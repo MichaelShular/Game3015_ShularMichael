@@ -26,12 +26,23 @@ bool Game::Initialize()
 	// so we have to query this information.
 	mCbvSrvDescriptorSize = md3dDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
 
-	LoadTextures();
+	
+
+	LoadTextures("temp", L"WireFence.dds");
+	
 	BuildRootSignature();
+	
+	//Fix
 	BuildDescriptorHeaps();
+	
 	BuildShadersAndInputLayout();
+	//Fix
 	BuildShapeGeometry();
-	BuildMaterials();
+	
+	MaterialCBIndexCount = 0;
+	DiffuseSrvHeapIndexCount = 0;
+	BuildMaterials("woodCrate");
+	//Fix
 	BuildRenderItems();
 	BuildFrameResources();
 	BuildPSOs();
@@ -302,17 +313,26 @@ void Game::UpdateMainPassCB(const GameTimer& gt)
 	currPassCB->CopyData(0, mMainPassCB);
 }
 
-void Game::LoadTextures()
+void Game::LoadTextures(std::string name, std::wstring fileName)
 {
-	auto woodCrateTex = std::make_unique<Texture>();
-	woodCrateTex->Name = "woodCrateTex";
-	//step 6
-	woodCrateTex->Filename = L"../../Textures/WireFence.dds";
-	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
-		mCommandList.Get(), woodCrateTex->Filename.c_str(),
-		woodCrateTex->Resource, woodCrateTex->UploadHeap));
+	//auto woodCrateTex = std::make_unique<Texture>();
+	//woodCrateTex->Name = "woodCrateTex";
+	////step 6
+	//woodCrateTex->Filename = L"../../Textures/WireFence.dds";
+	//ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+	//	mCommandList.Get(), woodCrateTex->Filename.c_str(),
+	//	woodCrateTex->Resource, woodCrateTex->UploadHeap));
 
-	mTextures[woodCrateTex->Name] = std::move(woodCrateTex);
+	//mTextures[woodCrateTex->Name] = std::move(woodCrateTex);
+	auto temp = std::make_unique<Texture>();
+	temp->Name = name;
+	//step 6
+	temp->Filename = L"../../Textures/" + fileName;
+	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+		mCommandList.Get(), temp->Filename.c_str(),
+		temp->Resource, temp->UploadHeap));
+
+	mTextures[temp->Name] = std::move(temp);
 }
 
 void Game::BuildRootSignature()
@@ -375,7 +395,7 @@ void Game::BuildDescriptorHeaps()
 	//
 	CD3DX12_CPU_DESCRIPTOR_HANDLE hDescriptor(mSrvDescriptorHeap->GetCPUDescriptorHandleForHeapStart());
 
-	auto woodCrateTex = mTextures["woodCrateTex"]->Resource;
+	auto woodCrateTex = mTextures["temp"]->Resource;
 
 	D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
 
@@ -530,17 +550,19 @@ void Game::BuildFrameResources()
 	}
 }
 
-void Game::BuildMaterials()
+void Game::BuildMaterials(std::string name)
 {
 	auto woodCrate = std::make_unique<Material>();
-	woodCrate->Name = "woodCrate";
-	woodCrate->MatCBIndex = 0;
-	woodCrate->DiffuseSrvHeapIndex = 0;
+	woodCrate->Name = name;
+	woodCrate->MatCBIndex = MaterialCBIndexCount;
+	MaterialCBIndexCount++;
+	woodCrate->DiffuseSrvHeapIndex = DiffuseSrvHeapIndexCount;
+	DiffuseSrvHeapIndexCount++;
 	woodCrate->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	woodCrate->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
 	woodCrate->Roughness = 0.2f;
 
-	mMaterials["woodCrate"] = std::move(woodCrate);
+	mMaterials[name] = std::move(woodCrate);
 }
 
 void Game::BuildRenderItems()
@@ -559,6 +581,21 @@ void Game::BuildRenderItems()
 	mRitemLayer[(int)RenderLayer::AlphaTested].push_back(boxRitem.get());
 
 	mAllRitems.push_back(std::move(boxRitem));
+
+	//auto temp = std::make_unique<RenderItem>();
+	//temp->ObjCBIndex = 0;
+	//temp->Mat = material[]
+	//temp->Geo = mGeometries["boxGeo"].get();
+	//temp->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+	//temp->IndexCount = temp->Geo->DrawArgs["box"].IndexCount;
+	//temp->StartIndexLocation = temp->Geo->DrawArgs["box"].StartIndexLocation;
+	//temp->BaseVertexLocation = temp->Geo->DrawArgs["box"].BaseVertexLocation;
+
+	////step4: All the render items are not opaque this time.
+	//mRitemLayer[(int)RenderLayer::Opaque].push_back(temp.get());
+	//mRitemLayer[(int)RenderLayer::AlphaTested].push_back(temp.get());
+
+	//mAllRitems.push_back(std::move(temp));
 }
 
 void Game::DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const std::vector<RenderItem*>& ritems)

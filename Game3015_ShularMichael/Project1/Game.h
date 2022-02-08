@@ -79,14 +79,14 @@ private:
 	void UpdateObjectCBs(const GameTimer& gt);
 	void UpdateMaterialCBs(const GameTimer& gt);
 	void UpdateMainPassCB(const GameTimer& gt);
-	void LoadTextures();
+	void LoadTextures(std::string name, std::wstring fileName);
 	void BuildRootSignature();
 	void BuildDescriptorHeaps();
 	void BuildShadersAndInputLayout();
 	void BuildShapeGeometry();
 	void BuildPSOs();
 	void BuildFrameResources();
-	void BuildMaterials();
+	void BuildMaterials(std::string name);
 	void BuildRenderItems();
 	void DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const std::vector<RenderItem*>& ritems);
 
@@ -136,4 +136,8 @@ private:
 	float mRadius = 2.5f;
 
 	POINT mLastMousePos;
+
+	int MaterialCBIndexCount;
+	int DiffuseSrvHeapIndexCount;
+
 };

@@ -83,11 +83,11 @@ private:
 	void BuildRootSignature();
 	void BuildDescriptorHeaps();
 	void BuildShadersAndInputLayout();
-	void BuildShapeGeometry();
+	void BuildShapeGeometry(GeometryGenerator::MeshData box, std::string shapeName);
 	void BuildPSOs();
 	void BuildFrameResources();
 	void BuildMaterials(std::string name);
-	void BuildRenderItems();
+	void BuildRenderItems(std::string matName, std::string geoName);
 	void DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const std::vector<RenderItem*>& ritems);
 
 	std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> GetStaticSamplers();

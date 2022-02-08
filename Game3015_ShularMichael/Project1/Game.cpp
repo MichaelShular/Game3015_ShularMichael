@@ -32,18 +32,17 @@ bool Game::Initialize()
 	
 	BuildRootSignature();
 	
-	//Fix
 	BuildDescriptorHeaps();
 	
 	BuildShadersAndInputLayout();
-	//Fix
-	BuildShapeGeometry();
+	GeometryGenerator geoGen;
+	BuildShapeGeometry(geoGen.CreateGrid(1.0f,1.0f,2,2), "box");
 	
 	MaterialCBIndexCount = 0;
 	DiffuseSrvHeapIndexCount = 0;
 	BuildMaterials("woodCrate");
 	//Fix
-	BuildRenderItems();
+	BuildRenderItems("woodCrate" ,"box");
 	BuildFrameResources();
 	BuildPSOs();
 
@@ -381,11 +380,50 @@ void Game::BuildRootSignature()
 //can set to a root signature parameter slot for use by the shader programs.
 void Game::BuildDescriptorHeaps()
 {
+	////
+	//// Create the SRV heap.
+	////
+	//D3D12_DESCRIPTOR_HEAP_DESC srvHeapDesc = {};
+	//srvHeapDesc.NumDescriptors = mTextures.size();
+	//srvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
+	//srvHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
+	//ThrowIfFailed(md3dDevice->CreateDescriptorHeap(&srvHeapDesc, IID_PPV_ARGS(&mSrvDescriptorHeap)));
+
+	////
+	//// Fill out the heap with actual descriptors.
+	////
+	//CD3DX12_CPU_DESCRIPTOR_HANDLE hDescriptor(mSrvDescriptorHeap->GetCPUDescriptorHandleForHeapStart());
+
+	//auto woodCrateTex = mTextures["temp"]->Resource;
+
+	//D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
+
+	////This mapping enables the shader resource view (SRV) to choose how memory gets routed to the 4 return components in a shader after a memory fetch.
+	////When a texture is sampled in a shader, it will return a vector of the texture data at the specified texture coordinates.
+	////This field provides a way to reorder the vector components returned when sampling the texture.
+	////D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING  will not reorder the components and just return the data in the order it is stored in the texture resource.
+	//srvDesc.Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING;
+
+	//srvDesc.Format = woodCrateTex->GetDesc().Format;
+	//srvDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2D;
+	//srvDesc.Texture2D.MostDetailedMip = 0;
+	////The number of mipmap levels to view, starting at MostDetailedMip.This field, along with MostDetailedMip allows us to
+	////specify a subrange of mipmap levels to view.You can specify - 1 to indicate to view
+	////all mipmap levels from MostDetailedMip down to the last mipmap level.
+
+	//srvDesc.Texture2D.MipLevels = woodCrateTex->GetDesc().MipLevels;
+
+	////Specifies the minimum mipmap level that can be accessed. 0.0 means all the mipmap levels can be accessed.
+	////Specifying 3.0 means mipmap levels 3.0 to MipCount - 1 can be accessed.
+	//srvDesc.Texture2D.ResourceMinLODClamp = 0.0f;
+
+	//md3dDevice->CreateShaderResourceView(woodCrateTex.Get(), &srvDesc, hDescriptor);
+
 	//
 	// Create the SRV heap.
 	//
 	D3D12_DESCRIPTOR_HEAP_DESC srvHeapDesc = {};
-	srvHeapDesc.NumDescriptors = 1;
+	srvHeapDesc.NumDescriptors = mTextures.size();
 	srvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
 	srvHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
 	ThrowIfFailed(md3dDevice->CreateDescriptorHeap(&srvHeapDesc, IID_PPV_ARGS(&mSrvDescriptorHeap)));
@@ -394,31 +432,25 @@ void Game::BuildDescriptorHeaps()
 	// Fill out the heap with actual descriptors.
 	//
 	CD3DX12_CPU_DESCRIPTOR_HANDLE hDescriptor(mSrvDescriptorHeap->GetCPUDescriptorHandleForHeapStart());
-
-	auto woodCrateTex = mTextures["temp"]->Resource;
-
+	
 	D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
-
-	//This mapping enables the shader resource view (SRV) to choose how memory gets routed to the 4 return components in a shader after a memory fetch.
-	//When a texture is sampled in a shader, it will return a vector of the texture data at the specified texture coordinates.
-	//This field provides a way to reorder the vector components returned when sampling the texture.
-	//D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING  will not reorder the components and just return the data in the order it is stored in the texture resource.
 	srvDesc.Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING;
-
-	srvDesc.Format = woodCrateTex->GetDesc().Format;
 	srvDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2D;
 	srvDesc.Texture2D.MostDetailedMip = 0;
-	//The number of mipmap levels to view, starting at MostDetailedMip.This field, along with MostDetailedMip allows us to
-	//specify a subrange of mipmap levels to view.You can specify - 1 to indicate to view
-	//all mipmap levels from MostDetailedMip down to the last mipmap level.
-
-	srvDesc.Texture2D.MipLevels = woodCrateTex->GetDesc().MipLevels;
-
-	//Specifies the minimum mipmap level that can be accessed. 0.0 means all the mipmap levels can be accessed.
-	//Specifying 3.0 means mipmap levels 3.0 to MipCount - 1 can be accessed.
 	srvDesc.Texture2D.ResourceMinLODClamp = 0.0f;
 
-	md3dDevice->CreateShaderResourceView(woodCrateTex.Get(), &srvDesc, hDescriptor);
+	for ( auto& it : mTextures) {
+		auto woodCrateTex = it.second->Resource;
+		
+		
+
+		srvDesc.Format = woodCrateTex->GetDesc().Format;
+		srvDesc.Texture2D.MipLevels = woodCrateTex->GetDesc().MipLevels;
+		md3dDevice->CreateShaderResourceView(woodCrateTex.Get(), &srvDesc, hDescriptor);
+		
+		hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+	}
+	
 }
 
 void Game::BuildShadersAndInputLayout()
@@ -444,11 +476,10 @@ void Game::BuildShadersAndInputLayout()
 	};
 }
 
-void Game::BuildShapeGeometry()
-{
-	GeometryGenerator geoGen;
-	GeometryGenerator::MeshData box = geoGen.CreateGrid(1.0f, 1.0f, 2, 2);
 
+
+void Game::BuildShapeGeometry(GeometryGenerator::MeshData box, std::string shapeName)
+{
 	SubmeshGeometry boxSubmesh;
 	boxSubmesh.IndexCount = (UINT)box.Indices32.size();
 	boxSubmesh.StartIndexLocation = 0;
@@ -470,7 +501,7 @@ void Game::BuildShapeGeometry()
 	const UINT ibByteSize = (UINT)indices.size() * sizeof(std::uint16_t);
 
 	auto geo = std::make_unique<MeshGeometry>();
-	geo->Name = "boxGeo";
+	geo->Name = shapeName;
 
 	ThrowIfFailed(D3DCreateBlob(vbByteSize, &geo->VertexBufferCPU));
 	CopyMemory(geo->VertexBufferCPU->GetBufferPointer(), vertices.data(), vbByteSize);
@@ -489,7 +520,7 @@ void Game::BuildShapeGeometry()
 	geo->IndexFormat = DXGI_FORMAT_R16_UINT;
 	geo->IndexBufferByteSize = ibByteSize;
 
-	geo->DrawArgs["box"] = boxSubmesh;
+	geo->DrawArgs[shapeName] = boxSubmesh;
 
 	mGeometries[geo->Name] = std::move(geo);
 }
@@ -565,16 +596,16 @@ void Game::BuildMaterials(std::string name)
 	mMaterials[name] = std::move(woodCrate);
 }
 
-void Game::BuildRenderItems()
+void Game::BuildRenderItems(std::string matName, std::string geoName)
 {
 	auto boxRitem = std::make_unique<RenderItem>();
 	boxRitem->ObjCBIndex = 0;
-	boxRitem->Mat = mMaterials["woodCrate"].get();
-	boxRitem->Geo = mGeometries["boxGeo"].get();
+	boxRitem->Mat = mMaterials[matName].get();
+	boxRitem->Geo = mGeometries[geoName].get();
 	boxRitem->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
-	boxRitem->IndexCount = boxRitem->Geo->DrawArgs["box"].IndexCount;
-	boxRitem->StartIndexLocation = boxRitem->Geo->DrawArgs["box"].StartIndexLocation;
-	boxRitem->BaseVertexLocation = boxRitem->Geo->DrawArgs["box"].BaseVertexLocation;
+	boxRitem->IndexCount = boxRitem->Geo->DrawArgs[geoName].IndexCount;
+	boxRitem->StartIndexLocation = boxRitem->Geo->DrawArgs[geoName].StartIndexLocation;
+	boxRitem->BaseVertexLocation = boxRitem->Geo->DrawArgs[geoName].BaseVertexLocation;
 
 	//step4: All the render items are not opaque this time.
 	mRitemLayer[(int)RenderLayer::Opaque].push_back(boxRitem.get());

@@ -9,11 +9,3 @@ public:
 private:
 
 };
-
-Aircraft::Aircraft()
-{
-}
-
-Aircraft::~Aircraft()
-{
-}

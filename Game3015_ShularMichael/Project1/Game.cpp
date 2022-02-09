@@ -4,8 +4,10 @@ const int gNumFrameResources = 3;
 
 
 Game::Game(HINSTANCE hInstance)
-	: D3DApp(hInstance)
+	: D3DApp(hInstance),
+	mGameWorld()
 {
+	
 }
 
 Game::~Game()
@@ -26,10 +28,13 @@ bool Game::Initialize()
 	// so we have to query this information.
 	mCbvSrvDescriptorSize = md3dDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
 
-	
+	for (auto& it : *mGameWorld.getTextures()) {
+		LoadTextures(it.first, it.second);
+	}
 
-	LoadTextures("temp", L"WireFence.dds");
-	
+	//LoadTextures("temp", L"WireFence.dds");
+
+
 	BuildRootSignature();
 	
 	BuildDescriptorHeaps();
@@ -441,7 +446,6 @@ void Game::BuildDescriptorHeaps()
 
 	for ( auto& it : mTextures) {
 		auto woodCrateTex = it.second->Resource;
-		
 		
 
 		srvDesc.Format = woodCrateTex->GetDesc().Format;

@@ -4,6 +4,7 @@
 #include "../../Common/UploadBuffer.h"
 #include "FrameResource.h"
 #include "../../Common/GeometryGenerator.h"
+#include "world.h"
 
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
@@ -93,6 +94,8 @@ private:
 	std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> GetStaticSamplers();
 
 private:
+	World mGameWorld;
+
 
 	std::vector<std::unique_ptr<FrameResource>> mFrameResources;
 	FrameResource* mCurrFrameResource = nullptr;

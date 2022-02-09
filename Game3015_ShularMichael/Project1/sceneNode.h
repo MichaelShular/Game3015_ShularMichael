@@ -9,11 +9,3 @@ public:
 private:
 
 };
-
-sceneNode::sceneNode()
-{
-}
-
-sceneNode::~sceneNode()
-{
-}

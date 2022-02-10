@@ -7,6 +7,7 @@ using namespace DirectX;
 class Entity : public sceneNode
 {
 public:
+	Entity();
 	void setVelocity(XMFLOAT2 velocity);
 	void setVelocity(float vx, float vy);
 	XMFLOAT2 getVelocity() const;

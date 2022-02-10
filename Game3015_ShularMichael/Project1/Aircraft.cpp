@@ -1,9 +1,21 @@
 #include "Aircraft.h"
 
-Aircraft::Aircraft()
+Aircraft::Aircraft(Type type) : Entity()
 {
+	switch (type)
+	{
+	case Aircraft::Eagle:  
+		 mSprite = "Eagle";
+		 break;
+	case Aircraft::Raptor:
+		mSprite = "Raptor";
+		break;
+	default:
+		mSprite = "Eagle";
+		break;
+	}
 }
 
-Aircraft::~Aircraft()
+void Aircraft::drawCurrent() const
 {
 }

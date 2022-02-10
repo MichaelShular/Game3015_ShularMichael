@@ -1,7 +1,8 @@
 #include "world.h"
 #include "Game.h"
 
-World::World(Game* game)
+World::World(Game* game):
+	sceneGraph(new sceneNode())
 {
 	mGame = game;
 	//mGame->LoadTextures("temp", L"WireFence.dds");
@@ -10,6 +11,7 @@ World::World(Game* game)
 
 void World::update(const GameTimer& gt)
 {
+	sceneGraph->update(gt);
 }
 
 void World::draw(const GameTimer& gt)
@@ -23,6 +25,10 @@ std::unordered_map<std::string, std::wstring>* World::getTextures()
 
 void World::buildScene()
 {
+	std::unique_ptr<Aircraft> player(new Aircraft(Aircraft::Eagle));
+	mplayerAircraft = player.get();
+	mplayerAircraft->attachChild(std::move(player));
+
 
 }
 

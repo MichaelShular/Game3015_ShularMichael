@@ -1,11 +1,21 @@
 #pragma once
+#include "entity.h"
 
-class Aircraft
+class Aircraft : public Entity
 {
 public:
-	Aircraft();
-	~Aircraft();
-
+	enum Type
+	{
+		Eagle,
+		Raptor,
+	};
+public:
+	Aircraft(Type type);
+ 
 private:
-
+	virtual void drawCurrent() const;
+private:
+	Type mType;
+	std::string mSprite;
 };
+

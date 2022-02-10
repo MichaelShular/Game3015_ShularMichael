@@ -1,6 +1,11 @@
 #include "sceneNode.h"
+#include "Game.h"
 #include <algorithm>
 #include <cassert>
+
+using Microsoft::WRL::ComPtr;
+using namespace DirectX;
+using namespace DirectX::PackedVector;
 
 sceneNode::sceneNode()
 	: mChildren()
@@ -42,5 +47,41 @@ void sceneNode::updateChildren(const GameTimer& gt)
 	{
 		child->update(gt);
 	}
+}
+
+XMFLOAT3 sceneNode::getWorldPosition() const
+{
+	return mWorldPosition;
+}
+
+void sceneNode::setWorldPosition(float x, float y, float z)
+{
+	mWorldPosition.x = x;
+	mWorldPosition.y = y;
+	mWorldPosition.z = z;
+}
+
+XMFLOAT3 sceneNode::getWorldRotation() const
+{
+	return mWorldRotation;
+}
+
+void sceneNode::setWorldRotation(float x, float y, float z)
+{
+	mWorldRotation.x = x;
+	mWorldRotation.y = y;
+	mWorldRotation.z = z;
+}
+
+XMFLOAT3 sceneNode::getWorldScale() const
+{
+	return mWorldScale;
+}
+
+void sceneNode::setWorldScale(float x, float y, float z)
+{
+	mWorldScale.x = x;
+	mWorldScale.y = y;
+	mWorldScale.z = z;
 }
 

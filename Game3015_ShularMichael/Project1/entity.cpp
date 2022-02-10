@@ -1,5 +1,9 @@
 #include "entity.h"
 
+Entity::Entity() : sceneNode ()
+{
+}
+
 void Entity::setVelocity(XMFLOAT2 velocity)
 {
 	mVelocity = velocity;

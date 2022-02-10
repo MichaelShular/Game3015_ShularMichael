@@ -7,6 +7,9 @@
 #include "../../Common/UploadBuffer.h"
 #include "FrameResource.h"
 #include "../../Common/GeometryGenerator.h"
+#include "Aircraft.h"
+#include "sceneNode.h"
+
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
 using namespace DirectX::PackedVector;
@@ -30,7 +33,8 @@ private:
 	void loadTextures();
 private:
 	Game *mGame;
-	//Aircraft* mplayerAircraft;
+	Aircraft* mplayerAircraft;
+	sceneNode* sceneGraph;
 	std::unordered_map<std::string, std::wstring> mTexture;
 };
 

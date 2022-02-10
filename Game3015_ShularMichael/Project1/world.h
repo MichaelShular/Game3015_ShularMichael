@@ -26,10 +26,9 @@ public:
 	void update(const GameTimer& gt);
 	void draw(const GameTimer& gt);
 	std::unordered_map<std::string, std::wstring> *getTextures();
-	
+	void buildScene();
 private:
 	void CreateTexture(std::string name, std::wstring fileName);
-	void buildScene();
 	void loadTextures();
 private:
 	Game *mGame;

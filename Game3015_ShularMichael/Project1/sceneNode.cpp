@@ -3,14 +3,13 @@
 #include <algorithm>
 #include <cassert>
 
-using Microsoft::WRL::ComPtr;
-using namespace DirectX;
-using namespace DirectX::PackedVector;
+
 
 sceneNode::sceneNode()
 	: mChildren()
 	, mParent(nullptr)
 {
+
 }
 
 void sceneNode::attachChild(Ptr child)
@@ -49,7 +48,7 @@ void sceneNode::updateChildren(const GameTimer& gt)
 	}
 }
 
-XMFLOAT3 sceneNode::getWorldPosition() const
+XMFLOAT3 sceneNode::getWorldPosition()
 {
 	return mWorldPosition;
 }
@@ -61,7 +60,7 @@ void sceneNode::setWorldPosition(float x, float y, float z)
 	mWorldPosition.z = z;
 }
 
-XMFLOAT3 sceneNode::getWorldRotation() const
+XMFLOAT3 sceneNode::getWorldRotation()
 {
 	return mWorldRotation;
 }
@@ -73,7 +72,7 @@ void sceneNode::setWorldRotation(float x, float y, float z)
 	mWorldRotation.z = z;
 }
 
-XMFLOAT3 sceneNode::getWorldScale() const
+XMFLOAT3 sceneNode::getWorldScale()
 {
 	return mWorldScale;
 }

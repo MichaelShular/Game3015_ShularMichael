@@ -92,7 +92,7 @@ public:
 	void BuildPSOs();
 	void BuildFrameResources();
 	void BuildMaterials(std::string name);
-	void BuildRenderItems(std::string matName, std::string geoName);
+	void BuildRenderItems(std::string matName, std::string geoName, XMFLOAT3 position, XMFLOAT3 rotation, XMFLOAT3 scale);
 	void DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const std::vector<RenderItem*>& ritems);
 
 	std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> GetStaticSamplers();

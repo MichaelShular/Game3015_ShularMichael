@@ -37,13 +37,14 @@ bool Game::Initialize()
 	BuildShadersAndInputLayout();
 	
 	GeometryGenerator geoGen;
-	BuildShapeGeometry(geoGen.CreateBox(2.0f,2.0f,8,2), "box");
+	BuildShapeGeometry(geoGen.CreateBox(2.0f,2.0f,2,2), "box");
 	
 	MaterialCBIndexCount = 0;
 	DiffuseSrvHeapIndexCount = 0;
 	BuildMaterials("woodCrate");
 	//Fix
-	BuildRenderItems("woodCrate" ,"box");
+	//BuildRenderItems("woodCrate" ,"box");
+	mGameWorld->buildScene();
 	BuildFrameResources();
 	BuildPSOs();
 
@@ -599,9 +600,11 @@ void Game::BuildMaterials(std::string name)
 	mMaterials[name] = std::move(woodCrate);
 }
 
-void Game::BuildRenderItems(std::string matName, std::string geoName)
+void Game::BuildRenderItems(std::string matName, std::string geoName, XMFLOAT3 position, XMFLOAT3 rotation, XMFLOAT3 scale)
 {
 	auto boxRitem = std::make_unique<RenderItem>();
+
+	XMStoreFloat4x4(&boxRitem->World, XMMatrixScaling(scale.x, scale.y, scale.z) * XMMatrixRotationRollPitchYaw(rotation.x, rotation.y, rotation.z) * XMMatrixTranslation(position.x, position.y, position.z));
 	boxRitem->ObjCBIndex = 0;
 	boxRitem->Mat = mMaterials[matName].get();
 	boxRitem->Geo = mGeometries[geoName].get();

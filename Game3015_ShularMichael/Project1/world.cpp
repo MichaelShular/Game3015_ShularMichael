@@ -28,8 +28,12 @@ void World::buildScene()
 	std::unique_ptr<Aircraft> player(new Aircraft(Aircraft::Eagle));
 	mplayerAircraft = player.get();
 	mplayerAircraft->attachChild(std::move(player));
+	mplayerAircraft->setWorldPosition(0.0f, 0.0f, 0.0f);
+	mplayerAircraft->setWorldRotation(0.0f, 0.0f, 0.0f);
+	mplayerAircraft->setWorldScale(1.0f, 1.0f, 1.0f);
 
-
+	mGame->BuildRenderItems("woodCrate", "box", mplayerAircraft->getWorldPosition(), mplayerAircraft->getWorldRotation(), mplayerAircraft->getWorldScale());
+	//sceneGraph->attachChild(std::move(player));
 }
 
 void World::loadTextures()

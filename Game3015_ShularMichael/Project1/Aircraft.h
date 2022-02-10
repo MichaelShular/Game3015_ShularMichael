@@ -11,6 +11,7 @@ public:
 	};
 public:
 	Aircraft(Type type);
+
  
 private:
 	virtual void drawCurrent() const;

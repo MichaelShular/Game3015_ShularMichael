@@ -2,22 +2,30 @@
 \label{class_world}\index{World@{World}}
 
 
+This class is use to build game objects and hold \mbox{\hyperlink{classscene_node}{scene\+Node}} which will hold all objects that are part of the game.  
+
+
+
+
 {\ttfamily \#include $<$world.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_world_a358fecc8d0e42996d7bd1884f126a97c}{World}} (\mbox{\hyperlink{class_game}{Game}} $\ast$game)
-\item 
+\begin{DoxyCompactList}\small\item\em The defualt conconstructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_world_a36c003f54e14e022a360551af5e7923e}{update}} (const Game\+Timer \&gt)
-\item 
+\begin{DoxyCompactList}\small\item\em Used update \mbox{\hyperlink{classscene_node}{scene\+Node}} class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_world_a2b1049691edabbeca3be712f2be8c36e}{draw}} (const Game\+Timer \&gt)
-\item 
+\begin{DoxyCompactList}\small\item\em Used draw. \end{DoxyCompactList}\item 
 std\+::unordered\+\_\+map$<$ std\+::string, std\+::wstring $>$ $\ast$ \mbox{\hyperlink{class_world_a4cca68d1c7ea4bbbbdd6b07bce2ebc78}{get\+Textures}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Used to pass information about textures to game. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_world_ae7df49f5d488e5cd1254bf360966f410}{build\+Scene}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used to construct materials for scene and game objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+This class is use to build game objects and hold \mbox{\hyperlink{classscene_node}{scene\+Node}} which will hold all objects that are part of the game. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_world_a358fecc8d0e42996d7bd1884f126a97c}\label{class_world_a358fecc8d0e42996d7bd1884f126a97c}} 
@@ -28,6 +36,15 @@ void \mbox{\hyperlink{class_world_ae7df49f5d488e5cd1254bf360966f410}{build\+Scen
 
 
 
+The defualt conconstructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \mbox{\hyperlink{class_game}{Game}} \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_world_ae7df49f5d488e5cd1254bf360966f410}\label{class_world_ae7df49f5d488e5cd1254bf360966f410}} 
 \index{World@{World}!buildScene@{buildScene}}
@@ -35,18 +52,38 @@ void \mbox{\hyperlink{class_world_ae7df49f5d488e5cd1254bf360966f410}{build\+Scen
 \doxysubsubsection{\texorpdfstring{buildScene()}{buildScene()}}
 {\footnotesize\ttfamily void World\+::build\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Used to construct materials for scene and game objects. 
+
 \mbox{\Hypertarget{class_world_a2b1049691edabbeca3be712f2be8c36e}\label{class_world_a2b1049691edabbeca3be712f2be8c36e}} 
 \index{World@{World}!draw@{draw}}
 \index{draw@{draw}!World@{World}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
 {\footnotesize\ttfamily void World\+::draw (\begin{DoxyParamCaption}\item[{const Game\+Timer \&}]{gt }\end{DoxyParamCaption})}
 
+
+
+Used draw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & const Game\+Timer\& \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_world_a4cca68d1c7ea4bbbbdd6b07bce2ebc78}\label{class_world_a4cca68d1c7ea4bbbbdd6b07bce2ebc78}} 
 \index{World@{World}!getTextures@{getTextures}}
 \index{getTextures@{getTextures}!World@{World}}
 \doxysubsubsection{\texorpdfstring{getTextures()}{getTextures()}}
 {\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, std\+::wstring $>$ $\ast$ World\+::get\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Used to pass information about textures to game. 
+
+\begin{DoxyReturn}{Returns}
+\&std\+::unordered\+\_\+map$<$std\+::string, std\+::wstring$>$ 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_world_a36c003f54e14e022a360551af5e7923e}\label{class_world_a36c003f54e14e022a360551af5e7923e}} 
 \index{World@{World}!update@{update}}
 \index{update@{update}!World@{World}}
@@ -55,7 +92,16 @@ void \mbox{\hyperlink{class_world_ae7df49f5d488e5cd1254bf360966f410}{build\+Scen
 
 
 
+Used update \mbox{\hyperlink{classscene_node}{scene\+Node}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & const Game\+Timer\& \\
+\hline
+\end{DoxyParams}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{world_8h}{world.\+h}}\item 
-Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{world_8cpp}{world.\+cpp}}\end{DoxyCompactItemize}
+D\+:/\+Semester 6/\+Game Engine Dev 2/\+Game3015\+\_\+\+Shular\+Michael/\+Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{world_8h}{world.\+h}}\item 
+D\+:/\+Semester 6/\+Game Engine Dev 2/\+Game3015\+\_\+\+Shular\+Michael/\+Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{world_8cpp}{world.\+cpp}}\end{DoxyCompactItemize}

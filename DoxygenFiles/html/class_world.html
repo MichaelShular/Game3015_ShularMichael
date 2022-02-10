@@ -98,22 +98,32 @@ $(document).ready(function(){initNavTree('class_world.html',''); initResizable()
 </div><!--header-->
 <div class="contents">
 
+<p>This class is use to build game objects and hold <a class="el" href="classscene_node.html" title="This class is used manage transform hierarchies.">sceneNode</a> which will hold all objects that are part of the game.  
+ <a href="class_world.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="world_8h_source.html">world.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a358fecc8d0e42996d7bd1884f126a97c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_world.html#a358fecc8d0e42996d7bd1884f126a97c">World</a> (<a class="el" href="class_game.html">Game</a> *game)</td></tr>
+<tr class="memdesc:a358fecc8d0e42996d7bd1884f126a97c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The defualt conconstructor.  <a href="class_world.html#a358fecc8d0e42996d7bd1884f126a97c">More...</a><br /></td></tr>
 <tr class="separator:a358fecc8d0e42996d7bd1884f126a97c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36c003f54e14e022a360551af5e7923e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_world.html#a36c003f54e14e022a360551af5e7923e">update</a> (const GameTimer &amp;gt)</td></tr>
+<tr class="memdesc:a36c003f54e14e022a360551af5e7923e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used update <a class="el" href="classscene_node.html" title="This class is used manage transform hierarchies.">sceneNode</a> class.  <a href="class_world.html#a36c003f54e14e022a360551af5e7923e">More...</a><br /></td></tr>
 <tr class="separator:a36c003f54e14e022a360551af5e7923e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b1049691edabbeca3be712f2be8c36e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_world.html#a2b1049691edabbeca3be712f2be8c36e">draw</a> (const GameTimer &amp;gt)</td></tr>
+<tr class="memdesc:a2b1049691edabbeca3be712f2be8c36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used draw.  <a href="class_world.html#a2b1049691edabbeca3be712f2be8c36e">More...</a><br /></td></tr>
 <tr class="separator:a2b1049691edabbeca3be712f2be8c36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cca68d1c7ea4bbbbdd6b07bce2ebc78"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::wstring &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_world.html#a4cca68d1c7ea4bbbbdd6b07bce2ebc78">getTextures</a> ()</td></tr>
+<tr class="memdesc:a4cca68d1c7ea4bbbbdd6b07bce2ebc78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to pass information about textures to game.  <a href="class_world.html#a4cca68d1c7ea4bbbbdd6b07bce2ebc78">More...</a><br /></td></tr>
 <tr class="separator:a4cca68d1c7ea4bbbbdd6b07bce2ebc78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7df49f5d488e5cd1254bf360966f410"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_world.html#ae7df49f5d488e5cd1254bf360966f410">buildScene</a> ()</td></tr>
+<tr class="memdesc:ae7df49f5d488e5cd1254bf360966f410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to construct materials for scene and game objects.  <a href="class_world.html#ae7df49f5d488e5cd1254bf360966f410">More...</a><br /></td></tr>
 <tr class="separator:ae7df49f5d488e5cd1254bf360966f410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >This class is use to build game objects and hold <a class="el" href="classscene_node.html" title="This class is used manage transform hierarchies.">sceneNode</a> which will hold all objects that are part of the game. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a358fecc8d0e42996d7bd1884f126a97c" name="a358fecc8d0e42996d7bd1884f126a97c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a358fecc8d0e42996d7bd1884f126a97c">&#9670;&nbsp;</a></span>World()</h2>
 
@@ -129,6 +139,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The defualt conconstructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td><a class="el" href="class_game.html" title="This class is used to Initialize the application, control game loop and hold the D3D12 game engine fu...">Game</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -148,6 +166,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to construct materials for scene and game objects. </p>
+
 </div>
 </div>
 <a id="a2b1049691edabbeca3be712f2be8c36e" name="a2b1049691edabbeca3be712f2be8c36e"></a>
@@ -166,6 +186,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used draw. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>const GameTimer&amp; </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a4cca68d1c7ea4bbbbdd6b07bce2ebc78" name="a4cca68d1c7ea4bbbbdd6b07bce2ebc78"></a>
@@ -182,6 +210,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Used to pass information about textures to game. </p>
+<dl class="section return"><dt>Returns</dt><dd>&amp;std::unordered_map&lt;std::string, std::wstring&gt; </dd></dl>
 
 </div>
 </div>
@@ -201,11 +232,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used update <a class="el" href="classscene_node.html" title="This class is used manage transform hierarchies.">sceneNode</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>const GameTimer&amp; </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Game3015_ShularMichael/Project1/<a class="el" href="world_8h_source.html">world.h</a></li>
-<li>Game3015_ShularMichael/Project1/<a class="el" href="world_8cpp.html">world.cpp</a></li>
+<li>D:/Semester 6/Game Engine Dev 2/Game3015_ShularMichael/Game3015_ShularMichael/Project1/<a class="el" href="world_8h_source.html">world.h</a></li>
+<li>D:/Semester 6/Game Engine Dev 2/Game3015_ShularMichael/Game3015_ShularMichael/Project1/<a class="el" href="world_8cpp.html">world.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

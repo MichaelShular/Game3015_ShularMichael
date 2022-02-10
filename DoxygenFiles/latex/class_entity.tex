@@ -2,6 +2,11 @@
 \label{class_entity}\index{Entity@{Entity}}
 
 
+This class game object that are part of the world which could use velocity.  
+
+
+
+
 {\ttfamily \#include $<$entity.\+h$>$}
 
 Inheritance diagram for Entity\+:\begin{figure}[H]
@@ -14,15 +19,15 @@ Inheritance diagram for Entity\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_entity_a980f368aa07ce358583982821533a54a}{Entity}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em The defualt conconstructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_entity_acf5f6bb1df6f5dba9923a2355b8c0ac2}{set\+Velocity}} (XMFLOAT2 velocity)
-\item 
+\begin{DoxyCompactList}\small\item\em Used to set velocity of an game object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_entity_a7873fbd61cf1a742d4492ec438a9ac9f}{set\+Velocity}} (float vx, float vy)
-\item 
+\begin{DoxyCompactList}\small\item\em Used to set velocity of an game object. \end{DoxyCompactList}\item 
 XMFLOAT2 \mbox{\hyperlink{class_entity_a8e1cbc69431758859f15d0b9d70b8cf5}{get\+Velocity}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Used to get the velocity of game object. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_entity_ac2ba9cb8ca54fff11ad7397334edcd94}{update\+Current}} (const Game\+Timer \&gt)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used update entities velocity. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,6 +35,9 @@ XMFLOAT2 \mbox{\hyperlink{class_entity_a31d59d6f95b6084907efdf6f58bdd525}{m\+Vel
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
+
+\doxysubsection{Detailed Description}
+This class game object that are part of the world which could use velocity. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_entity_a980f368aa07ce358583982821533a54a}\label{class_entity_a980f368aa07ce358583982821533a54a}} 
@@ -40,6 +48,10 @@ XMFLOAT2 \mbox{\hyperlink{class_entity_a31d59d6f95b6084907efdf6f58bdd525}{m\+Vel
 
 
 
+The defualt conconstructor. 
+
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_entity_a8e1cbc69431758859f15d0b9d70b8cf5}\label{class_entity_a8e1cbc69431758859f15d0b9d70b8cf5}} 
 \index{Entity@{Entity}!getVelocity@{getVelocity}}
@@ -47,24 +59,61 @@ XMFLOAT2 \mbox{\hyperlink{class_entity_a31d59d6f95b6084907efdf6f58bdd525}{m\+Vel
 \doxysubsubsection{\texorpdfstring{getVelocity()}{getVelocity()}}
 {\footnotesize\ttfamily XMFLOAT2 Entity\+::get\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Used to get the velocity of game object. 
+
+\begin{DoxyReturn}{Returns}
+Direct\+X\+::\+XMFLOAT2 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_entity_a7873fbd61cf1a742d4492ec438a9ac9f}\label{class_entity_a7873fbd61cf1a742d4492ec438a9ac9f}} 
 \index{Entity@{Entity}!setVelocity@{setVelocity}}
 \index{setVelocity@{setVelocity}!Entity@{Entity}}
 \doxysubsubsection{\texorpdfstring{setVelocity()}{setVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Entity\+::set\+Velocity (\begin{DoxyParamCaption}\item[{float}]{vx,  }\item[{float}]{vy }\end{DoxyParamCaption})}
 
+
+
+Used to set velocity of an game object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & a float in the x direction \\
+\hline
+{\em } & a float in the y direction \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_entity_acf5f6bb1df6f5dba9923a2355b8c0ac2}\label{class_entity_acf5f6bb1df6f5dba9923a2355b8c0ac2}} 
 \index{Entity@{Entity}!setVelocity@{setVelocity}}
 \index{setVelocity@{setVelocity}!Entity@{Entity}}
 \doxysubsubsection{\texorpdfstring{setVelocity()}{setVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void Entity\+::set\+Velocity (\begin{DoxyParamCaption}\item[{XMFLOAT2}]{velocity }\end{DoxyParamCaption})}
 
+
+
+Used to set velocity of an game object. 
+
+///
+\begin{DoxyParams}{Parameters}
+{\em } & Direct\+X\+::\+XMFLOAT2 \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_entity_ac2ba9cb8ca54fff11ad7397334edcd94}\label{class_entity_ac2ba9cb8ca54fff11ad7397334edcd94}} 
 \index{Entity@{Entity}!updateCurrent@{updateCurrent}}
 \index{updateCurrent@{updateCurrent}!Entity@{Entity}}
 \doxysubsubsection{\texorpdfstring{updateCurrent()}{updateCurrent()}}
 {\footnotesize\ttfamily void Entity\+::update\+Current (\begin{DoxyParamCaption}\item[{const Game\+Timer \&}]{gt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Used update entities velocity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & Game\+Timer ~\newline
+ \\
+\hline
+\end{DoxyParams}
 
 
 Reimplemented from \mbox{\hyperlink{classscene_node}{scene\+Node}}.
@@ -82,5 +131,5 @@ Reimplemented from \mbox{\hyperlink{classscene_node}{scene\+Node}}.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{entity_8h}{entity.\+h}}\item 
-Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{entity_8cpp}{entity.\+cpp}}\end{DoxyCompactItemize}
+D\+:/\+Semester 6/\+Game Engine Dev 2/\+Game3015\+\_\+\+Shular\+Michael/\+Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{entity_8h}{entity.\+h}}\item 
+D\+:/\+Semester 6/\+Game Engine Dev 2/\+Game3015\+\_\+\+Shular\+Michael/\+Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{entity_8cpp}{entity.\+cpp}}\end{DoxyCompactItemize}

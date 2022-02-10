@@ -1,5 +1,8 @@
 #include "Aircraft.h"
 
+/// The defualt conconstructor
+/// 
+/// @param: enum Type: use to switch sprites
 Aircraft::Aircraft(Type type) : Entity()
 {
 	switch (type)

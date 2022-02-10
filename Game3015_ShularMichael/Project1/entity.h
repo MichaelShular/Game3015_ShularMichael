@@ -4,6 +4,7 @@
 
 using namespace DirectX;
 
+/// This class game object that are part of the world which could use velocity 
 class Entity : public sceneNode
 {
 public:

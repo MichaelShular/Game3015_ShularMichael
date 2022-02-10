@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('classscene_node.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 
+<p>This class is used manage transform hierarchies.  
+ <a href="classscene_node.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="scene_node_8h_source.html">sceneNode.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sceneNode:</div>
@@ -106,8 +109,8 @@ Inheritance diagram for sceneNode:</div>
  <div class="center">
   <img src="classscene_node.png" usemap="#sceneNode_map" alt=""/>
   <map id="sceneNode_map" name="sceneNode_map">
-<area href="class_entity.html" alt="Entity" shape="rect" coords="0,56,76,80"/>
-<area href="class_aircraft.html" alt="Aircraft" shape="rect" coords="0,112,76,136"/>
+<area href="class_entity.html" title="This class game object that are part of the world which could use velocity." alt="Entity" shape="rect" coords="0,56,76,80"/>
+<area href="class_aircraft.html" title="This class is the derived class from entity but only of aircrafts." alt="Aircraft" shape="rect" coords="0,112,76,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -119,27 +122,39 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9d0f364b4159293d871bcc85666a2b97"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#a9d0f364b4159293d871bcc85666a2b97">sceneNode</a> ()</td></tr>
+<tr class="memdesc:a9d0f364b4159293d871bcc85666a2b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">The defualt conconstructor.  <a href="classscene_node.html#a9d0f364b4159293d871bcc85666a2b97">More...</a><br /></td></tr>
 <tr class="separator:a9d0f364b4159293d871bcc85666a2b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab208a5760c8e1abb12902bacda7328bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#ab208a5760c8e1abb12902bacda7328bb">attachChild</a> (<a class="el" href="classscene_node.html#a21c67aa425d7a41f2d49d277b4192a50">Ptr</a> child)</td></tr>
+<tr class="memdesc:ab208a5760c8e1abb12902bacda7328bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used attach game objects to <a class="el" href="classscene_node.html" title="This class is used manage transform hierarchies.">sceneNode</a>.  <a href="classscene_node.html#ab208a5760c8e1abb12902bacda7328bb">More...</a><br /></td></tr>
 <tr class="separator:ab208a5760c8e1abb12902bacda7328bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f76b067d297ba0910d7b452dff926a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscene_node.html#a21c67aa425d7a41f2d49d277b4192a50">Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#a4f76b067d297ba0910d7b452dff926a6">detachChild</a> (const <a class="el" href="classscene_node.html">sceneNode</a> &amp;node)</td></tr>
+<tr class="memdesc:a4f76b067d297ba0910d7b452dff926a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used detach game objects from <a class="el" href="classscene_node.html" title="This class is used manage transform hierarchies.">sceneNode</a>.  <a href="classscene_node.html#a4f76b067d297ba0910d7b452dff926a6">More...</a><br /></td></tr>
 <tr class="separator:a4f76b067d297ba0910d7b452dff926a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a838a34341398f8b9056f0c46aca76261"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#a838a34341398f8b9056f0c46aca76261">update</a> (const GameTimer &amp;gt)</td></tr>
+<tr class="memdesc:a838a34341398f8b9056f0c46aca76261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to update.  <a href="classscene_node.html#a838a34341398f8b9056f0c46aca76261">More...</a><br /></td></tr>
 <tr class="separator:a838a34341398f8b9056f0c46aca76261"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad99cf805a23515aa816b12bb8f06021b"><td class="memItemLeft" align="right" valign="top">XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#ad99cf805a23515aa816b12bb8f06021b">getWorldPosition</a> ()</td></tr>
+<tr class="memdesc:ad99cf805a23515aa816b12bb8f06021b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to get game object's world position.  <a href="classscene_node.html#ad99cf805a23515aa816b12bb8f06021b">More...</a><br /></td></tr>
 <tr class="separator:ad99cf805a23515aa816b12bb8f06021b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeedc9b6916936a3393f3b10318cc7cef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#aeedc9b6916936a3393f3b10318cc7cef">setWorldPosition</a> (float x, float y, float z)</td></tr>
+<tr class="memdesc:aeedc9b6916936a3393f3b10318cc7cef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to set game object's world position.  <a href="classscene_node.html#aeedc9b6916936a3393f3b10318cc7cef">More...</a><br /></td></tr>
 <tr class="separator:aeedc9b6916936a3393f3b10318cc7cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa82ae55b7add12477b16350a79dabebe"><td class="memItemLeft" align="right" valign="top">XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#aa82ae55b7add12477b16350a79dabebe">getWorldRotation</a> ()</td></tr>
+<tr class="memdesc:aa82ae55b7add12477b16350a79dabebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to get game object's world rotatiion.  <a href="classscene_node.html#aa82ae55b7add12477b16350a79dabebe">More...</a><br /></td></tr>
 <tr class="separator:aa82ae55b7add12477b16350a79dabebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e043216420c64193027275f63b9a044"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#a5e043216420c64193027275f63b9a044">setWorldRotation</a> (float x, float y, float z)</td></tr>
+<tr class="memdesc:a5e043216420c64193027275f63b9a044"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to set game object's world rotatiion.  <a href="classscene_node.html#a5e043216420c64193027275f63b9a044">More...</a><br /></td></tr>
 <tr class="separator:a5e043216420c64193027275f63b9a044"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad387755feb78ed58905c8da11a96f80e"><td class="memItemLeft" align="right" valign="top">XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#ad387755feb78ed58905c8da11a96f80e">getWorldScale</a> ()</td></tr>
+<tr class="memdesc:ad387755feb78ed58905c8da11a96f80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to get game object's world scale.  <a href="classscene_node.html#ad387755feb78ed58905c8da11a96f80e">More...</a><br /></td></tr>
 <tr class="separator:ad387755feb78ed58905c8da11a96f80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04a8ab1a9e3a01f211d14c42ec6ee18c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#a04a8ab1a9e3a01f211d14c42ec6ee18c">setWorldScale</a> (float x, float y, float z)</td></tr>
+<tr class="memdesc:a04a8ab1a9e3a01f211d14c42ec6ee18c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to set game object's world scale.  <a href="classscene_node.html#a04a8ab1a9e3a01f211d14c42ec6ee18c">More...</a><br /></td></tr>
 <tr class="separator:a04a8ab1a9e3a01f211d14c42ec6ee18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >This class is used manage transform hierarchies. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a21c67aa425d7a41f2d49d277b4192a50" name="a21c67aa425d7a41f2d49d277b4192a50"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21c67aa425d7a41f2d49d277b4192a50">&#9670;&nbsp;</a></span>Ptr</h2>
 
@@ -170,6 +185,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The defualt conconstructor. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -189,6 +206,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used attach game objects to <a class="el" href="classscene_node.html" title="This class is used manage transform hierarchies.">sceneNode</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>std::unique_ptr&lt;sceneNode&gt; </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a4f76b067d297ba0910d7b452dff926a6" name="a4f76b067d297ba0910d7b452dff926a6"></a>
@@ -207,6 +232,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used detach game objects from <a class="el" href="classscene_node.html" title="This class is used manage transform hierarchies.">sceneNode</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>const <a class="el" href="classscene_node.html" title="This class is used manage transform hierarchies.">sceneNode</a>&amp; </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ad99cf805a23515aa816b12bb8f06021b" name="ad99cf805a23515aa816b12bb8f06021b"></a>
@@ -223,6 +256,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Used to get game object's world position. </p>
+<dl class="section return"><dt>Returns</dt><dd>DirectX::XMFLOAT3 </dd></dl>
 
 </div>
 </div>
@@ -241,6 +277,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to get game object's world rotatiion. </p>
+<dl class="section return"><dt>Returns</dt><dd>DirectX::XMFLOAT3 </dd></dl>
+
 </div>
 </div>
 <a id="ad387755feb78ed58905c8da11a96f80e" name="ad387755feb78ed58905c8da11a96f80e"></a>
@@ -257,6 +296,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Used to get game object's world scale. </p>
+<dl class="section return"><dt>Returns</dt><dd>DirectX::XMFLOAT3 </dd></dl>
 
 </div>
 </div>
@@ -292,6 +334,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to set game object's world position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>a float for x position </td></tr>
+    <tr><td class="paramname"></td><td>a float for y position </td></tr>
+    <tr><td class="paramname"></td><td>a float for z position </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a5e043216420c64193027275f63b9a044" name="a5e043216420c64193027275f63b9a044"></a>
@@ -325,6 +377,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Used to set game object's world rotatiion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>a float for x rotatiion </td></tr>
+    <tr><td class="paramname"></td><td>a float for y rotatiion </td></tr>
+    <tr><td class="paramname"></td><td>a float for z rotatiion </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -360,6 +422,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to set game object's world scale. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>a float for x scale </td></tr>
+    <tr><td class="paramname"></td><td>a float for y scale </td></tr>
+    <tr><td class="paramname"></td><td>a float for z scale </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a838a34341398f8b9056f0c46aca76261" name="a838a34341398f8b9056f0c46aca76261"></a>
@@ -378,11 +450,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to update. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>const GameTimer&amp; </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Game3015_ShularMichael/Project1/<a class="el" href="scene_node_8h_source.html">sceneNode.h</a></li>
-<li>Game3015_ShularMichael/Project1/<a class="el" href="scene_node_8cpp.html">sceneNode.cpp</a></li>
+<li>D:/Semester 6/Game Engine Dev 2/Game3015_ShularMichael/Game3015_ShularMichael/Project1/<a class="el" href="scene_node_8h_source.html">sceneNode.h</a></li>
+<li>D:/Semester 6/Game Engine Dev 2/Game3015_ShularMichael/Game3015_ShularMichael/Project1/<a class="el" href="scene_node_8cpp.html">sceneNode.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

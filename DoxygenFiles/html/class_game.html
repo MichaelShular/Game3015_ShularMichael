@@ -98,6 +98,10 @@ $(document).ready(function(){initNavTree('class_game.html',''); initResizable();
 </div><!--header-->
 <div class="contents">
 
+<p>This class is used to Initialize the application, control game loop and hold the D3D12 game engine function. <br  />
+  
+ <a href="class_game.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_game_8h_source.html">Game.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Game:</div>
@@ -109,63 +113,92 @@ Inheritance diagram for Game:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3f68a62a1fe1ca8dcd1deb054b384cef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a3f68a62a1fe1ca8dcd1deb054b384cef">Game</a> (HINSTANCE hInstance)</td></tr>
+<tr class="memdesc:a3f68a62a1fe1ca8dcd1deb054b384cef"><td class="mdescLeft">&#160;</td><td class="mdescRight">The defualt conconstructor.  <a href="class_game.html#a3f68a62a1fe1ca8dcd1deb054b384cef">More...</a><br /></td></tr>
 <tr class="separator:a3f68a62a1fe1ca8dcd1deb054b384cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a293c79673d4c15f55f1ab7f3d1809ddb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a293c79673d4c15f55f1ab7f3d1809ddb">Game</a> (const <a class="el" href="class_game.html">Game</a> &amp;rhs)=delete</td></tr>
 <tr class="separator:a293c79673d4c15f55f1ab7f3d1809ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bda5763ea460634fef947be2530c8f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game.html">Game</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a9bda5763ea460634fef947be2530c8f5">operator=</a> (const <a class="el" href="class_game.html">Game</a> &amp;rhs)=delete</td></tr>
 <tr class="separator:a9bda5763ea460634fef947be2530c8f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3d112ca6e0e55150d2fdbc704474530"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">~Game</a> ()</td></tr>
+<tr class="memdesc:ae3d112ca6e0e55150d2fdbc704474530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deconstructor.  <a href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">More...</a><br /></td></tr>
 <tr class="separator:ae3d112ca6e0e55150d2fdbc704474530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16354d232327f6c21319713bf6983674"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a16354d232327f6c21319713bf6983674">Initialize</a> () override</td></tr>
+<tr class="memdesc:a16354d232327f6c21319713bf6983674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to run all function need before game loop.  <a href="class_game.html#a16354d232327f6c21319713bf6983674">More...</a><br /></td></tr>
 <tr class="separator:a16354d232327f6c21319713bf6983674"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bd6d8d7aa09aa1196b4fa463d2ac41b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a7bd6d8d7aa09aa1196b4fa463d2ac41b">OnResize</a> () override</td></tr>
+<tr class="memdesc:a7bd6d8d7aa09aa1196b4fa463d2ac41b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to update the aspect ratio and recompute the projection matrix when window is resized.  <a href="class_game.html#a7bd6d8d7aa09aa1196b4fa463d2ac41b">More...</a><br /></td></tr>
 <tr class="separator:a7bd6d8d7aa09aa1196b4fa463d2ac41b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9244991993b5a1cbde3f1f2d73f2745"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ab9244991993b5a1cbde3f1f2d73f2745">Update</a> (const GameTimer &amp;gt) override</td></tr>
+<tr class="memdesc:ab9244991993b5a1cbde3f1f2d73f2745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used as application's main update.  <a href="class_game.html#ab9244991993b5a1cbde3f1f2d73f2745">More...</a><br /></td></tr>
 <tr class="separator:ab9244991993b5a1cbde3f1f2d73f2745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc62dae28f3cd775d8110ff5386c1fe1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#afc62dae28f3cd775d8110ff5386c1fe1">Draw</a> (const GameTimer &amp;gt) override</td></tr>
+<tr class="memdesc:afc62dae28f3cd775d8110ff5386c1fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used as application's main draw.  <a href="class_game.html#afc62dae28f3cd775d8110ff5386c1fe1">More...</a><br /></td></tr>
 <tr class="separator:afc62dae28f3cd775d8110ff5386c1fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a605e728835f29b7b320f6c9c8de05d00"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a605e728835f29b7b320f6c9c8de05d00">OnMouseDown</a> (WPARAM btnState, int x, int y) override</td></tr>
+<tr class="memdesc:a605e728835f29b7b320f6c9c8de05d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to find postion of mouse when pressed.  <a href="class_game.html#a605e728835f29b7b320f6c9c8de05d00">More...</a><br /></td></tr>
 <tr class="separator:a605e728835f29b7b320f6c9c8de05d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a020e0c5f01a724bfef357bfe29f800c3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a020e0c5f01a724bfef357bfe29f800c3">OnMouseUp</a> (WPARAM btnState, int x, int y) override</td></tr>
+<tr class="memdesc:a020e0c5f01a724bfef357bfe29f800c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to find postion of mouse when not pressed.  <a href="class_game.html#a020e0c5f01a724bfef357bfe29f800c3">More...</a><br /></td></tr>
 <tr class="separator:a020e0c5f01a724bfef357bfe29f800c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada0f3fffa1b4560465128b1eff7d1ef5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ada0f3fffa1b4560465128b1eff7d1ef5">OnMouseMove</a> (WPARAM btnState, int x, int y) override</td></tr>
+<tr class="memdesc:ada0f3fffa1b4560465128b1eff7d1ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to find postion of mouse when moved.  <a href="class_game.html#ada0f3fffa1b4560465128b1eff7d1ef5">More...</a><br /></td></tr>
 <tr class="separator:ada0f3fffa1b4560465128b1eff7d1ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97cb6124867ae61c31a23dfc22de3c6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a97cb6124867ae61c31a23dfc22de3c6a">OnKeyboardInput</a> (const GameTimer &amp;gt)</td></tr>
+<tr class="memdesc:a97cb6124867ae61c31a23dfc22de3c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use to take input for keyboard.  <a href="class_game.html#a97cb6124867ae61c31a23dfc22de3c6a">More...</a><br /></td></tr>
 <tr class="separator:a97cb6124867ae61c31a23dfc22de3c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a077400cce3bd3e41333b8228b386e450"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a077400cce3bd3e41333b8228b386e450">UpdateCamera</a> (const GameTimer &amp;gt)</td></tr>
+<tr class="memdesc:a077400cce3bd3e41333b8228b386e450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to update the transformation of camera.  <a href="class_game.html#a077400cce3bd3e41333b8228b386e450">More...</a><br /></td></tr>
 <tr class="separator:a077400cce3bd3e41333b8228b386e450"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e0c6faa5f2386c3ad80fe5d5a9e11e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a7e0c6faa5f2386c3ad80fe5d5a9e11e4">AnimateMaterials</a> (const GameTimer &amp;gt)</td></tr>
+<tr class="memdesc:a7e0c6faa5f2386c3ad80fe5d5a9e11e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to update animated materirals.  <a href="class_game.html#a7e0c6faa5f2386c3ad80fe5d5a9e11e4">More...</a><br /></td></tr>
 <tr class="separator:a7e0c6faa5f2386c3ad80fe5d5a9e11e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bdfe76a8bfdff007837cb2d2c3c59d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a1bdfe76a8bfdff007837cb2d2c3c59d6">UpdateObjectCBs</a> (const GameTimer &amp;gt)</td></tr>
+<tr class="memdesc:a1bdfe76a8bfdff007837cb2d2c3c59d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to update game object's CBs.  <a href="class_game.html#a1bdfe76a8bfdff007837cb2d2c3c59d6">More...</a><br /></td></tr>
 <tr class="separator:a1bdfe76a8bfdff007837cb2d2c3c59d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b7fd5dda779a7dd834dd7d26566b657"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a4b7fd5dda779a7dd834dd7d26566b657">UpdateMaterialCBs</a> (const GameTimer &amp;gt)</td></tr>
+<tr class="memdesc:a4b7fd5dda779a7dd834dd7d26566b657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to update material's CBs.  <a href="class_game.html#a4b7fd5dda779a7dd834dd7d26566b657">More...</a><br /></td></tr>
 <tr class="separator:a4b7fd5dda779a7dd834dd7d26566b657"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3bb0452e306c88eadfb2d4eedf5ad25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aa3bb0452e306c88eadfb2d4eedf5ad25">UpdateMainPassCB</a> (const GameTimer &amp;gt)</td></tr>
+<tr class="memdesc:aa3bb0452e306c88eadfb2d4eedf5ad25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to as th emain pass for CBs and creating lights.  <a href="class_game.html#aa3bb0452e306c88eadfb2d4eedf5ad25">More...</a><br /></td></tr>
 <tr class="separator:aa3bb0452e306c88eadfb2d4eedf5ad25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62dae15e7e1828427b696f017ce6241c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a62dae15e7e1828427b696f017ce6241c">LoadTextures</a> (std::string name, std::wstring fileName)</td></tr>
+<tr class="memdesc:a62dae15e7e1828427b696f017ce6241c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used load textures into application.  <a href="class_game.html#a62dae15e7e1828427b696f017ce6241c">More...</a><br /></td></tr>
 <tr class="separator:a62dae15e7e1828427b696f017ce6241c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa02e07384ccea21f7421ca60967c1fa5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aa02e07384ccea21f7421ca60967c1fa5">BuildRootSignature</a> ()</td></tr>
+<tr class="memdesc:aa02e07384ccea21f7421ca60967c1fa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use build root signature.  <a href="class_game.html#aa02e07384ccea21f7421ca60967c1fa5">More...</a><br /></td></tr>
 <tr class="separator:aa02e07384ccea21f7421ca60967c1fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62c79f98ef99a7ee0c54e3ae23ab0173"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a62c79f98ef99a7ee0c54e3ae23ab0173">BuildDescriptorHeaps</a> ()</td></tr>
+<tr class="memdesc:a62c79f98ef99a7ee0c54e3ae23ab0173"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use build descriptor heaps for loaded textures.  <a href="class_game.html#a62c79f98ef99a7ee0c54e3ae23ab0173">More...</a><br /></td></tr>
 <tr class="separator:a62c79f98ef99a7ee0c54e3ae23ab0173"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc0692c304c05a5a281d88622b39c498"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#adc0692c304c05a5a281d88622b39c498">BuildShadersAndInputLayout</a> ()</td></tr>
+<tr class="memdesc:adc0692c304c05a5a281d88622b39c498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use build shaders and input layout.  <a href="class_game.html#adc0692c304c05a5a281d88622b39c498">More...</a><br /></td></tr>
 <tr class="separator:adc0692c304c05a5a281d88622b39c498"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1166f658b26c355325807126ff2e4a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#af1166f658b26c355325807126ff2e4a6">BuildShapeGeometry</a> (GeometryGenerator::MeshData box, std::string shapeName)</td></tr>
+<tr class="memdesc:af1166f658b26c355325807126ff2e4a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to build shapes from GeometryGenerator.  <a href="class_game.html#af1166f658b26c355325807126ff2e4a6">More...</a><br /></td></tr>
 <tr class="separator:af1166f658b26c355325807126ff2e4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0934b45052f43934eb93fd013ca23a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aa0934b45052f43934eb93fd013ca23a8">BuildPSOs</a> ()</td></tr>
+<tr class="memdesc:aa0934b45052f43934eb93fd013ca23a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to build POSs.  <a href="class_game.html#aa0934b45052f43934eb93fd013ca23a8">More...</a><br /></td></tr>
 <tr class="separator:aa0934b45052f43934eb93fd013ca23a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f6f10460db9b4b5561656d6be357f4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a3f6f10460db9b4b5561656d6be357f4f">BuildFrameResources</a> ()</td></tr>
+<tr class="memdesc:a3f6f10460db9b4b5561656d6be357f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to build frame resources.  <a href="class_game.html#a3f6f10460db9b4b5561656d6be357f4f">More...</a><br /></td></tr>
 <tr class="separator:a3f6f10460db9b4b5561656d6be357f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a484e0584d6b787faa74d48e79313fcd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a484e0584d6b787faa74d48e79313fcd2">BuildMaterials</a> (std::string name)</td></tr>
+<tr class="memdesc:a484e0584d6b787faa74d48e79313fcd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to build materials for game objects.  <a href="class_game.html#a484e0584d6b787faa74d48e79313fcd2">More...</a><br /></td></tr>
 <tr class="separator:a484e0584d6b787faa74d48e79313fcd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4c32e9bd2226c780e1dcd5939f4e1db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ab4c32e9bd2226c780e1dcd5939f4e1db">BuildRenderItems</a> (std::string matName, std::string geoName, XMFLOAT3 position, XMFLOAT3 rotation, XMFLOAT3 scale)</td></tr>
+<tr class="memdesc:ab4c32e9bd2226c780e1dcd5939f4e1db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to build the rendered game objects.  <a href="class_game.html#ab4c32e9bd2226c780e1dcd5939f4e1db">More...</a><br /></td></tr>
 <tr class="separator:ab4c32e9bd2226c780e1dcd5939f4e1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58fb5b65b969ba19ac0f5517c91bf9ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a58fb5b65b969ba19ac0f5517c91bf9ae">DrawRenderItems</a> (ID3D12GraphicsCommandList *cmdList, const std::vector&lt; <a class="el" href="struct_render_item.html">RenderItem</a> * &gt; &amp;ritems)</td></tr>
+<tr class="memdesc:a58fb5b65b969ba19ac0f5517c91bf9ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to draw game objects.  <a href="class_game.html#a58fb5b65b969ba19ac0f5517c91bf9ae">More...</a><br /></td></tr>
 <tr class="separator:a58fb5b65b969ba19ac0f5517c91bf9ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e8f674ef01b7480d39fe90374301c2d"><td class="memItemLeft" align="right" valign="top">std::array&lt; const CD3DX12_STATIC_SAMPLER_DESC, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a6e8f674ef01b7480d39fe90374301c2d">GetStaticSamplers</a> ()</td></tr>
+<tr class="memdesc:a6e8f674ef01b7480d39fe90374301c2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to define samplers.  <a href="class_game.html#a6e8f674ef01b7480d39fe90374301c2d">More...</a><br /></td></tr>
 <tr class="separator:a6e8f674ef01b7480d39fe90374301c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >This class is used to Initialize the application, control game loop and hold the D3D12 game engine function. <br  />
+ </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3f68a62a1fe1ca8dcd1deb054b384cef" name="a3f68a62a1fe1ca8dcd1deb054b384cef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3f68a62a1fe1ca8dcd1deb054b384cef">&#9670;&nbsp;</a></span>Game() <span class="overload">[1/2]</span></h2>
 
@@ -181,6 +214,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The defualt conconstructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>HINSTANCE </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -225,6 +266,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Deconstructor. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -244,6 +287,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to update animated materirals. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>const GameTimer </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a62c79f98ef99a7ee0c54e3ae23ab0173" name="a62c79f98ef99a7ee0c54e3ae23ab0173"></a>
@@ -261,6 +312,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Use build descriptor heaps for loaded textures. </p>
+
 </div>
 </div>
 <a id="a3f6f10460db9b4b5561656d6be357f4f" name="a3f6f10460db9b4b5561656d6be357f4f"></a>
@@ -277,6 +330,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Used to build frame resources. </p>
 
 </div>
 </div>
@@ -296,6 +351,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to build materials for game objects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>std::string </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aa0934b45052f43934eb93fd013ca23a8" name="aa0934b45052f43934eb93fd013ca23a8"></a>
@@ -312,6 +375,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Used to build POSs. </p>
 
 </div>
 </div>
@@ -359,6 +424,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to build the rendered game objects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>std::string material name </td></tr>
+    <tr><td class="paramname"></td><td>std::string shape name </td></tr>
+    <tr><td class="paramname"></td><td>XMFLOAT3 position </td></tr>
+    <tr><td class="paramname"></td><td>XMFLOAT3 rotation </td></tr>
+    <tr><td class="paramname"></td><td>XMFLOAT3 scale </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aa02e07384ccea21f7421ca60967c1fa5" name="aa02e07384ccea21f7421ca60967c1fa5"></a>
@@ -376,6 +453,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Use build root signature. </p>
+
 </div>
 </div>
 <a id="adc0692c304c05a5a281d88622b39c498" name="adc0692c304c05a5a281d88622b39c498"></a>
@@ -392,6 +471,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Use build shaders and input layout. </p>
 
 </div>
 </div>
@@ -421,6 +502,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to build shapes from GeometryGenerator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>GeometryGenerator::MeshData </td></tr>
+    <tr><td class="paramname"></td><td>std::string </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="afc62dae28f3cd775d8110ff5386c1fe1" name="afc62dae28f3cd775d8110ff5386c1fe1"></a>
@@ -446,6 +536,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Used as application's main draw. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>const GameTimer&amp; </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -475,6 +573,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to draw game objects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>ID3D12GraphicsCommandList* </td></tr>
+    <tr><td class="paramname"></td><td>const std::vector&lt;RenderItem*&gt;&amp; </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a6e8f674ef01b7480d39fe90374301c2d" name="a6e8f674ef01b7480d39fe90374301c2d"></a>
@@ -491,6 +598,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Used to define samplers. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::array&lt;const CD3DX12_STATIC_SAMPLER_DESC, 6&gt; </dd></dl>
 
 </div>
 </div>
@@ -516,6 +626,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Used to run all function need before game loop. </p>
 
 </div>
 </div>
@@ -545,6 +657,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used load textures into application. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>std::string </td></tr>
+    <tr><td class="paramname"></td><td>std::wstring </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a97cb6124867ae61c31a23dfc22de3c6a" name="a97cb6124867ae61c31a23dfc22de3c6a"></a>
@@ -562,6 +683,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Use to take input for keyboard. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>const GameTimer </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -605,6 +734,16 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Used to find postion of mouse when pressed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>UINT_PTR state of mouse </td></tr>
+    <tr><td class="paramname"></td><td>int on x plane </td></tr>
+    <tr><td class="paramname"></td><td>int on y plane </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ada0f3fffa1b4560465128b1eff7d1ef5" name="ada0f3fffa1b4560465128b1eff7d1ef5"></a>
@@ -646,6 +785,16 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Used to find postion of mouse when moved. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>UINT_PTR state of mouse </td></tr>
+    <tr><td class="paramname"></td><td>int on x plane </td></tr>
+    <tr><td class="paramname"></td><td>int on y plane </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -689,6 +838,16 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Used to find postion of mouse when not pressed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>UINT_PTR state of mouse </td></tr>
+    <tr><td class="paramname"></td><td>int on x plane </td></tr>
+    <tr><td class="paramname"></td><td>int on y plane </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a7bd6d8d7aa09aa1196b4fa463d2ac41b" name="a7bd6d8d7aa09aa1196b4fa463d2ac41b"></a>
@@ -713,6 +872,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Used to update the aspect ratio and recompute the projection matrix when window is resized. </p>
 
 </div>
 </div>
@@ -766,6 +927,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Used as application's main update. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>const GameTimer&amp; </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a077400cce3bd3e41333b8228b386e450" name="a077400cce3bd3e41333b8228b386e450"></a>
@@ -783,6 +952,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Used to update the transformation of camera. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>const GameTimer </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -802,6 +979,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to as th emain pass for CBs and creating lights. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>const GameTimer </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a4b7fd5dda779a7dd834dd7d26566b657" name="a4b7fd5dda779a7dd834dd7d26566b657"></a>
@@ -819,6 +1004,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Used to update material's CBs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>const GameTimer </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -838,11 +1031,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to update game object's CBs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>const GameTimer </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Game3015_ShularMichael/Project1/<a class="el" href="_game_8h_source.html">Game.h</a></li>
-<li>Game3015_ShularMichael/Project1/<a class="el" href="_game_8cpp.html">Game.cpp</a></li>
+<li>D:/Semester 6/Game Engine Dev 2/Game3015_ShularMichael/Game3015_ShularMichael/Project1/<a class="el" href="_game_8h_source.html">Game.h</a></li>
+<li>D:/Semester 6/Game Engine Dev 2/Game3015_ShularMichael/Game3015_ShularMichael/Project1/<a class="el" href="_game_8cpp.html">Game.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

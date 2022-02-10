@@ -57,6 +57,7 @@ enum class RenderLayer : int
 	Count
 };
 
+/// This class is used to Initialize the application, control game loop and hold the D3D12 game engine function.  
 class Game : public D3DApp
 {
 public: 

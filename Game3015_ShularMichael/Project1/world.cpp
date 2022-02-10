@@ -1,28 +1,35 @@
 #include "world.h"
 #include "Game.h"
-
+/// The defualt conconstructor
+///
+/// @param: Game
 World::World(Game* game):
 	sceneGraph(new sceneNode())
 {
 	mGame = game;
-	//mGame->LoadTextures("temp", L"WireFence.dds");
 	loadTextures();
 }
-
+/// Used update sceneNode class
+/// 
+/// @param: const GameTimer&
 void World::update(const GameTimer& gt)
 {
 	sceneGraph->update(gt);
 }
-
+/// Used draw
+/// 
+/// @param: const GameTimer&
 void World::draw(const GameTimer& gt)
 {
 }
-
+/// Used to pass information about textures to game 
+/// 
+/// @returns &std::unordered_map<std::string, std::wstring>
 std::unordered_map<std::string, std::wstring>* World::getTextures()
 {
 	return &mTexture;
 }
-
+/// Used to construct materials for scene and game objects
 void World::buildScene()
 {
 	mGame->BuildMaterials("desert");
@@ -49,7 +56,7 @@ void World::buildScene()
 
 	std::unique_ptr<Aircraft> eaglePlane(new Aircraft(Aircraft::Eagle));
 	mplayerAircraft4 = eaglePlane.get();
-	mplayerAircraft4->setWorldPosition(0.4f, -1.5f, 0.6f);
+	mplayerAircraft4->setWorldPosition(0.7f, -1.5f, 0.6f);
 	mplayerAircraft4->setWorldRotation(0.0f, 1.0f, 0.2f);
 	mplayerAircraft4->setWorldScale(0.05f, 0.05f, 0.0f);
 	sceneGraph->attachChild(std::move(eaglePlane));
@@ -65,7 +72,7 @@ void World::buildScene()
 
 	mGame->BuildRenderItems("raptor", "box", mplayerAircraft5->getWorldPosition(), mplayerAircraft5->getWorldRotation(), mplayerAircraft5->getWorldScale());
 }
-
+/// Used get set all information for textures
 void World::loadTextures()
 {
 	CreateTexture("desert", L"Desert.dds");
@@ -73,7 +80,10 @@ void World::loadTextures()
 	CreateTexture("eagle", L"Eagle.dds");
 	CreateTexture("raptor", L"Raptor.dds");
 }
-
+/// Used save information about textures name and file path
+/// 
+/// @param: std::string
+/// @param: std::wstring
 void World::CreateTexture(std::string name, std::wstring fileName)
 {
 	mTexture[name] = fileName;

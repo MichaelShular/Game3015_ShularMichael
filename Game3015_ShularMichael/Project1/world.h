@@ -18,7 +18,7 @@ using namespace DirectX::PackedVector;
 #pragma comment(lib, "D3D12.lib")
 
 class Game;
-
+/// This class is use to build game objects and hold sceneNode which will hold all objects that are part of the game
 class World
 {
 public:

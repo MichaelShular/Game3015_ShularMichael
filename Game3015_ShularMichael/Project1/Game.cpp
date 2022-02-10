@@ -2,20 +2,22 @@
 
 const int gNumFrameResources = 3;
 
-
+/// The defualt conconstructor
+/// 
+/// @param: HINSTANCE
 Game::Game(HINSTANCE hInstance)
 	: D3DApp(hInstance),
 	mGameWorld()
 {
 	mGameWorld = new World(this);
 }
-
+/// Deconstructor
 Game::~Game()
 {
 	if (md3dDevice != nullptr)
 		FlushCommandQueue();
 }
-
+/// Used to run all function need before game loop
 bool Game::Initialize()
 {
 	if (!D3DApp::Initialize())
@@ -31,20 +33,17 @@ bool Game::Initialize()
 	for (auto& it : *mGameWorld->getTextures()) {
 		LoadTextures(it.first, it.second);
 	}
-	//LoadTextures("temp", L"WireFence.dds");
 	BuildRootSignature();
 	BuildDescriptorHeaps();
 	BuildShadersAndInputLayout();
 	
 	GeometryGenerator geoGen;
 	BuildShapeGeometry(geoGen.CreateBox(2.0f,2.0f,2,2), "box");
-	
+
 	MaterialCBIndexCount = 0;
 	DiffuseSrvHeapIndexCount = 0;
 	ObjectCBIndex = 0;
-	//BuildMaterials("woodCrate");
-	//Fix
-	//BuildRenderItems("woodCrate" ,"box");
+
 	mGameWorld->buildScene();
 	BuildFrameResources();
 	BuildPSOs();
@@ -59,7 +58,7 @@ bool Game::Initialize()
 
 	return true;
 }
-
+/// Used to update the aspect ratio and recompute the projection matrix when window is resized
 void Game::OnResize()
 {
 	D3DApp::OnResize();
@@ -68,7 +67,9 @@ void Game::OnResize()
 	XMMATRIX P = XMMatrixPerspectiveFovLH(0.25f * MathHelper::Pi, AspectRatio(), 1.0f, 1000.0f);
 	XMStoreFloat4x4(&mProj, P);
 }
-
+/// Used as application's main update 
+/// 
+/// @param: const GameTimer&
 void Game::Update(const GameTimer& gt)
 {
 	OnKeyboardInput(gt);
@@ -89,14 +90,15 @@ void Game::Update(const GameTimer& gt)
 	}
 
 	AnimateMaterials(gt);
-	//XMStoreFloat4x4(&mAllRitems[0].get()->World, XMMatrixTranslation(1.0f, 0.0f, 0.0f));
 	UpdateObjectCBs(gt);
 	UpdateMaterialCBs(gt);
 	UpdateMainPassCB(gt);
 	mGameWorld->update(gt);
 	
 }
-
+/// Used as application's main draw 
+/// 
+/// @param: const GameTimer&
 void Game::Draw(const GameTimer& gt)
 {
 	auto cmdListAlloc = mCurrFrameResource->CmdListAlloc;
@@ -162,7 +164,11 @@ void Game::Draw(const GameTimer& gt)
 	// set until the GPU finishes processing all the commands prior to this Signal().
 	mCommandQueue->Signal(mFence.Get(), mCurrentFence);
 }
-
+/// Used to find postion of mouse when pressed
+/// 
+/// @param: UINT_PTR state of mouse
+/// @param: int on x plane
+/// @param: int on y plane
 void Game::OnMouseDown(WPARAM btnState, int x, int y)
 {
 	mLastMousePos.x = x;
@@ -170,12 +176,20 @@ void Game::OnMouseDown(WPARAM btnState, int x, int y)
 
 	SetCapture(mhMainWnd);
 }
-
+/// Used to find postion of mouse when not pressed
+/// 
+/// @param: UINT_PTR state of mouse
+/// @param: int on x plane
+/// @param: int on y plane
 void Game::OnMouseUp(WPARAM btnState, int x, int y)
 {
 	ReleaseCapture();
 }
-
+/// Used to find postion of mouse when moved
+/// 
+/// @param: UINT_PTR state of mouse
+/// @param: int on x plane
+/// @param: int on y plane
 void Game::OnMouseMove(WPARAM btnState, int x, int y)
 {
 	if ((btnState & MK_LBUTTON) != 0)
@@ -207,11 +221,15 @@ void Game::OnMouseMove(WPARAM btnState, int x, int y)
 	mLastMousePos.x = x;
 	mLastMousePos.y = y;
 }
-
+/// Use to take input for keyboard 
+/// 
+/// @param: const GameTimer
 void Game::OnKeyboardInput(const GameTimer& gt)
 {
 }
-
+/// Used to update the transformation of camera
+/// 
+/// @param: const GameTimer
 void Game::UpdateCamera(const GameTimer& gt)
 {
 	// Convert Spherical to Cartesian coordinates.
@@ -227,12 +245,16 @@ void Game::UpdateCamera(const GameTimer& gt)
 	XMMATRIX view = XMMatrixLookAtLH(pos, target, up);
 	XMStoreFloat4x4(&mView, view);
 }
-
+/// Used to update animated materirals
+/// 
+/// @param: const GameTimer
 void Game::AnimateMaterials(const GameTimer& gt)
 {
 
 }
-
+/// Used to update game object's CBs
+/// 
+/// @param: const GameTimer
 void Game::UpdateObjectCBs(const GameTimer& gt)
 {
 	auto currObjectCB = mCurrFrameResource->ObjectCB.get();
@@ -256,7 +278,9 @@ void Game::UpdateObjectCBs(const GameTimer& gt)
 		}
 	}
 }
-
+/// Used to update material's CBs
+/// 
+/// @param: const GameTimer
 void Game::UpdateMaterialCBs(const GameTimer& gt)
 {
 	auto currMaterialCB = mCurrFrameResource->MaterialCB.get();
@@ -282,7 +306,9 @@ void Game::UpdateMaterialCBs(const GameTimer& gt)
 		}
 	}
 }
-
+/// Used to as th emain pass for CBs and creating lights
+/// 
+/// @param: const GameTimer
 void Game::UpdateMainPassCB(const GameTimer& gt)
 {
 	XMMATRIX view = XMLoadFloat4x4(&mView);
@@ -317,18 +343,12 @@ void Game::UpdateMainPassCB(const GameTimer& gt)
 	auto currPassCB = mCurrFrameResource->PassCB.get();
 	currPassCB->CopyData(0, mMainPassCB);
 }
-
+/// Used load textures into application
+/// 
+/// @param: std::string
+/// @param: std::wstring
 void Game::LoadTextures(std::string name, std::wstring fileName)
 {
-	//auto woodCrateTex = std::make_unique<Texture>();
-	//woodCrateTex->Name = "woodCrateTex";
-	////step 6
-	//woodCrateTex->Filename = L"../../Textures/WireFence.dds";
-	//ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
-	//	mCommandList.Get(), woodCrateTex->Filename.c_str(),
-	//	woodCrateTex->Resource, woodCrateTex->UploadHeap));
-
-	//mTextures[woodCrateTex->Name] = std::move(woodCrateTex);
 	auto temp = std::make_unique<Texture>();
 	temp->Name = name;
 	//step 6
@@ -339,7 +359,7 @@ void Game::LoadTextures(std::string name, std::wstring fileName)
 
 	mTextures[temp->Name] = std::move(temp);
 }
-
+/// Use build root signature
 void Game::BuildRootSignature()
 {
 	CD3DX12_DESCRIPTOR_RANGE texTable;
@@ -381,50 +401,9 @@ void Game::BuildRootSignature()
 		serializedRootSig->GetBufferSize(),
 		IID_PPV_ARGS(mRootSignature.GetAddressOf())));
 }
-
-//Once a texture resource is created, we need to create an SRV descriptor to it which we
-//can set to a root signature parameter slot for use by the shader programs.
+/// Use build descriptor heaps for loaded textures 
 void Game::BuildDescriptorHeaps()
 {
-	////
-	//// Create the SRV heap.
-	////
-	//D3D12_DESCRIPTOR_HEAP_DESC srvHeapDesc = {};
-	//srvHeapDesc.NumDescriptors = mTextures.size();
-	//srvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
-	//srvHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
-	//ThrowIfFailed(md3dDevice->CreateDescriptorHeap(&srvHeapDesc, IID_PPV_ARGS(&mSrvDescriptorHeap)));
-
-	////
-	//// Fill out the heap with actual descriptors.
-	////
-	//CD3DX12_CPU_DESCRIPTOR_HANDLE hDescriptor(mSrvDescriptorHeap->GetCPUDescriptorHandleForHeapStart());
-
-	//auto woodCrateTex = mTextures["temp"]->Resource;
-
-	//D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
-
-	////This mapping enables the shader resource view (SRV) to choose how memory gets routed to the 4 return components in a shader after a memory fetch.
-	////When a texture is sampled in a shader, it will return a vector of the texture data at the specified texture coordinates.
-	////This field provides a way to reorder the vector components returned when sampling the texture.
-	////D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING  will not reorder the components and just return the data in the order it is stored in the texture resource.
-	//srvDesc.Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING;
-
-	//srvDesc.Format = woodCrateTex->GetDesc().Format;
-	//srvDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2D;
-	//srvDesc.Texture2D.MostDetailedMip = 0;
-	////The number of mipmap levels to view, starting at MostDetailedMip.This field, along with MostDetailedMip allows us to
-	////specify a subrange of mipmap levels to view.You can specify - 1 to indicate to view
-	////all mipmap levels from MostDetailedMip down to the last mipmap level.
-
-	//srvDesc.Texture2D.MipLevels = woodCrateTex->GetDesc().MipLevels;
-
-	////Specifies the minimum mipmap level that can be accessed. 0.0 means all the mipmap levels can be accessed.
-	////Specifying 3.0 means mipmap levels 3.0 to MipCount - 1 can be accessed.
-	//srvDesc.Texture2D.ResourceMinLODClamp = 0.0f;
-
-	//md3dDevice->CreateShaderResourceView(woodCrateTex.Get(), &srvDesc, hDescriptor);
-
 	//
 	// Create the SRV heap.
 	//
@@ -457,7 +436,7 @@ void Game::BuildDescriptorHeaps()
 	}
 	
 }
-
+/// Use build shaders and input layout
 void Game::BuildShadersAndInputLayout()
 {
 	//step7: Adding  Alpha_Test
@@ -480,9 +459,10 @@ void Game::BuildShadersAndInputLayout()
 		{ "TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT, 0, 24, D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
 	};
 }
-
-
-
+/// Used to build shapes from GeometryGenerator
+/// 
+/// @param: GeometryGenerator::MeshData 
+/// @param: std::string
 void Game::BuildShapeGeometry(GeometryGenerator::MeshData box, std::string shapeName)
 {
 	SubmeshGeometry boxSubmesh;
@@ -529,7 +509,7 @@ void Game::BuildShapeGeometry(GeometryGenerator::MeshData box, std::string shape
 
 	mGeometries[geo->Name] = std::move(geo);
 }
-
+/// Used to build POSs
 void Game::BuildPSOs()
 {
 	D3D12_GRAPHICS_PIPELINE_STATE_DESC opaquePsoDesc;
@@ -576,7 +556,7 @@ void Game::BuildPSOs()
 	alphaTestedPsoDesc.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
 	ThrowIfFailed(md3dDevice->CreateGraphicsPipelineState(&alphaTestedPsoDesc, IID_PPV_ARGS(&mPSOs["alphaTested"])));
 }
-
+/// Used to build frame resources
 void Game::BuildFrameResources()
 {
 	for (int i = 0; i < gNumFrameResources; ++i)
@@ -585,7 +565,9 @@ void Game::BuildFrameResources()
 			1, (UINT)mAllRitems.size(), (UINT)mMaterials.size()));
 	}
 }
-
+/// Used to build materials for game objects
+/// 
+/// @param: std::string
 void Game::BuildMaterials(std::string name)
 {
 	auto woodCrate = std::make_unique<Material>();
@@ -600,7 +582,13 @@ void Game::BuildMaterials(std::string name)
 
 	mMaterials[name] = std::move(woodCrate);
 }
-
+/// Used to build the rendered game objects
+/// 
+/// @param: std::string material name
+/// @param: std::string shape name
+/// @param: XMFLOAT3 position
+/// @param: XMFLOAT3 rotation
+/// @param: XMFLOAT3 scale
 void Game::BuildRenderItems(std::string matName, std::string geoName, XMFLOAT3 position, XMFLOAT3 rotation, XMFLOAT3 scale)
 {
 	auto boxRitem = std::make_unique<RenderItem>();
@@ -620,23 +608,11 @@ void Game::BuildRenderItems(std::string matName, std::string geoName, XMFLOAT3 p
 
 	mAllRitems.push_back(std::move(boxRitem));
 	ObjectCBIndex++;
-
-	//auto temp = std::make_unique<RenderItem>();
-	//temp->ObjCBIndex = 0;
-	//temp->Mat = material[]
-	//temp->Geo = mGeometries["boxGeo"].get();
-	//temp->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
-	//temp->IndexCount = temp->Geo->DrawArgs["box"].IndexCount;
-	//temp->StartIndexLocation = temp->Geo->DrawArgs["box"].StartIndexLocation;
-	//temp->BaseVertexLocation = temp->Geo->DrawArgs["box"].BaseVertexLocation;
-
-	////step4: All the render items are not opaque this time.
-	//mRitemLayer[(int)RenderLayer::Opaque].push_back(temp.get());
-	//mRitemLayer[(int)RenderLayer::AlphaTested].push_back(temp.get());
-
-	//mAllRitems.push_back(std::move(temp));
 }
-
+/// Used to draw game objects
+/// 
+/// @param: ID3D12GraphicsCommandList*
+/// @param: const std::vector<RenderItem*>&
 void Game::DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const std::vector<RenderItem*>& ritems)
 {
 	UINT objCBByteSize = d3dUtil::CalcConstantBufferByteSize(sizeof(ObjectConstants));
@@ -667,7 +643,9 @@ void Game::DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const std::vector
 		cmdList->DrawIndexedInstanced(ri->IndexCount, 1, ri->StartIndexLocation, ri->BaseVertexLocation, 0);
 	}
 }
-
+/// Used to define samplers 
+/// 
+/// @returns std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6>
 std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> Game::GetStaticSamplers()
 {
 	// Applications usually only need a handful of samplers.  So just define them all up front

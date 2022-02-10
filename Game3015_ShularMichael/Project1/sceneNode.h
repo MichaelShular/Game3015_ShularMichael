@@ -15,6 +15,7 @@ using namespace DirectX::PackedVector;
 #pragma comment(lib, "d3dcompiler.lib")
 #pragma comment(lib, "D3D12.lib")
 
+/// This class is used manage transform hierarchies
 class sceneNode
 {
 public:
@@ -34,8 +35,6 @@ public:
 private:
 	virtual void updateCurrent(const GameTimer& gt);
 	void updateChildren(const GameTimer& gt);
-
-	
 
 	/*virtual void draw(const GameTimer& gt) const;
 	virtual void drawCurrent(const GameTimer& gt) const;

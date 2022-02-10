@@ -2,6 +2,11 @@
 \label{classscene_node}\index{sceneNode@{sceneNode}}
 
 
+This class is used manage transform hierarchies.  
+
+
+
+
 {\ttfamily \#include $<$scene\+Node.\+h$>$}
 
 Inheritance diagram for scene\+Node\+:\begin{figure}[H]
@@ -19,26 +24,29 @@ typedef std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classscene_node}{scene\+Node}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classscene_node_a9d0f364b4159293d871bcc85666a2b97}{scene\+Node}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em The defualt conconstructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classscene_node_ab208a5760c8e1abb12902bacda7328bb}{attach\+Child}} (\mbox{\hyperlink{classscene_node_a21c67aa425d7a41f2d49d277b4192a50}{Ptr}} child)
-\item 
+\begin{DoxyCompactList}\small\item\em Used attach game objects to \mbox{\hyperlink{classscene_node}{scene\+Node}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classscene_node_a21c67aa425d7a41f2d49d277b4192a50}{Ptr}} \mbox{\hyperlink{classscene_node_a4f76b067d297ba0910d7b452dff926a6}{detach\+Child}} (const \mbox{\hyperlink{classscene_node}{scene\+Node}} \&node)
-\item 
+\begin{DoxyCompactList}\small\item\em Used detach game objects from \mbox{\hyperlink{classscene_node}{scene\+Node}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classscene_node_a838a34341398f8b9056f0c46aca76261}{update}} (const Game\+Timer \&gt)
-\item 
+\begin{DoxyCompactList}\small\item\em Used to update. \end{DoxyCompactList}\item 
 XMFLOAT3 \mbox{\hyperlink{classscene_node_ad99cf805a23515aa816b12bb8f06021b}{get\+World\+Position}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Used to get game object\textquotesingle{}s world position. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classscene_node_aeedc9b6916936a3393f3b10318cc7cef}{set\+World\+Position}} (float x, float y, float z)
-\item 
+\begin{DoxyCompactList}\small\item\em Used to set game object\textquotesingle{}s world position. \end{DoxyCompactList}\item 
 XMFLOAT3 \mbox{\hyperlink{classscene_node_aa82ae55b7add12477b16350a79dabebe}{get\+World\+Rotation}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Used to get game object\textquotesingle{}s world rotatiion. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classscene_node_a5e043216420c64193027275f63b9a044}{set\+World\+Rotation}} (float x, float y, float z)
-\item 
+\begin{DoxyCompactList}\small\item\em Used to set game object\textquotesingle{}s world rotatiion. \end{DoxyCompactList}\item 
 XMFLOAT3 \mbox{\hyperlink{classscene_node_ad387755feb78ed58905c8da11a96f80e}{get\+World\+Scale}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Used to get game object\textquotesingle{}s world scale. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classscene_node_a04a8ab1a9e3a01f211d14c42ec6ee18c}{set\+World\+Scale}} (float x, float y, float z)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used to set game object\textquotesingle{}s world scale. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+This class is used manage transform hierarchies. 
 
 \doxysubsection{Member Typedef Documentation}
 \mbox{\Hypertarget{classscene_node_a21c67aa425d7a41f2d49d277b4192a50}\label{classscene_node_a21c67aa425d7a41f2d49d277b4192a50}} 
@@ -58,6 +66,10 @@ void \mbox{\hyperlink{classscene_node_a04a8ab1a9e3a01f211d14c42ec6ee18c}{set\+Wo
 
 
 
+The defualt conconstructor. 
+
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classscene_node_ab208a5760c8e1abb12902bacda7328bb}\label{classscene_node_ab208a5760c8e1abb12902bacda7328bb}} 
 \index{sceneNode@{sceneNode}!attachChild@{attachChild}}
@@ -65,48 +77,126 @@ void \mbox{\hyperlink{classscene_node_a04a8ab1a9e3a01f211d14c42ec6ee18c}{set\+Wo
 \doxysubsubsection{\texorpdfstring{attachChild()}{attachChild()}}
 {\footnotesize\ttfamily void scene\+Node\+::attach\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscene_node_a21c67aa425d7a41f2d49d277b4192a50}{Ptr}}}]{child }\end{DoxyParamCaption})}
 
+
+
+Used attach game objects to \mbox{\hyperlink{classscene_node}{scene\+Node}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & std\+::unique\+\_\+ptr$<$scene\+Node$>$ \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classscene_node_a4f76b067d297ba0910d7b452dff926a6}\label{classscene_node_a4f76b067d297ba0910d7b452dff926a6}} 
 \index{sceneNode@{sceneNode}!detachChild@{detachChild}}
 \index{detachChild@{detachChild}!sceneNode@{sceneNode}}
 \doxysubsubsection{\texorpdfstring{detachChild()}{detachChild()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classscene_node_a21c67aa425d7a41f2d49d277b4192a50}{scene\+Node\+::\+Ptr}} scene\+Node\+::detach\+Child (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscene_node}{scene\+Node}} \&}]{node }\end{DoxyParamCaption})}
 
+
+
+Used detach game objects from \mbox{\hyperlink{classscene_node}{scene\+Node}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & const \mbox{\hyperlink{classscene_node}{scene\+Node}}\& \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classscene_node_ad99cf805a23515aa816b12bb8f06021b}\label{classscene_node_ad99cf805a23515aa816b12bb8f06021b}} 
 \index{sceneNode@{sceneNode}!getWorldPosition@{getWorldPosition}}
 \index{getWorldPosition@{getWorldPosition}!sceneNode@{sceneNode}}
 \doxysubsubsection{\texorpdfstring{getWorldPosition()}{getWorldPosition()}}
 {\footnotesize\ttfamily XMFLOAT3 scene\+Node\+::get\+World\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Used to get game object\textquotesingle{}s world position. 
+
+\begin{DoxyReturn}{Returns}
+Direct\+X\+::\+XMFLOAT3 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classscene_node_aa82ae55b7add12477b16350a79dabebe}\label{classscene_node_aa82ae55b7add12477b16350a79dabebe}} 
 \index{sceneNode@{sceneNode}!getWorldRotation@{getWorldRotation}}
 \index{getWorldRotation@{getWorldRotation}!sceneNode@{sceneNode}}
 \doxysubsubsection{\texorpdfstring{getWorldRotation()}{getWorldRotation()}}
 {\footnotesize\ttfamily XMFLOAT3 scene\+Node\+::get\+World\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Used to get game object\textquotesingle{}s world rotatiion. 
+
+\begin{DoxyReturn}{Returns}
+Direct\+X\+::\+XMFLOAT3 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classscene_node_ad387755feb78ed58905c8da11a96f80e}\label{classscene_node_ad387755feb78ed58905c8da11a96f80e}} 
 \index{sceneNode@{sceneNode}!getWorldScale@{getWorldScale}}
 \index{getWorldScale@{getWorldScale}!sceneNode@{sceneNode}}
 \doxysubsubsection{\texorpdfstring{getWorldScale()}{getWorldScale()}}
 {\footnotesize\ttfamily XMFLOAT3 scene\+Node\+::get\+World\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Used to get game object\textquotesingle{}s world scale. 
+
+\begin{DoxyReturn}{Returns}
+Direct\+X\+::\+XMFLOAT3 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classscene_node_aeedc9b6916936a3393f3b10318cc7cef}\label{classscene_node_aeedc9b6916936a3393f3b10318cc7cef}} 
 \index{sceneNode@{sceneNode}!setWorldPosition@{setWorldPosition}}
 \index{setWorldPosition@{setWorldPosition}!sceneNode@{sceneNode}}
 \doxysubsubsection{\texorpdfstring{setWorldPosition()}{setWorldPosition()}}
 {\footnotesize\ttfamily void scene\+Node\+::set\+World\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
 
+
+
+Used to set game object\textquotesingle{}s world position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & a float for x position \\
+\hline
+{\em } & a float for y position \\
+\hline
+{\em } & a float for z position \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classscene_node_a5e043216420c64193027275f63b9a044}\label{classscene_node_a5e043216420c64193027275f63b9a044}} 
 \index{sceneNode@{sceneNode}!setWorldRotation@{setWorldRotation}}
 \index{setWorldRotation@{setWorldRotation}!sceneNode@{sceneNode}}
 \doxysubsubsection{\texorpdfstring{setWorldRotation()}{setWorldRotation()}}
 {\footnotesize\ttfamily void scene\+Node\+::set\+World\+Rotation (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
 
+
+
+Used to set game object\textquotesingle{}s world rotatiion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & a float for x rotatiion \\
+\hline
+{\em } & a float for y rotatiion \\
+\hline
+{\em } & a float for z rotatiion \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classscene_node_a04a8ab1a9e3a01f211d14c42ec6ee18c}\label{classscene_node_a04a8ab1a9e3a01f211d14c42ec6ee18c}} 
 \index{sceneNode@{sceneNode}!setWorldScale@{setWorldScale}}
 \index{setWorldScale@{setWorldScale}!sceneNode@{sceneNode}}
 \doxysubsubsection{\texorpdfstring{setWorldScale()}{setWorldScale()}}
 {\footnotesize\ttfamily void scene\+Node\+::set\+World\+Scale (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
 
+
+
+Used to set game object\textquotesingle{}s world scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & a float for x scale \\
+\hline
+{\em } & a float for y scale \\
+\hline
+{\em } & a float for z scale \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classscene_node_a838a34341398f8b9056f0c46aca76261}\label{classscene_node_a838a34341398f8b9056f0c46aca76261}} 
 \index{sceneNode@{sceneNode}!update@{update}}
 \index{update@{update}!sceneNode@{sceneNode}}
@@ -115,7 +205,16 @@ void \mbox{\hyperlink{classscene_node_a04a8ab1a9e3a01f211d14c42ec6ee18c}{set\+Wo
 
 
 
+Used to update. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & const Game\+Timer\& \\
+\hline
+\end{DoxyParams}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{scene_node_8h}{scene\+Node.\+h}}\item 
-Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{scene_node_8cpp}{scene\+Node.\+cpp}}\end{DoxyCompactItemize}
+D\+:/\+Semester 6/\+Game Engine Dev 2/\+Game3015\+\_\+\+Shular\+Michael/\+Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{scene_node_8h}{scene\+Node.\+h}}\item 
+D\+:/\+Semester 6/\+Game Engine Dev 2/\+Game3015\+\_\+\+Shular\+Michael/\+Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{scene_node_8cpp}{scene\+Node.\+cpp}}\end{DoxyCompactItemize}

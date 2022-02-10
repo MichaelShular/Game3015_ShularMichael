@@ -220,9 +220,9 @@ void Game::UpdateCamera(const GameTimer& gt)
 	mEyePos.y = mRadius * cosf(mPhi);
 
 	// Build the view matrix.
-	XMVECTOR pos = XMVectorSet(1.0f, mEyePos.y, 5.0f, 1.0f);
-	XMVECTOR target = XMVectorZero();
-	XMVECTOR up = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+	XMVECTOR pos = XMVectorSet(-0.7f, -2.0f, 0.7f, 1.0f);
+	XMVECTOR target = XMVectorSet(3.0f, 1.0f, 0.0f, 0.0f);
+	XMVECTOR up = XMVectorSet(1.0f, 0.0f, 5.0f, 0.0f);
 
 	XMMATRIX view = XMMatrixLookAtLH(pos, target, up);
 	XMStoreFloat4x4(&mView, view);

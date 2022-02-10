@@ -33,6 +33,8 @@ private:
 private:
 	Game *mGame;
 	Aircraft* mplayerAircraft;
+	Aircraft* mplayerAircraft2;
+
 	sceneNode* sceneGraph;
 	std::unordered_map<std::string, std::wstring> mTexture;
 };

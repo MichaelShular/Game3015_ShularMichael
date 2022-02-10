@@ -41,7 +41,8 @@ bool Game::Initialize()
 	
 	MaterialCBIndexCount = 0;
 	DiffuseSrvHeapIndexCount = 0;
-	BuildMaterials("woodCrate");
+	ObjectCBIndex = 0;
+	//BuildMaterials("woodCrate");
 	//Fix
 	//BuildRenderItems("woodCrate" ,"box");
 	mGameWorld->buildScene();
@@ -219,7 +220,7 @@ void Game::UpdateCamera(const GameTimer& gt)
 	mEyePos.y = mRadius * cosf(mPhi);
 
 	// Build the view matrix.
-	XMVECTOR pos = XMVectorSet(mEyePos.x, mEyePos.y, mEyePos.z, 1.0f);
+	XMVECTOR pos = XMVectorSet(1.0f, mEyePos.y, 5.0f, 1.0f);
 	XMVECTOR target = XMVectorZero();
 	XMVECTOR up = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
 
@@ -305,7 +306,7 @@ void Game::UpdateMainPassCB(const GameTimer& gt)
 	mMainPassCB.FarZ = 1000.0f;
 	mMainPassCB.TotalTime = gt.TotalTime();
 	mMainPassCB.DeltaTime = gt.DeltaTime();
-	mMainPassCB.AmbientLight = { 0.25f, 0.25f, 0.35f, 1.0f };
+	mMainPassCB.AmbientLight = { 0.55f, 0.55f, 0.55f, 1.0f };
 	mMainPassCB.Lights[0].Direction = { 0.57735f, -0.57735f, 0.57735f };
 	mMainPassCB.Lights[0].Strength = { 0.6f, 0.6f, 0.6f };
 	mMainPassCB.Lights[1].Direction = { -0.57735f, -0.57735f, 0.57735f };
@@ -605,7 +606,7 @@ void Game::BuildRenderItems(std::string matName, std::string geoName, XMFLOAT3 p
 	auto boxRitem = std::make_unique<RenderItem>();
 
 	XMStoreFloat4x4(&boxRitem->World, XMMatrixScaling(scale.x, scale.y, scale.z) * XMMatrixRotationRollPitchYaw(rotation.x, rotation.y, rotation.z) * XMMatrixTranslation(position.x, position.y, position.z));
-	boxRitem->ObjCBIndex = 0;
+	boxRitem->ObjCBIndex = ObjectCBIndex;
 	boxRitem->Mat = mMaterials[matName].get();
 	boxRitem->Geo = mGeometries[geoName].get();
 	boxRitem->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
@@ -618,6 +619,7 @@ void Game::BuildRenderItems(std::string matName, std::string geoName, XMFLOAT3 p
 	mRitemLayer[(int)RenderLayer::AlphaTested].push_back(boxRitem.get());
 
 	mAllRitems.push_back(std::move(boxRitem));
+	ObjectCBIndex++;
 
 	//auto temp = std::make_unique<RenderItem>();
 	//temp->ObjCBIndex = 0;

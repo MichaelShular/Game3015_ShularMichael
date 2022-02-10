@@ -145,7 +145,7 @@ private:
 
 	int MaterialCBIndexCount;
 	int DiffuseSrvHeapIndexCount;
-
+	int ObjectCBIndex;
 };
 
 #endif 

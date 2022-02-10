@@ -87,11 +87,12 @@ void Game::Update(const GameTimer& gt)
 	}
 
 	AnimateMaterials(gt);
+	//XMStoreFloat4x4(&mAllRitems[0].get()->World, XMMatrixTranslation(1.0f, 0.0f, 0.0f));
 	UpdateObjectCBs(gt);
 	UpdateMaterialCBs(gt);
 	UpdateMainPassCB(gt);
-	//mGameWorld->update(gt);
-	//XMStoreFloat4x4(&mAllRitems[0].get()->World, XMMatrixTranslation(1.0f, 0.0f, 0.0f));
+	mGameWorld->update(gt);
+	
 }
 
 void Game::Draw(const GameTimer& gt)

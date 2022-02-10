@@ -8,11 +8,11 @@ World::World(Game* game)
 	loadTextures();
 }
 
-void World::update()
+void World::update(const GameTimer& gt)
 {
 }
 
-void World::draw()
+void World::draw(const GameTimer& gt)
 {
 }
 

@@ -20,8 +20,8 @@ class World
 {
 public:
 	World(Game * game);
-	void update();
-	void draw();
+	void update(const GameTimer& gt);
+	void draw(const GameTimer& gt);
 	std::unordered_map<std::string, std::wstring> *getTextures();
 	
 private:

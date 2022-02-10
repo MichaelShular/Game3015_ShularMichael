@@ -7,7 +7,7 @@ Game::Game(HINSTANCE hInstance)
 	: D3DApp(hInstance),
 	mGameWorld()
 {
-	
+	mGameWorld = new World(this);
 }
 
 Game::~Game()
@@ -28,20 +28,16 @@ bool Game::Initialize()
 	// so we have to query this information.
 	mCbvSrvDescriptorSize = md3dDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
 
-	for (auto& it : *mGameWorld.getTextures()) {
+	for (auto& it : *mGameWorld->getTextures()) {
 		LoadTextures(it.first, it.second);
 	}
-
 	//LoadTextures("temp", L"WireFence.dds");
-
-
 	BuildRootSignature();
-	
 	BuildDescriptorHeaps();
-	
 	BuildShadersAndInputLayout();
+	
 	GeometryGenerator geoGen;
-	BuildShapeGeometry(geoGen.CreateGrid(1.0f,1.0f,2,2), "box");
+	BuildShapeGeometry(geoGen.CreateBox(2.0f,2.0f,8,2), "box");
 	
 	MaterialCBIndexCount = 0;
 	DiffuseSrvHeapIndexCount = 0;
@@ -94,6 +90,8 @@ void Game::Update(const GameTimer& gt)
 	UpdateObjectCBs(gt);
 	UpdateMaterialCBs(gt);
 	UpdateMainPassCB(gt);
+	//mGameWorld->update(gt);
+	//XMStoreFloat4x4(&mAllRitems[0].get()->World, XMMatrixTranslation(1.0f, 0.0f, 0.0f));
 }
 
 void Game::Draw(const GameTimer& gt)

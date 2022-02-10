@@ -1,11 +1,13 @@
 #pragma once
+#ifndef _GAME_H_
+#define _GAME_H_
+
 #include "../../Common/d3dApp.h"
 #include "../../Common/MathHelper.h"
 #include "../../Common/UploadBuffer.h"
 #include "FrameResource.h"
 #include "../../Common/GeometryGenerator.h"
 #include "world.h"
-
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
 using namespace DirectX::PackedVector;
@@ -57,15 +59,17 @@ enum class RenderLayer : int
 
 class Game : public D3DApp
 {
-public:
+public: 
 	Game(HINSTANCE hInstance);
+
+public:
 	Game(const Game& rhs) = delete;
 	Game& operator=(const Game& rhs) = delete;
 	~Game();
 
 	virtual bool Initialize()override;
 
-private:
+public:
 	virtual void OnResize()override;
 	virtual void Update(const GameTimer& gt)override;
 	virtual void Draw(const GameTimer& gt)override;
@@ -94,8 +98,7 @@ private:
 	std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> GetStaticSamplers();
 
 private:
-	World mGameWorld;
-
+	World *mGameWorld;
 
 	std::vector<std::unique_ptr<FrameResource>> mFrameResources;
 	FrameResource* mCurrFrameResource = nullptr;
@@ -144,3 +147,5 @@ private:
 	int DiffuseSrvHeapIndexCount;
 
 };
+
+#endif 

@@ -1,12 +1,11 @@
 #include "world.h"
+#include "Game.h"
 
-World::World()
+World::World(Game* game)
 {
+	mGame = game;
+	//mGame->LoadTextures("temp", L"WireFence.dds");
 	loadTextures();
-}
-
-World::~World()
-{
 }
 
 void World::update()
@@ -24,6 +23,7 @@ std::unordered_map<std::string, std::wstring>* World::getTextures()
 
 void World::buildScene()
 {
+
 }
 
 void World::loadTextures()

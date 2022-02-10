@@ -1,0 +1,28 @@
+\hypertarget{_aircraft_8h_source}{}\doxysection{Aircraft.\+h}
+\label{_aircraft_8h_source}\index{Game3015\_ShularMichael/Project1/Aircraft.h@{Game3015\_ShularMichael/Project1/Aircraft.h}}
+\mbox{\hyperlink{_aircraft_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{entity_8h}{entity.h}}"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{class }\mbox{\hyperlink{class_aircraft}{Aircraft}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_entity}{Entity}}}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6 \textcolor{keyword}{public}:}
+\DoxyCodeLine{7     \textcolor{keyword}{enum} \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}}}
+\DoxyCodeLine{8     \{}
+\DoxyCodeLine{9         \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acdaed1ed20dae2d2d8eaa1d2186c6ee9315}{Eagle}},}
+\DoxyCodeLine{10         \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acdaf080b57c0c515dea65f056395cc6d59b}{Raptor}},}
+\DoxyCodeLine{11     \};}
+\DoxyCodeLine{12 \textcolor{keyword}{public}:}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_aircraft_a7182c04a7e319c1a63beb4015cdd6029}{Aircraft}}(\mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}} type);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15  }
+\DoxyCodeLine{16 \textcolor{keyword}{private}:}
+\DoxyCodeLine{17     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} drawCurrent() \textcolor{keyword}{const};}
+\DoxyCodeLine{18 \textcolor{keyword}{private}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}} mType;}
+\DoxyCodeLine{20     std::string mSprite;}
+\DoxyCodeLine{21 \};}
+\DoxyCodeLine{22 }
+
+\end{DoxyCode}

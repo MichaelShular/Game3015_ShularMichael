@@ -1,0 +1,251 @@
+\hypertarget{class_game}{}\doxysection{Game Class Reference}
+\label{class_game}\index{Game@{Game}}
+
+
+{\ttfamily \#include $<$Game.\+h$>$}
+
+Inheritance diagram for Game\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_a3f68a62a1fe1ca8dcd1deb054b384cef}{Game}} (HINSTANCE h\+Instance)
+\item 
+\mbox{\hyperlink{class_game_a293c79673d4c15f55f1ab7f3d1809ddb}{Game}} (const \mbox{\hyperlink{class_game}{Game}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{class_game}{Game}} \& \mbox{\hyperlink{class_game_a9bda5763ea460634fef947be2530c8f5}{operator=}} (const \mbox{\hyperlink{class_game}{Game}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\+Game}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_game_a16354d232327f6c21319713bf6983674}{Initialize}} () override
+\item 
+virtual void \mbox{\hyperlink{class_game_a7bd6d8d7aa09aa1196b4fa463d2ac41b}{On\+Resize}} () override
+\item 
+virtual void \mbox{\hyperlink{class_game_ab9244991993b5a1cbde3f1f2d73f2745}{Update}} (const Game\+Timer \&gt) override
+\item 
+virtual void \mbox{\hyperlink{class_game_afc62dae28f3cd775d8110ff5386c1fe1}{Draw}} (const Game\+Timer \&gt) override
+\item 
+virtual void \mbox{\hyperlink{class_game_a605e728835f29b7b320f6c9c8de05d00}{On\+Mouse\+Down}} (WPARAM btn\+State, int x, int y) override
+\item 
+virtual void \mbox{\hyperlink{class_game_a020e0c5f01a724bfef357bfe29f800c3}{On\+Mouse\+Up}} (WPARAM btn\+State, int x, int y) override
+\item 
+virtual void \mbox{\hyperlink{class_game_ada0f3fffa1b4560465128b1eff7d1ef5}{On\+Mouse\+Move}} (WPARAM btn\+State, int x, int y) override
+\item 
+void \mbox{\hyperlink{class_game_a97cb6124867ae61c31a23dfc22de3c6a}{On\+Keyboard\+Input}} (const Game\+Timer \&gt)
+\item 
+void \mbox{\hyperlink{class_game_a077400cce3bd3e41333b8228b386e450}{Update\+Camera}} (const Game\+Timer \&gt)
+\item 
+void \mbox{\hyperlink{class_game_a7e0c6faa5f2386c3ad80fe5d5a9e11e4}{Animate\+Materials}} (const Game\+Timer \&gt)
+\item 
+void \mbox{\hyperlink{class_game_a1bdfe76a8bfdff007837cb2d2c3c59d6}{Update\+Object\+CBs}} (const Game\+Timer \&gt)
+\item 
+void \mbox{\hyperlink{class_game_a4b7fd5dda779a7dd834dd7d26566b657}{Update\+Material\+CBs}} (const Game\+Timer \&gt)
+\item 
+void \mbox{\hyperlink{class_game_aa3bb0452e306c88eadfb2d4eedf5ad25}{Update\+Main\+Pass\+CB}} (const Game\+Timer \&gt)
+\item 
+void \mbox{\hyperlink{class_game_a62dae15e7e1828427b696f017ce6241c}{Load\+Textures}} (std\+::string name, std\+::wstring file\+Name)
+\item 
+void \mbox{\hyperlink{class_game_aa02e07384ccea21f7421ca60967c1fa5}{Build\+Root\+Signature}} ()
+\item 
+void \mbox{\hyperlink{class_game_a62c79f98ef99a7ee0c54e3ae23ab0173}{Build\+Descriptor\+Heaps}} ()
+\item 
+void \mbox{\hyperlink{class_game_adc0692c304c05a5a281d88622b39c498}{Build\+Shaders\+And\+Input\+Layout}} ()
+\item 
+void \mbox{\hyperlink{class_game_af1166f658b26c355325807126ff2e4a6}{Build\+Shape\+Geometry}} (Geometry\+Generator\+::\+Mesh\+Data box, std\+::string shape\+Name)
+\item 
+void \mbox{\hyperlink{class_game_aa0934b45052f43934eb93fd013ca23a8}{Build\+PSOs}} ()
+\item 
+void \mbox{\hyperlink{class_game_a3f6f10460db9b4b5561656d6be357f4f}{Build\+Frame\+Resources}} ()
+\item 
+void \mbox{\hyperlink{class_game_a484e0584d6b787faa74d48e79313fcd2}{Build\+Materials}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{class_game_ab4c32e9bd2226c780e1dcd5939f4e1db}{Build\+Render\+Items}} (std\+::string mat\+Name, std\+::string geo\+Name, XMFLOAT3 position, XMFLOAT3 rotation, XMFLOAT3 scale)
+\item 
+void \mbox{\hyperlink{class_game_a58fb5b65b969ba19ac0f5517c91bf9ae}{Draw\+Render\+Items}} (ID3\+D12\+Graphics\+Command\+List $\ast$cmd\+List, const std\+::vector$<$ \mbox{\hyperlink{struct_render_item}{Render\+Item}} $\ast$ $>$ \&ritems)
+\item 
+std\+::array$<$ const CD3\+DX12\+\_\+\+STATIC\+\_\+\+SAMPLER\+\_\+\+DESC, 6 $>$ \mbox{\hyperlink{class_game_a6e8f674ef01b7480d39fe90374301c2d}{Get\+Static\+Samplers}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_a3f68a62a1fe1ca8dcd1deb054b384cef}\label{class_game_a3f68a62a1fe1ca8dcd1deb054b384cef}} 
+\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}\item[{HINSTANCE}]{h\+Instance }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_a293c79673d4c15f55f1ab7f3d1809ddb}\label{class_game_a293c79673d4c15f55f1ab7f3d1809ddb}} 
+\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game}{Game}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_game_ae3d112ca6e0e55150d2fdbc704474530}\label{class_game_ae3d112ca6e0e55150d2fdbc704474530}} 
+\index{Game@{Game}!````~Game@{$\sim$Game}}
+\index{````~Game@{$\sim$Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{$\sim$Game()}{~Game()}}
+{\footnotesize\ttfamily Game\+::$\sim$\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_a7e0c6faa5f2386c3ad80fe5d5a9e11e4}\label{class_game_a7e0c6faa5f2386c3ad80fe5d5a9e11e4}} 
+\index{Game@{Game}!AnimateMaterials@{AnimateMaterials}}
+\index{AnimateMaterials@{AnimateMaterials}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{AnimateMaterials()}{AnimateMaterials()}}
+{\footnotesize\ttfamily void Game\+::\+Animate\+Materials (\begin{DoxyParamCaption}\item[{const Game\+Timer \&}]{gt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_a62c79f98ef99a7ee0c54e3ae23ab0173}\label{class_game_a62c79f98ef99a7ee0c54e3ae23ab0173}} 
+\index{Game@{Game}!BuildDescriptorHeaps@{BuildDescriptorHeaps}}
+\index{BuildDescriptorHeaps@{BuildDescriptorHeaps}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildDescriptorHeaps()}{BuildDescriptorHeaps()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+Descriptor\+Heaps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_a3f6f10460db9b4b5561656d6be357f4f}\label{class_game_a3f6f10460db9b4b5561656d6be357f4f}} 
+\index{Game@{Game}!BuildFrameResources@{BuildFrameResources}}
+\index{BuildFrameResources@{BuildFrameResources}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildFrameResources()}{BuildFrameResources()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+Frame\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_a484e0584d6b787faa74d48e79313fcd2}\label{class_game_a484e0584d6b787faa74d48e79313fcd2}} 
+\index{Game@{Game}!BuildMaterials@{BuildMaterials}}
+\index{BuildMaterials@{BuildMaterials}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildMaterials()}{BuildMaterials()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+Materials (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_aa0934b45052f43934eb93fd013ca23a8}\label{class_game_aa0934b45052f43934eb93fd013ca23a8}} 
+\index{Game@{Game}!BuildPSOs@{BuildPSOs}}
+\index{BuildPSOs@{BuildPSOs}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildPSOs()}{BuildPSOs()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+PSOs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_ab4c32e9bd2226c780e1dcd5939f4e1db}\label{class_game_ab4c32e9bd2226c780e1dcd5939f4e1db}} 
+\index{Game@{Game}!BuildRenderItems@{BuildRenderItems}}
+\index{BuildRenderItems@{BuildRenderItems}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildRenderItems()}{BuildRenderItems()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+Render\+Items (\begin{DoxyParamCaption}\item[{std\+::string}]{mat\+Name,  }\item[{std\+::string}]{geo\+Name,  }\item[{XMFLOAT3}]{position,  }\item[{XMFLOAT3}]{rotation,  }\item[{XMFLOAT3}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_aa02e07384ccea21f7421ca60967c1fa5}\label{class_game_aa02e07384ccea21f7421ca60967c1fa5}} 
+\index{Game@{Game}!BuildRootSignature@{BuildRootSignature}}
+\index{BuildRootSignature@{BuildRootSignature}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildRootSignature()}{BuildRootSignature()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+Root\+Signature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_adc0692c304c05a5a281d88622b39c498}\label{class_game_adc0692c304c05a5a281d88622b39c498}} 
+\index{Game@{Game}!BuildShadersAndInputLayout@{BuildShadersAndInputLayout}}
+\index{BuildShadersAndInputLayout@{BuildShadersAndInputLayout}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildShadersAndInputLayout()}{BuildShadersAndInputLayout()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+Shaders\+And\+Input\+Layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_af1166f658b26c355325807126ff2e4a6}\label{class_game_af1166f658b26c355325807126ff2e4a6}} 
+\index{Game@{Game}!BuildShapeGeometry@{BuildShapeGeometry}}
+\index{BuildShapeGeometry@{BuildShapeGeometry}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildShapeGeometry()}{BuildShapeGeometry()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+Shape\+Geometry (\begin{DoxyParamCaption}\item[{Geometry\+Generator\+::\+Mesh\+Data}]{box,  }\item[{std\+::string}]{shape\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_afc62dae28f3cd775d8110ff5386c1fe1}\label{class_game_afc62dae28f3cd775d8110ff5386c1fe1}} 
+\index{Game@{Game}!Draw@{Draw}}
+\index{Draw@{Draw}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Game\+::\+Draw (\begin{DoxyParamCaption}\item[{const Game\+Timer \&}]{gt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_game_a58fb5b65b969ba19ac0f5517c91bf9ae}\label{class_game_a58fb5b65b969ba19ac0f5517c91bf9ae}} 
+\index{Game@{Game}!DrawRenderItems@{DrawRenderItems}}
+\index{DrawRenderItems@{DrawRenderItems}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{DrawRenderItems()}{DrawRenderItems()}}
+{\footnotesize\ttfamily void Game\+::\+Draw\+Render\+Items (\begin{DoxyParamCaption}\item[{ID3\+D12\+Graphics\+Command\+List $\ast$}]{cmd\+List,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_render_item}{Render\+Item}} $\ast$ $>$ \&}]{ritems }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_a6e8f674ef01b7480d39fe90374301c2d}\label{class_game_a6e8f674ef01b7480d39fe90374301c2d}} 
+\index{Game@{Game}!GetStaticSamplers@{GetStaticSamplers}}
+\index{GetStaticSamplers@{GetStaticSamplers}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{GetStaticSamplers()}{GetStaticSamplers()}}
+{\footnotesize\ttfamily std\+::array$<$ const CD3\+DX12\+\_\+\+STATIC\+\_\+\+SAMPLER\+\_\+\+DESC, 6 $>$ Game\+::\+Get\+Static\+Samplers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_a16354d232327f6c21319713bf6983674}\label{class_game_a16354d232327f6c21319713bf6983674}} 
+\index{Game@{Game}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily bool Game\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_game_a62dae15e7e1828427b696f017ce6241c}\label{class_game_a62dae15e7e1828427b696f017ce6241c}} 
+\index{Game@{Game}!LoadTextures@{LoadTextures}}
+\index{LoadTextures@{LoadTextures}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{LoadTextures()}{LoadTextures()}}
+{\footnotesize\ttfamily void Game\+::\+Load\+Textures (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::wstring}]{file\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_a97cb6124867ae61c31a23dfc22de3c6a}\label{class_game_a97cb6124867ae61c31a23dfc22de3c6a}} 
+\index{Game@{Game}!OnKeyboardInput@{OnKeyboardInput}}
+\index{OnKeyboardInput@{OnKeyboardInput}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{OnKeyboardInput()}{OnKeyboardInput()}}
+{\footnotesize\ttfamily void Game\+::\+On\+Keyboard\+Input (\begin{DoxyParamCaption}\item[{const Game\+Timer \&}]{gt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_a605e728835f29b7b320f6c9c8de05d00}\label{class_game_a605e728835f29b7b320f6c9c8de05d00}} 
+\index{Game@{Game}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{OnMouseDown()}{OnMouseDown()}}
+{\footnotesize\ttfamily void Game\+::\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{WPARAM}]{btn\+State,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_game_ada0f3fffa1b4560465128b1eff7d1ef5}\label{class_game_ada0f3fffa1b4560465128b1eff7d1ef5}} 
+\index{Game@{Game}!OnMouseMove@{OnMouseMove}}
+\index{OnMouseMove@{OnMouseMove}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{OnMouseMove()}{OnMouseMove()}}
+{\footnotesize\ttfamily void Game\+::\+On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{WPARAM}]{btn\+State,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_game_a020e0c5f01a724bfef357bfe29f800c3}\label{class_game_a020e0c5f01a724bfef357bfe29f800c3}} 
+\index{Game@{Game}!OnMouseUp@{OnMouseUp}}
+\index{OnMouseUp@{OnMouseUp}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{OnMouseUp()}{OnMouseUp()}}
+{\footnotesize\ttfamily void Game\+::\+On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{WPARAM}]{btn\+State,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_game_a7bd6d8d7aa09aa1196b4fa463d2ac41b}\label{class_game_a7bd6d8d7aa09aa1196b4fa463d2ac41b}} 
+\index{Game@{Game}!OnResize@{OnResize}}
+\index{OnResize@{OnResize}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{OnResize()}{OnResize()}}
+{\footnotesize\ttfamily void Game\+::\+On\+Resize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_game_a9bda5763ea460634fef947be2530c8f5}\label{class_game_a9bda5763ea460634fef947be2530c8f5}} 
+\index{Game@{Game}!operator=@{operator=}}
+\index{operator=@{operator=}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game}{Game}} \& Game\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game}{Game}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_game_ab9244991993b5a1cbde3f1f2d73f2745}\label{class_game_ab9244991993b5a1cbde3f1f2d73f2745}} 
+\index{Game@{Game}!Update@{Update}}
+\index{Update@{Update}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Game\+::\+Update (\begin{DoxyParamCaption}\item[{const Game\+Timer \&}]{gt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_game_a077400cce3bd3e41333b8228b386e450}\label{class_game_a077400cce3bd3e41333b8228b386e450}} 
+\index{Game@{Game}!UpdateCamera@{UpdateCamera}}
+\index{UpdateCamera@{UpdateCamera}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{UpdateCamera()}{UpdateCamera()}}
+{\footnotesize\ttfamily void Game\+::\+Update\+Camera (\begin{DoxyParamCaption}\item[{const Game\+Timer \&}]{gt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_aa3bb0452e306c88eadfb2d4eedf5ad25}\label{class_game_aa3bb0452e306c88eadfb2d4eedf5ad25}} 
+\index{Game@{Game}!UpdateMainPassCB@{UpdateMainPassCB}}
+\index{UpdateMainPassCB@{UpdateMainPassCB}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{UpdateMainPassCB()}{UpdateMainPassCB()}}
+{\footnotesize\ttfamily void Game\+::\+Update\+Main\+Pass\+CB (\begin{DoxyParamCaption}\item[{const Game\+Timer \&}]{gt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_a4b7fd5dda779a7dd834dd7d26566b657}\label{class_game_a4b7fd5dda779a7dd834dd7d26566b657}} 
+\index{Game@{Game}!UpdateMaterialCBs@{UpdateMaterialCBs}}
+\index{UpdateMaterialCBs@{UpdateMaterialCBs}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{UpdateMaterialCBs()}{UpdateMaterialCBs()}}
+{\footnotesize\ttfamily void Game\+::\+Update\+Material\+CBs (\begin{DoxyParamCaption}\item[{const Game\+Timer \&}]{gt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_a1bdfe76a8bfdff007837cb2d2c3c59d6}\label{class_game_a1bdfe76a8bfdff007837cb2d2c3c59d6}} 
+\index{Game@{Game}!UpdateObjectCBs@{UpdateObjectCBs}}
+\index{UpdateObjectCBs@{UpdateObjectCBs}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{UpdateObjectCBs()}{UpdateObjectCBs()}}
+{\footnotesize\ttfamily void Game\+::\+Update\+Object\+CBs (\begin{DoxyParamCaption}\item[{const Game\+Timer \&}]{gt }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{_game_8h}{Game.\+h}}\item 
+Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{_game_8cpp}{Game.\+cpp}}\end{DoxyCompactItemize}

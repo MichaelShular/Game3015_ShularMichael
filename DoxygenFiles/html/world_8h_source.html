@@ -105,33 +105,33 @@ $(document).ready(function(){initNavTree('world_8h_source.html',''); initResizab
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../../Common/GeometryGenerator.h&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_aircraft_8h.html">Aircraft.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="scene_node_8h.html">sceneNode.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using</span> Microsoft::WRL::ComPtr;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">using namespace </span>DirectX;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">using namespace </span>DirectX::PackedVector;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#pragma comment(lib, &quot;d3dcompiler.lib&quot;</span>)</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#pragma comment(lib, &quot;D3D12.lib&quot;</span>)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class </span><a class="code hl_class" href="class_game.html">Game</a>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_world.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="class_world.html">World</a></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="class_world.html#a358fecc8d0e42996d7bd1884f126a97c">World</a>(<a class="code hl_class" href="class_game.html">Game</a> * game);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_world.html#a36c003f54e14e022a360551af5e7923e">update</a>(<span class="keyword">const</span> GameTimer&amp; gt);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_world.html#a2b1049691edabbeca3be712f2be8c36e">draw</a>(<span class="keyword">const</span> GameTimer&amp; gt);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::unordered_map&lt;std::string, std::wstring&gt; *<a class="code hl_function" href="class_world.html#a4cca68d1c7ea4bbbbdd6b07bce2ebc78">getTextures</a>();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_world.html#ae7df49f5d488e5cd1254bf360966f410">buildScene</a>();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> CreateTexture(std::string name, std::wstring fileName);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> loadTextures();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_class" href="class_game.html">Game</a> *mGame;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_class" href="class_aircraft.html">Aircraft</a>* mplayerAircraft;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="class_aircraft.html">Aircraft</a>* mplayerAircraft2;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_class" href="class_aircraft.html">Aircraft</a>* mplayerAircraft3;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_class" href="class_aircraft.html">Aircraft</a>* mplayerAircraft4;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="class_aircraft.html">Aircraft</a>* mplayerAircraft5;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_sprite_node_8h.html">SpriteNode.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">using</span> Microsoft::WRL::ComPtr;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">using namespace </span>DirectX;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">using namespace </span>DirectX::PackedVector;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#pragma comment(lib, &quot;d3dcompiler.lib&quot;</span>)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma comment(lib, &quot;D3D12.lib&quot;</span>)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">class </span><a class="code hl_class" href="class_game.html">Game</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_world.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="class_world.html">World</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="class_world.html#a358fecc8d0e42996d7bd1884f126a97c">World</a>(<a class="code hl_class" href="class_game.html">Game</a> * game);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_world.html#a36c003f54e14e022a360551af5e7923e">update</a>(<span class="keyword">const</span> GameTimer&amp; gt);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_world.html#a2b1049691edabbeca3be712f2be8c36e">draw</a>(<span class="keyword">const</span> GameTimer&amp; gt);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::unordered_map&lt;std::string, std::wstring&gt; *<a class="code hl_function" href="class_world.html#a4cca68d1c7ea4bbbbdd6b07bce2ebc78">getTextures</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_world.html#ae7df49f5d488e5cd1254bf360966f410">buildScene</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> CreateTexture(std::string name, std::wstring fileName);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> loadTextures();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_class" href="class_game.html">Game</a> *mGame;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="class_sprite_node.html">SpriteNode</a>* mGround;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_class" href="class_sprite_node.html">SpriteNode</a>* mSky;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_class" href="class_aircraft.html">Aircraft</a>* mplayerAircraftOne;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="class_aircraft.html">Aircraft</a>* mplayerAircraftTwo;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_class" href="classscene_node.html">sceneNode</a>* sceneGraph;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::unordered_map&lt;std::string, std::wstring&gt; mTexture;</div>
@@ -140,9 +140,11 @@ $(document).ready(function(){initNavTree('world_8h_source.html',''); initResizab
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a_aircraft_8h_html"><div class="ttname"><a href="_aircraft_8h.html">Aircraft.h</a></div></div>
 <div class="ttc" id="a_frame_resource_8h_html"><div class="ttname"><a href="_frame_resource_8h.html">FrameResource.h</a></div></div>
+<div class="ttc" id="a_sprite_node_8h_html"><div class="ttname"><a href="_sprite_node_8h.html">SpriteNode.h</a></div></div>
 <div class="ttc" id="aclass_aircraft_html"><div class="ttname"><a href="class_aircraft.html">Aircraft</a></div><div class="ttdoc">This class is the derived class from entity but only of aircrafts.</div><div class="ttdef"><b>Definition:</b> Aircraft.h:6</div></div>
 <div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdoc">This class is used to Initialize the application, control game loop and hold the D3D12 game engine fu...</div><div class="ttdef"><b>Definition:</b> Game.h:62</div></div>
-<div class="ttc" id="aclass_world_html"><div class="ttname"><a href="class_world.html">World</a></div><div class="ttdoc">This class is use to build game objects and hold sceneNode which will hold all objects that are part ...</div><div class="ttdef"><b>Definition:</b> world.h:23</div></div>
+<div class="ttc" id="aclass_sprite_node_html"><div class="ttname"><a href="class_sprite_node.html">SpriteNode</a></div><div class="ttdoc">This class is use to create game objects that are not affected by physics.</div><div class="ttdef"><b>Definition:</b> SpriteNode.h:7</div></div>
+<div class="ttc" id="aclass_world_html"><div class="ttname"><a href="class_world.html">World</a></div><div class="ttdoc">This class is use to build game objects and hold sceneNode which will hold all objects that are part ...</div><div class="ttdef"><b>Definition:</b> world.h:24</div></div>
 <div class="ttc" id="aclass_world_html_a2b1049691edabbeca3be712f2be8c36e"><div class="ttname"><a href="class_world.html#a2b1049691edabbeca3be712f2be8c36e">World::draw</a></div><div class="ttdeci">void draw(const GameTimer &amp;gt)</div><div class="ttdoc">Used draw.</div><div class="ttdef"><b>Definition:</b> world.cpp:22</div></div>
 <div class="ttc" id="aclass_world_html_a358fecc8d0e42996d7bd1884f126a97c"><div class="ttname"><a href="class_world.html#a358fecc8d0e42996d7bd1884f126a97c">World::World</a></div><div class="ttdeci">World(Game *game)</div><div class="ttdoc">The defualt conconstructor.</div><div class="ttdef"><b>Definition:</b> world.cpp:6</div></div>
 <div class="ttc" id="aclass_world_html_a36c003f54e14e022a360551af5e7923e"><div class="ttname"><a href="class_world.html#a36c003f54e14e022a360551af5e7923e">World::update</a></div><div class="ttdeci">void update(const GameTimer &amp;gt)</div><div class="ttdoc">Used update sceneNode class.</div><div class="ttdef"><b>Definition:</b> world.cpp:15</div></div>

@@ -11,7 +11,8 @@ var hierarchy =
     [ "sceneNode", "classscene_node.html", [
       [ "Entity", "class_entity.html", [
         [ "Aircraft", "class_aircraft.html", null ]
-      ] ]
+      ] ],
+      [ "SpriteNode", "class_sprite_node.html", null ]
     ] ],
     [ "Vertex", "struct_vertex.html", null ],
     [ "World", "class_world.html", null ]

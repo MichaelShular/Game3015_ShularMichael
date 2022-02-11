@@ -9,6 +9,7 @@ var annotated_dup =
     [ "PassConstants", "struct_pass_constants.html", "struct_pass_constants" ],
     [ "RenderItem", "struct_render_item.html", "struct_render_item" ],
     [ "sceneNode", "classscene_node.html", "classscene_node" ],
+    [ "SpriteNode", "class_sprite_node.html", "class_sprite_node" ],
     [ "Vertex", "struct_vertex.html", "struct_vertex" ],
     [ "World", "class_world.html", "class_world" ]
 ];

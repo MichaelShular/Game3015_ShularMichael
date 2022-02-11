@@ -9,6 +9,7 @@
 #include "../../Common/GeometryGenerator.h"
 #include "Aircraft.h"
 #include "sceneNode.h"
+#include "SpriteNode.h"
 
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
@@ -32,11 +33,10 @@ private:
 	void loadTextures();
 private:
 	Game *mGame;
-	Aircraft* mplayerAircraft;
-	Aircraft* mplayerAircraft2;
-	Aircraft* mplayerAircraft3;
-	Aircraft* mplayerAircraft4;
-	Aircraft* mplayerAircraft5;
+	SpriteNode* mGround;
+	SpriteNode* mSky;
+	Aircraft* mplayerAircraftOne;
+	Aircraft* mplayerAircraftTwo;
 
 	sceneNode* sceneGraph;
 	std::unordered_map<std::string, std::wstring> mTexture;

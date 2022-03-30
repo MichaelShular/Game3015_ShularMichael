@@ -11,6 +11,9 @@
 #include "sceneNode.h"
 #include "SpriteNode.h"
 
+#include "CommandQueue.h"
+#include "Command.h"
+
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
 using namespace DirectX::PackedVector;
@@ -28,6 +31,9 @@ public:
 	void draw(const GameTimer& gt);
 	std::unordered_map<std::string, std::wstring> *getTextures();
 	void buildScene();
+	
+	CommandQueue& getCommandQueue();
+
 private:
 	void CreateTexture(std::string name, std::wstring fileName);
 	void loadTextures();
@@ -40,6 +46,9 @@ private:
 
 	sceneNode* sceneGraph;
 	std::unordered_map<std::string, std::wstring> mTexture;
+
+	CommandQueue mCommandQueue;
+
 };
 
 #endif

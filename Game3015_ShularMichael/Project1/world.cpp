@@ -9,6 +9,14 @@ World::World(Game* game):
 	mGame = game;
 	loadTextures();
 }
+
+
+CommandQueue& World::getCommandQueue()
+{
+	return mCommandQueue;
+}
+
+
 /// Used update sceneNode class
 /// 
 /// @param: const GameTimer&

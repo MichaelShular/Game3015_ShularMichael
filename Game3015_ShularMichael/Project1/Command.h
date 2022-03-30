@@ -1,7 +1,8 @@
 #pragma once
+#include "Category.h"
 
-#include <functional>
-#include <cassert>
+#include "functional"
+#include "cassert"
 
 class SceneNode;
 

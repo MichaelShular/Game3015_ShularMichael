@@ -4,3 +4,4 @@ Command::Command()
 	: action()
 	, category()
 {
+}

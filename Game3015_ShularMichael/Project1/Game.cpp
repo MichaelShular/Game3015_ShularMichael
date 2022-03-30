@@ -95,6 +95,7 @@ void Game::Update(const GameTimer& gt)
 	UpdateMainPassCB(gt);
 	mGameWorld->update(gt);
 	
+
 }
 /// Used as application's main draw 
 /// 

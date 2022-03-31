@@ -8,6 +8,7 @@ World::World(Game* game):
 {
 	mGame = game;
 	loadTextures();
+	mplayerAircraftOne = (new Aircraft(Aircraft::Eagle, mGame));
 }
 
 
@@ -52,6 +53,8 @@ void World::buildScene()
 	mGame->BuildMaterials("eagle");
 	mGame->BuildMaterials("raptor");
 
+	
+
 	std::unique_ptr<SpriteNode> BGGround(new SpriteNode(mGame));
 	mGround = BGGround.get();
 	mGround->setWorldPosition(0.0f, 0.0f, 0.0f);
@@ -69,14 +72,14 @@ void World::buildScene()
 
 	mGame->BuildRenderItems("sky", "box", mSky->getWorldPosition(), mSky->getWorldRotation(), mSky->getWorldScale());
 
-	std::unique_ptr<Aircraft> eaglePlane(new Aircraft(Aircraft::Eagle, mGame));
+	/*std::unique_ptr<Aircraft> eaglePlane(new Aircraft(Aircraft::Eagle, mGame));
 	mplayerAircraftOne = eaglePlane.get();
 	mplayerAircraftOne->setWorldPosition(0.7f, -1.5f, 0.6f);
 	mplayerAircraftOne->setWorldRotation(0.0f, 1.0f, 0.2f);
 	mplayerAircraftOne->setWorldScale(0.05f, 0.05f, 0.0f);
 	sceneGraph->attachChild(std::move(eaglePlane));
 
-	mGame->BuildRenderItems("eagle", "box", mplayerAircraftOne->getWorldPosition(), mplayerAircraftOne->getWorldRotation(), mplayerAircraftOne->getWorldScale());
+	mGame->BuildRenderItems("eagle", "box", mplayerAircraftOne->getWorldPosition(), mplayerAircraftOne->getWorldRotation(), mplayerAircraftOne->getWorldScale());*/
 
 	std::unique_ptr<Aircraft> raptorPlane(new Aircraft(Aircraft::Eagle, mGame));
 	mplayerAircraftTwo = raptorPlane.get();
@@ -86,6 +89,9 @@ void World::buildScene()
 	sceneGraph->attachChild(std::move(raptorPlane));
 
 	mGame->BuildRenderItems("raptor", "box", mplayerAircraftTwo->getWorldPosition(), mplayerAircraftTwo->getWorldRotation(), mplayerAircraftTwo->getWorldScale());
+	
+	
+	mplayerAircraftOne->buildAircraft();
 }
 /// Used get set all information for textures
 void World::loadTextures()

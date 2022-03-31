@@ -74,6 +74,8 @@ void Game::Update(const GameTimer& gt)
 {
 	OnKeyboardInput(gt);
 	UpdateCamera(gt);
+	
+	
 
 	// Cycle through the circular frame resource array.
 	mCurrFrameResourceIndex = (mCurrFrameResourceIndex + 1) % gNumFrameResources;
@@ -88,12 +90,15 @@ void Game::Update(const GameTimer& gt)
 		WaitForSingleObject(eventHandle, INFINITE);
 		CloseHandle(eventHandle);
 	}
-
+	
 	AnimateMaterials(gt);
 	UpdateObjectCBs(gt);
 	UpdateMaterialCBs(gt);
 	UpdateMainPassCB(gt);
+	
 	mGameWorld->update(gt);
+
+	
 	
 	processEvents();
 }
@@ -120,6 +125,11 @@ void Game::processEvents()
 
 	mPlayer.handleEvent(commands);
 	mPlayer.handleRealtimeInput(commands);
+}
+
+ID3D12GraphicsCommandList* Game::getCmdList()
+{
+	return mCommandList.Get();
 }
 
 
@@ -165,6 +175,8 @@ void Game::Draw(const GameTimer& gt)
 	//DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::Opaque]);
 
 	mCommandList->SetPipelineState(mPSOs["alphaTested"].Get());
+	
+	
 	DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::AlphaTested]);
 
 

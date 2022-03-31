@@ -14,12 +14,14 @@ public:
 	Aircraft(Type type, Game* game);
 
 	virtual unsigned int getCategory() const;
- 
+	void buildAircraft();
 private:
 	virtual void drawCurrent() const;
 private:
 	Type mType;
 	std::string mSprite;
+
+protected:
 	Game* mGame;
 };
 

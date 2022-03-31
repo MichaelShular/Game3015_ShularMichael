@@ -17,6 +17,8 @@ using namespace DirectX::PackedVector;
 #pragma comment(lib, "d3dcompiler.lib")
 #pragma comment(lib, "D3D12.lib")
 
+class Game;
+
 struct Command;
 
 /// This class is used manage transform hierarchies
@@ -24,8 +26,8 @@ class sceneNode
 {
 public:
 	typedef std::unique_ptr<sceneNode> Ptr;
-public:
-	sceneNode();
+public:	
+	sceneNode(Game* game);
 	void attachChild(Ptr child);
 	Ptr detachChild(const sceneNode& node);
 
@@ -39,14 +41,18 @@ public:
 
 	void onCommand(const Command& command, const GameTimer& gt);
 	virtual unsigned int getCategory() const;
-
+	
+	virtual void draw() const;
 private:
 	virtual void updateCurrent(const GameTimer& gt);
 	void updateChildren(const GameTimer& gt);
 
-	/*virtual void draw(const GameTimer& gt) const;
-	virtual void drawCurrent(const GameTimer& gt) const;
-	void drawChildren(const GameTimer& gt) const;*/
+	
+	virtual void drawCurrent() const;
+	void drawChildren() const;
+protected:
+	Game* mGame;
+
 private:
 	std::vector<Ptr> mChildren;
 	sceneNode* mParent;

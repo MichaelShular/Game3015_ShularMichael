@@ -6,7 +6,7 @@
 class SpriteNode : public sceneNode
 {
 public:
-	SpriteNode();
+	SpriteNode(Game* game);
 private:
 	virtual void drawCurrent() const;
 private:

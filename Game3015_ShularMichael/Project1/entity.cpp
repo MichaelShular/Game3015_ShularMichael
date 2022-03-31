@@ -1,7 +1,9 @@
 #include "entity.h"
 /// The defualt conconstructor
-Entity::Entity() : sceneNode ()
+Entity::Entity(Game* game) : sceneNode (game)
 {
+	mGame = game;
+
 }
 /// Used to set velocity of an game object
 /// 

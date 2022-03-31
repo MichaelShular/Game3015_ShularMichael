@@ -4,7 +4,7 @@
 ///
 /// @param: Game
 World::World(Game* game):
-	sceneGraph(new sceneNode())
+	sceneGraph(new sceneNode(game))
 {
 	mGame = game;
 	loadTextures();
@@ -35,6 +35,7 @@ void World::update(const GameTimer& gt)
 /// @param: const GameTimer&
 void World::draw(const GameTimer& gt)
 {
+	sceneGraph->draw();
 }
 /// Used to pass information about textures to game 
 /// 
@@ -51,7 +52,7 @@ void World::buildScene()
 	mGame->BuildMaterials("eagle");
 	mGame->BuildMaterials("raptor");
 
-	std::unique_ptr<SpriteNode> BGGround(new SpriteNode());
+	std::unique_ptr<SpriteNode> BGGround(new SpriteNode(mGame));
 	mGround = BGGround.get();
 	mGround->setWorldPosition(0.0f, 0.0f, 0.0f);
 	mGround->setWorldRotation(0.0f, 0.0f, 0.0f);
@@ -59,7 +60,7 @@ void World::buildScene()
 	mGame->BuildRenderItems("desert", "box", mGround->getWorldPosition(), mGround->getWorldRotation(), mGround->getWorldScale());
 	sceneGraph->attachChild(std::move(BGGround));
 
-	std::unique_ptr<SpriteNode> BGSky(new SpriteNode());
+	std::unique_ptr<SpriteNode> BGSky(new SpriteNode(mGame));
 	mSky = BGSky.get();
 	mSky->setWorldPosition(1.0f, 0.0f, 0.5f);
 	mSky->setWorldRotation(1.57f, 0.0f, 0.0f);
@@ -68,7 +69,7 @@ void World::buildScene()
 
 	mGame->BuildRenderItems("sky", "box", mSky->getWorldPosition(), mSky->getWorldRotation(), mSky->getWorldScale());
 
-	std::unique_ptr<Aircraft> eaglePlane(new Aircraft(Aircraft::Eagle));
+	std::unique_ptr<Aircraft> eaglePlane(new Aircraft(Aircraft::Eagle, mGame));
 	mplayerAircraftOne = eaglePlane.get();
 	mplayerAircraftOne->setWorldPosition(0.7f, -1.5f, 0.6f);
 	mplayerAircraftOne->setWorldRotation(0.0f, 1.0f, 0.2f);
@@ -77,7 +78,7 @@ void World::buildScene()
 
 	mGame->BuildRenderItems("eagle", "box", mplayerAircraftOne->getWorldPosition(), mplayerAircraftOne->getWorldRotation(), mplayerAircraftOne->getWorldScale());
 
-	std::unique_ptr<Aircraft> raptorPlane(new Aircraft(Aircraft::Eagle));
+	std::unique_ptr<Aircraft> raptorPlane(new Aircraft(Aircraft::Eagle, mGame));
 	mplayerAircraftTwo = raptorPlane.get();
 	mplayerAircraftTwo->setWorldPosition(0.3f, -1.6f, 0.4f);
 	mplayerAircraftTwo->setWorldRotation(0.0f, 1.0f, 0.1f);

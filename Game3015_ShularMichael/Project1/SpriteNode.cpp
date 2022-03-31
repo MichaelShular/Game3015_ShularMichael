@@ -1,7 +1,7 @@
 #include "SpriteNode.h"
 
 /// The defualt conconstructor
-SpriteNode::SpriteNode()
+SpriteNode::SpriteNode(Game* game) : sceneNode(game)
 {
 }
 

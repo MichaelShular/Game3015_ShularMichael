@@ -3,8 +3,9 @@
 /// The defualt conconstructor
 /// 
 /// @param: enum Type: use to switch sprites
-Aircraft::Aircraft(Type type) : Entity()
+Aircraft::Aircraft(Type type, Game* game) : Entity(game)
 {
+	mGame = game;
 	switch (type)
 	{
 	case Aircraft::Eagle:  
@@ -21,6 +22,7 @@ Aircraft::Aircraft(Type type) : Entity()
 
 void Aircraft::drawCurrent() const
 {
+	
 }
 
 unsigned int Aircraft::getCategory() const

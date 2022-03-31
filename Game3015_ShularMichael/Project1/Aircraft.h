@@ -11,7 +11,7 @@ public:
 		Raptor,
 	};
 public:
-	Aircraft(Type type);
+	Aircraft(Type type, Game* game);
 
 	virtual unsigned int getCategory() const;
  
@@ -20,5 +20,6 @@ private:
 private:
 	Type mType;
 	std::string mSprite;
+	Game* mGame;
 };
 

@@ -5,10 +5,11 @@
 #include <cassert>
 
 /// The defualt conconstructor
-sceneNode::sceneNode()
+sceneNode::sceneNode(Game * game)
 	: mChildren()
 	, mParent(nullptr)
 {
+	mGame = game;
 }
 /// Used attach game objects to sceneNode
 /// 
@@ -56,6 +57,27 @@ void sceneNode::updateChildren(const GameTimer& gt)
 		child->update(gt);
 	}
 }
+
+void sceneNode::draw() const
+{
+
+	// Draw node and children with changed transform
+	drawCurrent();
+	drawChildren();
+}
+
+void sceneNode::drawCurrent() const
+{
+	// Do nothing by default
+}
+
+void sceneNode::drawChildren() const
+{
+	for (const Ptr& child : mChildren)
+		child->draw();
+}
+
+
 /// Used to get game object's world position
 /// 
 /// @returns DirectX::XMFLOAT3

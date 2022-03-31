@@ -8,6 +8,8 @@
 #include <vector>
 #include <memory>
 
+#include "Category.h"
+
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
 using namespace DirectX::PackedVector;

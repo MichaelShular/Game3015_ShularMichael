@@ -13,6 +13,7 @@ public:
 public:
 	Aircraft(Type type);
 
+	virtual unsigned int getCategory() const;
  
 private:
 	virtual void drawCurrent() const;

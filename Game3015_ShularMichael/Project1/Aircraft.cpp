@@ -22,3 +22,15 @@ Aircraft::Aircraft(Type type) : Entity()
 void Aircraft::drawCurrent() const
 {
 }
+
+unsigned int Aircraft::getCategory() const
+{
+	switch (mType)
+	{
+	case Eagle:
+		return Category::PlayerAircraft;
+
+	default:
+		return Category::EnemyAircraft;
+	}
+}

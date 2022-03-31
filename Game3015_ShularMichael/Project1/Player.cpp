@@ -1,7 +1,7 @@
 #pragma region step 2
 #include "Player.h"
 #include "CommandQueue.h"
-#include "Aircraft.h""
+#include "Aircraft.h"
 #include "../../Common/d3dUtil.h"
 #include "map"
 #include "string"
@@ -15,7 +15,7 @@ struct AircraftMover
 	{
 	}
 
-	void operator() (Aircraft& aircraft) const
+	void operator() (Aircraft& aircraft, const GameTimer& gt) const
 	{
 		aircraft.setVelocity(mVelocity);
 	}

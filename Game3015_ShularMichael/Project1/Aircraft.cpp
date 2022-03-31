@@ -41,7 +41,7 @@ void Aircraft::drawCurrent() const
 		tex.Offset(renderer->Mat->DiffuseSrvHeapIndex, mGame->mCbvSrvDescriptorSize);
 
 		D3D12_GPU_VIRTUAL_ADDRESS objCBAddress = objectCB->GetGPUVirtualAddress() + (UINT64)renderer->ObjCBIndex * objCBByteSize;
-		D3D12_GPU_VIRTUAL_ADDRESS matCBAddress = matCB->GetGPUVirtualAddress() + (UINT64)renderer->Mat->MatCBIndex * matCBByteSize;
+		D3D12_GPU_VIRTUAL_ADDRESS matCBAddress = matCB->GetGPUVirtualAddress() +  (UINT64)renderer->Mat->MatCBIndex * matCBByteSize;
 
 		mGame->getCmdList()->SetGraphicsRootDescriptorTable(0, tex);
 		mGame->getCmdList()->SetGraphicsRootConstantBufferView(1, objCBAddress);
@@ -78,6 +78,8 @@ void Aircraft::buildAircraft()
 	renderer->IndexCount = renderer->Geo->DrawArgs["box"].IndexCount;
 	renderer->StartIndexLocation = renderer->Geo->DrawArgs["box"].StartIndexLocation;
 	renderer->BaseVertexLocation = renderer->Geo->DrawArgs["box"].BaseVertexLocation;
+
+	mGame->mRitemLayer[(int)RenderLayer::AlphaTested].push_back(render.get());
 
 	mGame->mAllRitems.push_back(std::move(render));
 

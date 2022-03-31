@@ -73,6 +73,8 @@ void Game::OnResize()
 void Game::Update(const GameTimer& gt)
 {
 	OnKeyboardInput(gt);
+	mGameWorld->update(gt);
+
 	UpdateCamera(gt);
 	
 	
@@ -96,8 +98,7 @@ void Game::Update(const GameTimer& gt)
 	UpdateMaterialCBs(gt);
 	UpdateMainPassCB(gt);
 	
-	mGameWorld->update(gt);
-
+	
 	
 	
 	processEvents();
@@ -176,7 +177,7 @@ void Game::Draw(const GameTimer& gt)
 
 	mCommandList->SetPipelineState(mPSOs["alphaTested"].Get());
 	
-	
+	mGameWorld->draw(gt);
 	DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::AlphaTested]);
 
 

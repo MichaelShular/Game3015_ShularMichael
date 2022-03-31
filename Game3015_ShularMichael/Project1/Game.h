@@ -8,6 +8,7 @@
 #include "FrameResource.h"
 #include "../../Common/GeometryGenerator.h"
 #include "world.h"
+#include "Player.h"
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
 using namespace DirectX::PackedVector;
@@ -98,6 +99,8 @@ public:
 
 	std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> GetStaticSamplers();
 
+	void processEvents();
+
 private:
 	World *mGameWorld;
 
@@ -147,6 +150,8 @@ private:
 	int MaterialCBIndexCount;
 	int DiffuseSrvHeapIndexCount;
 	int ObjectCBIndex;
+
+	Player mPlayer;
 };
 
 #endif 

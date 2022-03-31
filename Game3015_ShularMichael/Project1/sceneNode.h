@@ -15,6 +15,8 @@ using namespace DirectX::PackedVector;
 #pragma comment(lib, "d3dcompiler.lib")
 #pragma comment(lib, "D3D12.lib")
 
+struct Command;
+
 /// This class is used manage transform hierarchies
 class sceneNode
 {
@@ -32,6 +34,10 @@ public:
 	void setWorldRotation(float x, float y, float z) ;
 	XMFLOAT3 getWorldScale() ;
 	void setWorldScale(float x, float y, float z);
+
+	void onCommand(const Command& command, const GameTimer& gt);
+	virtual unsigned int getCategory() const;
+
 private:
 	virtual void updateCurrent(const GameTimer& gt);
 	void updateChildren(const GameTimer& gt);

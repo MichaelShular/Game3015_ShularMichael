@@ -6,21 +6,21 @@
 #include "map"
 #include "string"
 #include "algorithm"
-
+#include "../../Common/MathHelper.h"
 
 struct AircraftMover
 {
 	AircraftMover(float vx, float vy)
-		: velocity(vx, vy)
+		: mVelocity(vx, vy)
 	{
 	}
 
-	void operator() (Aircraft& aircraft, sf::Time) const
+	void operator() (Aircraft& aircraft) const
 	{
-		aircraft.accelerate(velocity);
+		aircraft.setVelocity(mVelocity);
 	}
 
-	sf::Vector2f velocity;
+	XMFLOAT2 mVelocity;
 };
 
 Player::Player()
@@ -41,13 +41,11 @@ Player::Player()
 
 void Player::handleEvent(CommandQueue& commands)
 {
-	if (event.type == sf::Event::KeyPressed)
-	{
-		// Check if pressed key appears in key binding, trigger command if so
-		auto found = mKeyBinding.find(event.key.code);
-		if (found != mKeyBinding.end() && !isRealtimeAction(found->second))
-			commands.push(mActionBinding[found->second]);
-	}
+
+	// Check if pressed key appears in key binding, trigger command if so
+	auto found = mKeyBinding.find(44);
+	if (found != mKeyBinding.end() && !isRealtimeAction(found->second))
+		commands.push(mActionBinding[found->second]);
 }
 
 void Player::handleRealtimeInput(CommandQueue& commands)
@@ -56,8 +54,8 @@ void Player::handleRealtimeInput(CommandQueue& commands)
 	for (auto pair : mKeyBinding)
 	{
 		// If key is pressed, lookup action and trigger corresponding command
-		if (d3dUtil::IsKeyDown()pair.first) && isRealtimeAction(pair.second))
-			commands.push(mActionBinding[pair.second]);
+		if (d3dUtil::IsKeyDown(pair.first) && isRealtimeAction(pair.second))
+		commands.push(mActionBinding[pair.second]);
 	}
 }
 

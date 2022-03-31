@@ -1,5 +1,6 @@
 #include "sceneNode.h"
 #include "Game.h"
+#include "Command.h"
 #include <algorithm>
 #include <cassert>
 
@@ -108,4 +109,20 @@ void sceneNode::setWorldScale(float x, float y, float z)
 	mWorldScale.x = x;
 	mWorldScale.y = y;
 	mWorldScale.z = z;
+}
+
+void sceneNode::onCommand(const Command& command, const GameTimer& gt)
+{
+	// Command current node, if category matches
+	if (command.category & getCategory())
+		command.action(*this, gt) ;
+
+	// Command children
+	for (Ptr& child : mChildren)
+		child->onCommand(command, gt);
+}
+
+unsigned int sceneNode::getCategory() const
+{
+	return Category::Scene;
 }

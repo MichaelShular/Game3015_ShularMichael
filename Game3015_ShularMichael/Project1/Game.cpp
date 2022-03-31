@@ -95,8 +95,34 @@ void Game::Update(const GameTimer& gt)
 	UpdateMainPassCB(gt);
 	mGameWorld->update(gt);
 	
-
+	processEvents();
 }
+
+void Game::processEvents()
+{
+	CommandQueue& commands = mGameWorld->getCommandQueue();
+	/*sf::Event event;
+
+	
+
+	while (mWindow.pollEvent(event))
+	{
+		switch (event.type)
+		{
+			mPlayer.handleEvent(commands);
+		case sf::Event::Closed:
+			mWindow.close();
+			break;
+		}
+
+		mPlayer.handleRealtimeInput(commands);
+	}*/
+
+	mPlayer.handleEvent(commands);
+	mPlayer.handleRealtimeInput(commands);
+}
+
+
 /// Used as application's main draw 
 /// 
 /// @param: const GameTimer&

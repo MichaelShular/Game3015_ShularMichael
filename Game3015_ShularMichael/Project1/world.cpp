@@ -22,6 +22,12 @@ CommandQueue& World::getCommandQueue()
 /// @param: const GameTimer&
 void World::update(const GameTimer& gt)
 {
+
+	// Forward commands to scene graph, adapt velocity (scrolling, diagonal correction)
+	while (!mCommandQueue.isEmpty())
+		sceneGraph->onCommand(mCommandQueue.pop(), gt);
+
+
 	sceneGraph->update(gt);
 }
 /// Used draw

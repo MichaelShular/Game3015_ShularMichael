@@ -2,6 +2,6 @@
 
 Command::Command()
 	: action()
-	, category()
+	, category(Category::None)
 {
 }

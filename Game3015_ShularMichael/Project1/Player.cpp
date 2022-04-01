@@ -7,6 +7,7 @@
 #include "string"
 #include "algorithm"
 #include "../../Common/MathHelper.h"
+#include <windows.system.diagnostics.h>
 
 struct AircraftMover
 {
@@ -26,10 +27,10 @@ struct AircraftMover
 Player::Player()
 {
 	// Set initial key bindings
-	mKeyBinding[44] = MoveLeft;
-	mKeyBinding[47] = MoveRight;
-	mKeyBinding[66] = MoveUp;
-	mKeyBinding[62] = MoveDown;
+	mKeyBinding[GetAsyncKeyState('W')] = MoveLeft;
+	mKeyBinding[GetAsyncKeyState('S')] = MoveRight;
+	mKeyBinding[GetAsyncKeyState('A')] = MoveUp;
+	mKeyBinding[GetAsyncKeyState('D')] = MoveDown;
 
 	// Set initial action bindings
 	initializeActions();
@@ -39,11 +40,12 @@ Player::Player()
 		pair.second.category = Category::PlayerAircraft;
 }
 
-void Player::handleEvent(CommandQueue& commands)
+void Player::handleEvent(CommandQueue& commands, SHORT key)
 {
-
+	
+	//OutputDebugStringW((L"asad dd aaaa\n"));
 	// Check if pressed key appears in key binding, trigger command if so
-	auto found = mKeyBinding.find(44);
+	auto found = mKeyBinding.find(key);
 	if (found != mKeyBinding.end() && !isRealtimeAction(found->second))
 		commands.push(mActionBinding[found->second]);
 }

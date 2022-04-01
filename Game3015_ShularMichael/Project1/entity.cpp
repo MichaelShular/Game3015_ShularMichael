@@ -33,7 +33,13 @@ XMFLOAT2 Entity::getVelocity() const
 /// @param: GameTimer 
 void Entity::updateCurrent(const GameTimer& gt)
 {
-	mVelocity.x * gt.DeltaTime();
-	mVelocity.y * gt.DeltaTime();
+	XMFLOAT2 mV;
+	mV.x =  mVelocity.x * gt.DeltaTime();
+	mV.y = mVelocity.y * gt.DeltaTime();
+
+	move(mV.x, mV.y, 0);
+
+	renderer->World = getWorldTransform();
+	renderer->NumFramesDirty++;
 
 }

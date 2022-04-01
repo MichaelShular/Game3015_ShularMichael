@@ -124,7 +124,7 @@ void Game::processEvents()
 		mPlayer.handleRealtimeInput(commands);
 	}*/
 
-	mPlayer.handleEvent(commands);
+	mPlayer.handleEvent(commands, key);
 	mPlayer.handleRealtimeInput(commands);
 }
 
@@ -266,6 +266,29 @@ void Game::OnMouseMove(WPARAM btnState, int x, int y)
 /// @param: const GameTimer
 void Game::OnKeyboardInput(const GameTimer& gt)
 {
+	SHORT key;
+
+	if (GetAsyncKeyState('W') & 0x8000)
+	{
+		key = GetAsyncKeyState('W');
+
+	}
+		
+
+	if (GetAsyncKeyState('S') & 0x8000)
+		key = GetAsyncKeyState('S');
+
+
+	if (GetAsyncKeyState('A') & 0x8000)
+		key = GetAsyncKeyState('A');
+
+
+	if (GetAsyncKeyState('D') & 0x8000)
+		key = GetAsyncKeyState('D');
+
+
+	
+
 }
 /// Used to update the transformation of camera
 /// 

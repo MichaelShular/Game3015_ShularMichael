@@ -66,6 +66,11 @@ void sceneNode::draw() const
 	drawChildren();
 }
 
+void sceneNode::move(float x, float y, float z)
+{
+	setWorldPosition(getWorldPosition().x + x, getWorldPosition().y + y, getWorldPosition().z + z);
+}
+
 void sceneNode::drawCurrent() const
 {
 	// Do nothing by default
@@ -131,6 +136,35 @@ void sceneNode::setWorldScale(float x, float y, float z)
 	mWorldScale.x = x;
 	mWorldScale.y = y;
 	mWorldScale.z = z;
+}
+
+XMFLOAT4X4 sceneNode::getWorldTransform() const 
+{
+	XMFLOAT4X4 transform = MathHelper::Identity4x4();
+	XMMATRIX T = XMLoadFloat4x4(&transform);
+	for (const sceneNode* node = this; node != nullptr; node = node->mParent) 
+	{
+		XMMATRIX Tp = XMLoadFloat4x4(&node->getTransform());
+		T = Tp * T;
+	}
+	XMStoreFloat4x4(&transform, T);
+
+	return transform;
+}
+
+XMFLOAT4X4 sceneNode::getTransform() const
+{
+	XMFLOAT4X4 transform;
+
+	XMMATRIX T(XMMatrixTranslation(mWorldPosition.x, mWorldPosition.y, mWorldPosition.z) 
+		* XMMatrixRotationX(XMConvertToRadians(mWorldRotation.x))
+			* XMMatrixRotationY(XMConvertToRadians(mWorldRotation.y))
+				* XMMatrixRotationZ(XMConvertToRadians(mWorldRotation.z))
+					* XMMatrixScaling(mWorldScale.x, mWorldScale.y, mWorldScale.z));
+
+	XMStoreFloat4x4(&transform, T);
+
+	return transform;
 }
 
 void sceneNode::onCommand(const Command& command, const GameTimer& gt)

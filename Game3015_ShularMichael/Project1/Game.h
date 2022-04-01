@@ -122,6 +122,8 @@ public:
 	int ObjectCBIndex;
 
 	Player mPlayer;
+
+	SHORT key;
 };
 
 #endif 

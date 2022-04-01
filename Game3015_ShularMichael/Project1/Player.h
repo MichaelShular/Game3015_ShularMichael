@@ -9,7 +9,7 @@ class Player
 {
 public:
 	Player();
-	void handleEvent(CommandQueue& commands);
+	void handleEvent(CommandQueue& commands, SHORT key);
 	void handleRealtimeInput(CommandQueue& commands);
 #pragma region step 1
 	//static const float		PlayerSpeed;

@@ -73,10 +73,16 @@ public:
 	XMFLOAT3 getWorldScale() ;
 	void setWorldScale(float x, float y, float z);
 
+	XMFLOAT4X4 getWorldTransform() const;
+	XMFLOAT4X4 getTransform() const;
+
+
 	void onCommand(const Command& command, const GameTimer& gt);
 	virtual unsigned int getCategory() const;
 	
 	virtual void draw() const;
+
+	void move(float x, float y, float z);
 private:
 	virtual void updateCurrent(const GameTimer& gt);
 	void updateChildren(const GameTimer& gt);

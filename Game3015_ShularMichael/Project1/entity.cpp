@@ -37,7 +37,7 @@ void Entity::updateCurrent(const GameTimer& gt)
 	mV.x =  mVelocity.x * gt.DeltaTime();
 	mV.y = mVelocity.y * gt.DeltaTime();
 
-	move(mV.x, mV.y, 0);
+	move(0, mV.x,mV.y);
 
 	renderer->World = getWorldTransform();
 	renderer->NumFramesDirty++;

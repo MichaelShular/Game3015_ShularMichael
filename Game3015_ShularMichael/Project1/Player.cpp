@@ -8,7 +8,7 @@
 #include "algorithm"
 #include "../../Common/MathHelper.h"
 #include <windows.system.diagnostics.h>
-
+/// The updates the aircrafts velocity
 struct AircraftMover
 {
 	AircraftMover(float vx, float vy)
@@ -23,7 +23,7 @@ struct AircraftMover
 
 	XMFLOAT2 mVelocity;
 };
-
+/// The defualt conconstructor
 Player::Player()
 {
 	// Set initial key bindings
@@ -39,7 +39,9 @@ Player::Player()
 	for (auto& pair : mActionBinding)
 		pair.second.category = Category::PlayerAircraft;
 }
-
+/// One time events
+/// 
+/// @param: CommandQueue&
 void Player::handleEvent(CommandQueue& commands, int key)
 {
 
@@ -50,7 +52,9 @@ void Player::handleEvent(CommandQueue& commands, int key)
 		commands.push(mActionBinding[found->second]);
 
 }
-
+/// Key presses that are held down
+/// 
+/// @param: CommandQueue&
 void Player::handleRealtimeInput(CommandQueue& commands, int key)
 {
 	// Traverse all assigned keys and check if they are pressed
@@ -62,17 +66,17 @@ void Player::handleRealtimeInput(CommandQueue& commands, int key)
 	}
 }
 
-
+/// Bind actions to an event 
 void Player::initializeActions()
 {
 	const float playerSpeed = 1.0f;
 
-	mActionBinding[MoveLeft].action = derivedAction<Aircraft>(AircraftMover(playerSpeed, 0.f));
-	mActionBinding[MoveRight].action = derivedAction<Aircraft>(AircraftMover(-playerSpeed, 0.f));
-	mActionBinding[MoveUp].action = derivedAction<Aircraft>(AircraftMover(0.f, playerSpeed));
-	mActionBinding[MoveDown].action = derivedAction<Aircraft>(AircraftMover(0.f, -playerSpeed));
+	mActionBinding[MoveLeft].action = derivedAction<Aircraft>(AircraftMover(-playerSpeed * 10, 0.f));
+	mActionBinding[MoveRight].action = derivedAction<Aircraft>(AircraftMover(playerSpeed * 10, 0.f));
+	mActionBinding[MoveUp].action = derivedAction<Aircraft>(AircraftMover(0.f, playerSpeed * 10));
+	mActionBinding[MoveDown].action = derivedAction<Aircraft>(AircraftMover(0.f, -playerSpeed * 10));
 }
-
+/// Switch case
 bool Player::isRealtimeAction(Action action)
 {
 	switch (action)
@@ -87,7 +91,10 @@ bool Player::isRealtimeAction(Action action)
 		return false;
 	}
 }
-
+/// Used to change keys to new keys 
+/// 
+/// @param: Action
+/// @param: unsigned int
 void Player::assignKey(Action action, unsigned int key)
 {
 	// Remove all keys that already map to action
@@ -102,7 +109,10 @@ void Player::assignKey(Action action, unsigned int key)
 	// Insert new binding
 	mKeyBinding[key] = action;
 }
-
+/// Switch the key to new key
+/// 
+/// @param: Action
+/// @return: unsigned int
 unsigned int Player::getAssignedKey(Action action) const
 {
 	for (auto pair : mKeyBinding)

@@ -107,6 +107,8 @@ void Game::Update(const GameTimer& gt)
 	
 }
 
+///Held any commands once or real time input
+
 void Game::processEvents()
 {
 	CommandQueue& commands = mGameWorld->getCommandQueue();
@@ -115,6 +117,9 @@ void Game::processEvents()
 	mPlayer.handleRealtimeInput(commands, key);
 }
 
+/// Used to get command list
+/// 
+/// @returns ID3D12GraphicsCommandList
 ID3D12GraphicsCommandList* Game::getCmdList()
 {
 	return mCommandList.Get();
@@ -254,23 +259,6 @@ void Game::OnMouseMove(WPARAM btnState, int x, int y)
 void Game::OnKeyboardInput(const GameTimer& gt)
 {
 	key = 0;
-	//
-
-	//
-	//if (GetAsyncKeyState('W') & 0x8000)
-	//	key = 66;
-
-	//if (GetAsyncKeyState('S') & 0x8000)
-	//	key = 62;
-
-
-	//if (GetAsyncKeyState('A') & 0x8000)
-	//	key = 44;
-
-
-	//if (GetAsyncKeyState('D') & 0x8000)
-	//	key = 47;
-
 
 }
 /// Used to update the transformation of camera
@@ -284,9 +272,9 @@ void Game::UpdateCamera(const GameTimer& gt)
 	mEyePos.y = mRadius * cosf(mPhi);
 
 	// Build the view matrix.
-	XMVECTOR pos = XMVectorSet(0.0f, mEyePos.y, 5.0f, 1.0f);
-	XMVECTOR target = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
-	XMVECTOR up = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+	XMVECTOR pos = XMVectorSet(-10.0f, -5.0f, 2.0f, 1.0f);
+	XMVECTOR target = XMVectorSet(300.0f, 300.0f, -100.0f, 0.0f);
+	XMVECTOR up = XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
 
 	XMMATRIX view = XMMatrixLookAtLH(pos, target, up);
 	XMStoreFloat4x4(&mView, view);

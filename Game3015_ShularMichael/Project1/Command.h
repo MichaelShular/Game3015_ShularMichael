@@ -8,7 +8,7 @@
 #include <cassert>
 
 class sceneNode;
-
+/// This struct is use as a template to create commands 
 struct Command
 {
 	Command();

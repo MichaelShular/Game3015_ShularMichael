@@ -4,7 +4,7 @@
 #include "map"
 
 class CommandQueue;
-
+/// This class is use as manage the inputs the the player give the game and rebind any key 
 class Player
 {
 public:

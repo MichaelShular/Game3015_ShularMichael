@@ -57,7 +57,7 @@ void sceneNode::updateChildren(const GameTimer& gt)
 		child->update(gt);
 	}
 }
-
+/// Used to draw all childern in sceneNode
 void sceneNode::draw() const
 {
 
@@ -65,17 +65,22 @@ void sceneNode::draw() const
 	drawCurrent();
 	drawChildren();
 }
-
+/// Move the game object position
+/// 
+/// @param: float x
+/// @param: float x
+/// @param: float z
 void sceneNode::move(float x, float y, float z)
 {
 	setWorldPosition(getWorldPosition().x + x, getWorldPosition().y + y, getWorldPosition().z + z);
 }
 
+/// Used to draw
 void sceneNode::drawCurrent() const
 {
 	// Do nothing by default
 }
-
+/// Used to draw the children
 void sceneNode::drawChildren() const
 {
 	for (const Ptr& child : mChildren)
@@ -138,6 +143,9 @@ void sceneNode::setWorldScale(float x, float y, float z)
 	mWorldScale.z = z;
 }
 
+/// Used to get the world transform
+/// 
+/// @return: XMFLOAT4X4
 XMFLOAT4X4 sceneNode::getWorldTransform() const 
 {
 	XMFLOAT4X4 transform = MathHelper::Identity4x4();
@@ -151,7 +159,9 @@ XMFLOAT4X4 sceneNode::getWorldTransform() const
 
 	return transform;
 }
-
+/// Used to get the objects transforms
+/// 
+/// @return: XMFLOAT4X4
 XMFLOAT4X4 sceneNode::getTransform() const
 {
 	XMFLOAT4X4 transform;
@@ -162,11 +172,18 @@ XMFLOAT4X4 sceneNode::getTransform() const
 				* XMMatrixRotationZ(XMConvertToRadians(mWorldRotation.z))
 					* XMMatrixScaling(mWorldScale.x, mWorldScale.y, mWorldScale.z));
 
+	//*XMMatrixRotationX(XMConvertToRadians(mWorldRotation.x))
+	//	* XMMatrixRotationY(XMConvertToRadians(mWorldRotation.y))
+	//	* XMMatrixRotationZ(XMConvertToRadians(mWorldRotation.z))
 	XMStoreFloat4x4(&transform, T);
 
 	return transform;
 }
 
+/// Used to run actions base on command
+/// 
+/// @param:  Command&
+/// @param:  GameTimer&
 void sceneNode::onCommand(const Command& command, const GameTimer& gt)
 {
 	// Command current node, if category matches
@@ -177,7 +194,9 @@ void sceneNode::onCommand(const Command& command, const GameTimer& gt)
 	for (Ptr& child : mChildren)
 		child->onCommand(command, gt);
 }
-
+/// Used get the catefgory
+/// 
+/// @return:  Command&
 unsigned int sceneNode::getCategory() const
 {
 	return Category::Scene;

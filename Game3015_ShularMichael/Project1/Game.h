@@ -123,7 +123,7 @@ public:
 
 	Player mPlayer;
 
-	SHORT key;
+	int key;
 };
 
 #endif 

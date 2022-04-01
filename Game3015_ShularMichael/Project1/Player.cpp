@@ -27,10 +27,10 @@ struct AircraftMover
 Player::Player()
 {
 	// Set initial key bindings
-	mKeyBinding[GetAsyncKeyState('W')] = MoveLeft;
-	mKeyBinding[GetAsyncKeyState('S')] = MoveRight;
-	mKeyBinding[GetAsyncKeyState('A')] = MoveUp;
-	mKeyBinding[GetAsyncKeyState('D')] = MoveDown;
+	mKeyBinding[44] = MoveLeft;
+	mKeyBinding[47] = MoveRight;
+	mKeyBinding[66] = MoveUp;
+	mKeyBinding[62] = MoveDown;
 
 	// Set initial action bindings
 	initializeActions();
@@ -40,31 +40,32 @@ Player::Player()
 		pair.second.category = Category::PlayerAircraft;
 }
 
-void Player::handleEvent(CommandQueue& commands, SHORT key)
+void Player::handleEvent(CommandQueue& commands, int key)
 {
-	
+
 	//OutputDebugStringW((L"asad dd aaaa\n"));
 	// Check if pressed key appears in key binding, trigger command if so
 	auto found = mKeyBinding.find(key);
 	if (found != mKeyBinding.end() && !isRealtimeAction(found->second))
 		commands.push(mActionBinding[found->second]);
+
 }
 
-void Player::handleRealtimeInput(CommandQueue& commands)
+void Player::handleRealtimeInput(CommandQueue& commands, int key)
 {
 	// Traverse all assigned keys and check if they are pressed
 	for (auto pair : mKeyBinding)
 	{
 		// If key is pressed, lookup action and trigger corresponding command
-		if (d3dUtil::IsKeyDown(pair.first) && isRealtimeAction(pair.second))
-		commands.push(mActionBinding[pair.second]);
+		if (key == pair.first && isRealtimeAction(pair.second))
+			commands.push(mActionBinding[pair.second]);
 	}
 }
 
 
 void Player::initializeActions()
 {
-	const float playerSpeed = 200.f;
+	const float playerSpeed = 1.0f;
 
 	mActionBinding[MoveLeft].action = derivedAction<Aircraft>(AircraftMover(-playerSpeed, 0.f));
 	mActionBinding[MoveRight].action = derivedAction<Aircraft>(AircraftMover(+playerSpeed, 0.f));

@@ -9,8 +9,8 @@ class Player
 {
 public:
 	Player();
-	void handleEvent(CommandQueue& commands, SHORT key);
-	void handleRealtimeInput(CommandQueue& commands);
+	void handleEvent(CommandQueue& commands, int key);
+	void handleRealtimeInput(CommandQueue& commands, int key);
 #pragma region step 1
 	//static const float		PlayerSpeed;
 	enum Action
@@ -24,8 +24,8 @@ public:
 
 
 private:
-	void					initializeActions();
-	static bool				isRealtimeAction(Action action);
+	void initializeActions();
+	static bool isRealtimeAction(Action action);
 
 
 private:

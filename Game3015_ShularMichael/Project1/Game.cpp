@@ -73,6 +73,7 @@ void Game::OnResize()
 void Game::Update(const GameTimer& gt)
 {
 	OnKeyboardInput(gt);
+	processEvents();
 	mGameWorld->update(gt);
 
 	UpdateCamera(gt);
@@ -101,7 +102,7 @@ void Game::Update(const GameTimer& gt)
 	
 	
 	
-	processEvents();
+	
 }
 
 void Game::processEvents()
@@ -125,7 +126,7 @@ void Game::processEvents()
 	}*/
 
 	mPlayer.handleEvent(commands, key);
-	mPlayer.handleRealtimeInput(commands);
+	mPlayer.handleRealtimeInput(commands, key);
 }
 
 ID3D12GraphicsCommandList* Game::getCmdList()
@@ -266,28 +267,22 @@ void Game::OnMouseMove(WPARAM btnState, int x, int y)
 /// @param: const GameTimer
 void Game::OnKeyboardInput(const GameTimer& gt)
 {
-	SHORT key;
+	key = 0;
 
 	if (GetAsyncKeyState('W') & 0x8000)
-	{
-		key = GetAsyncKeyState('W');
-
-	}
-		
+		key = 66;
 
 	if (GetAsyncKeyState('S') & 0x8000)
-		key = GetAsyncKeyState('S');
+		key = 62;
 
 
 	if (GetAsyncKeyState('A') & 0x8000)
-		key = GetAsyncKeyState('A');
+		key = 44;
 
 
 	if (GetAsyncKeyState('D') & 0x8000)
-		key = GetAsyncKeyState('D');
+		key = 47;
 
-
-	
 
 }
 /// Used to update the transformation of camera

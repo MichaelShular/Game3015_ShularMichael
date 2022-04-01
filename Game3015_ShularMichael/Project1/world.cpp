@@ -23,13 +23,14 @@ CommandQueue& World::getCommandQueue()
 /// @param: const GameTimer&
 void World::update(const GameTimer& gt)
 {
-	mplayerAircraftOne->setVelocity(1, 0);
+	mplayerAircraftOne->setVelocity(0, 0);
 
 	// Forward commands to scene graph, adapt velocity (scrolling, diagonal correction)
 	while (!mCommandQueue.isEmpty())
 		sceneGraph->onCommand(mCommandQueue.pop(), gt);
 
 	
+
 	sceneGraph->update(gt);
 
 

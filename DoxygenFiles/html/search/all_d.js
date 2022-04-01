@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['passcb_0',['PassCB',['../struct_frame_resource.html#a2a301e2320545cc025551247f9f60df5',1,'FrameResource']]],
-  ['passconstants_1',['PassConstants',['../struct_pass_constants.html',1,'']]],
-  ['pos_2',['Pos',['../struct_vertex.html#af07583772f2c7eee146e655826467dcb',1,'Vertex']]],
-  ['primitivetype_3',['PrimitiveType',['../struct_render_item.html#ab3aad9050526250c4877956789e50b3a',1,'RenderItem']]],
-  ['proj_4',['Proj',['../struct_pass_constants.html#a8af99b882f26e3507717dacc0c957521',1,'PassConstants']]],
-  ['ptr_5',['Ptr',['../classscene_node.html#a21c67aa425d7a41f2d49d277b4192a50',1,'sceneNode']]]
+  ['nearz_0',['NearZ',['../struct_pass_constants.html#affe3124795eccdba77dae8cef5399e7d',1,'PassConstants']]],
+  ['none_1',['None',['../namespace_category.html#a2ff936dbd42aeae91fdfb6f8456a8ab0af5e99963224a9d7e0d16e4a782446ebf',1,'Category']]],
+  ['normal_2',['Normal',['../struct_vertex.html#a553ed48ae98dda36da8e57cfa53877d4',1,'Vertex']]],
+  ['numframesdirty_3',['NumFramesDirty',['../struct_render_item.html#aca6ae2de91638af530fd5ce91fea3306',1,'RenderItem']]]
 ];

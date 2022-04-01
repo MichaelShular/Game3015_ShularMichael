@@ -1,14 +1,16 @@
 var searchData=
 [
-  ['scenenode_0',['sceneNode',['../classscene_node.html',1,'sceneNode'],['../classscene_node.html#a9d0f364b4159293d871bcc85666a2b97',1,'sceneNode::sceneNode()']]],
-  ['scenenode_2ecpp_1',['sceneNode.cpp',['../scene_node_8cpp.html',1,'']]],
-  ['scenenode_2eh_2',['sceneNode.h',['../scene_node_8h.html',1,'']]],
-  ['setvelocity_3',['setVelocity',['../class_entity.html#acf5f6bb1df6f5dba9923a2355b8c0ac2',1,'Entity::setVelocity(XMFLOAT2 velocity)'],['../class_entity.html#a7873fbd61cf1a742d4492ec438a9ac9f',1,'Entity::setVelocity(float vx, float vy)']]],
-  ['setworldposition_4',['setWorldPosition',['../classscene_node.html#aeedc9b6916936a3393f3b10318cc7cef',1,'sceneNode']]],
-  ['setworldrotation_5',['setWorldRotation',['../classscene_node.html#a5e043216420c64193027275f63b9a044',1,'sceneNode']]],
-  ['setworldscale_6',['setWorldScale',['../classscene_node.html#a04a8ab1a9e3a01f211d14c42ec6ee18c',1,'sceneNode']]],
-  ['spritenode_7',['SpriteNode',['../class_sprite_node.html',1,'SpriteNode'],['../class_sprite_node.html#a0f9529fa5cd03852ad18fb56c8fdcd66',1,'SpriteNode::SpriteNode()']]],
-  ['spritenode_2ecpp_8',['SpriteNode.cpp',['../_sprite_node_8cpp.html',1,'']]],
-  ['spritenode_2eh_9',['SpriteNode.h',['../_sprite_node_8h.html',1,'']]],
-  ['startindexlocation_10',['StartIndexLocation',['../struct_render_item.html#a979179c6dd354cd329563e3599245463',1,'RenderItem']]]
+  ['passcb_0',['PassCB',['../struct_frame_resource.html#a2a301e2320545cc025551247f9f60df5',1,'FrameResource']]],
+  ['passconstants_1',['PassConstants',['../struct_pass_constants.html',1,'']]],
+  ['player_2',['Player',['../class_player.html',1,'Player'],['../class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player::Player()']]],
+  ['player_2ecpp_3',['Player.cpp',['../_player_8cpp.html',1,'']]],
+  ['player_2eh_4',['Player.h',['../_player_8h.html',1,'']]],
+  ['playeraircraft_5',['PlayerAircraft',['../namespace_category.html#a2ff936dbd42aeae91fdfb6f8456a8ab0ac17fded322e70d4086e2f5dfcc706679',1,'Category']]],
+  ['pop_6',['pop',['../class_command_queue.html#ac2dde510222b8df393b55978f4594194',1,'CommandQueue']]],
+  ['pos_7',['Pos',['../struct_vertex.html#af07583772f2c7eee146e655826467dcb',1,'Vertex']]],
+  ['primitivetype_8',['PrimitiveType',['../struct_render_item.html#ab3aad9050526250c4877956789e50b3a',1,'RenderItem']]],
+  ['processevents_9',['processEvents',['../class_game.html#a79f698dda206dd7a9bed28b3f88bdc38',1,'Game']]],
+  ['proj_10',['Proj',['../struct_pass_constants.html#a8af99b882f26e3507717dacc0c957521',1,'PassConstants']]],
+  ['ptr_11',['Ptr',['../classscene_node.html#a21c67aa425d7a41f2d49d277b4192a50',1,'sceneNode']]],
+  ['push_12',['push',['../class_command_queue.html#ad444e0d7af45d9e09b834f0cec1e1f43',1,'CommandQueue']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Assignment_1_ShularMichael: sceneNode Class Reference</title>
+<title>Assignment_2_ShularMichael: sceneNode Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Assignment_1_ShularMichael
+   <div id="projectname">Assignment_2_ShularMichael
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('classscene_node.html',''); initResizab
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classscene_node-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">sceneNode Class Reference</div></div>
 </div><!--header-->
@@ -122,9 +123,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9d0f364b4159293d871bcc85666a2b97"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#a9d0f364b4159293d871bcc85666a2b97">sceneNode</a> ()</td></tr>
-<tr class="memdesc:a9d0f364b4159293d871bcc85666a2b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">The defualt conconstructor.  <a href="classscene_node.html#a9d0f364b4159293d871bcc85666a2b97">More...</a><br /></td></tr>
-<tr class="separator:a9d0f364b4159293d871bcc85666a2b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72431ed14b60354b5ff6186ef69bef3b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#a72431ed14b60354b5ff6186ef69bef3b">sceneNode</a> (<a class="el" href="class_game.html">Game</a> *game)</td></tr>
+<tr class="memdesc:a72431ed14b60354b5ff6186ef69bef3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The defualt conconstructor.  <a href="classscene_node.html#a72431ed14b60354b5ff6186ef69bef3b">More...</a><br /></td></tr>
+<tr class="separator:a72431ed14b60354b5ff6186ef69bef3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab208a5760c8e1abb12902bacda7328bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#ab208a5760c8e1abb12902bacda7328bb">attachChild</a> (<a class="el" href="classscene_node.html#a21c67aa425d7a41f2d49d277b4192a50">Ptr</a> child)</td></tr>
 <tr class="memdesc:ab208a5760c8e1abb12902bacda7328bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used attach game objects to <a class="el" href="classscene_node.html" title="This class is used manage transform hierarchies.">sceneNode</a>.  <a href="classscene_node.html#ab208a5760c8e1abb12902bacda7328bb">More...</a><br /></td></tr>
 <tr class="separator:ab208a5760c8e1abb12902bacda7328bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,6 +153,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a04a8ab1a9e3a01f211d14c42ec6ee18c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#a04a8ab1a9e3a01f211d14c42ec6ee18c">setWorldScale</a> (float x, float y, float z)</td></tr>
 <tr class="memdesc:a04a8ab1a9e3a01f211d14c42ec6ee18c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to set game object's world scale.  <a href="classscene_node.html#a04a8ab1a9e3a01f211d14c42ec6ee18c">More...</a><br /></td></tr>
 <tr class="separator:a04a8ab1a9e3a01f211d14c42ec6ee18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab27e1b0913c52cf24b47e2cb2ecf0075"><td class="memItemLeft" align="right" valign="top">XMFLOAT4X4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#ab27e1b0913c52cf24b47e2cb2ecf0075">getWorldTransform</a> () const</td></tr>
+<tr class="memdesc:ab27e1b0913c52cf24b47e2cb2ecf0075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to get the world transform.  <a href="classscene_node.html#ab27e1b0913c52cf24b47e2cb2ecf0075">More...</a><br /></td></tr>
+<tr class="separator:ab27e1b0913c52cf24b47e2cb2ecf0075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77b367b669ada26d734fb4073d8373a5"><td class="memItemLeft" align="right" valign="top">XMFLOAT4X4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#a77b367b669ada26d734fb4073d8373a5">getTransform</a> () const</td></tr>
+<tr class="memdesc:a77b367b669ada26d734fb4073d8373a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to get the objects transforms.  <a href="classscene_node.html#a77b367b669ada26d734fb4073d8373a5">More...</a><br /></td></tr>
+<tr class="separator:a77b367b669ada26d734fb4073d8373a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad74a4378d55458f9f2dab8bf75e00d2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#ad74a4378d55458f9f2dab8bf75e00d2c">onCommand</a> (const <a class="el" href="struct_command.html">Command</a> &amp;command, const GameTimer &amp;gt)</td></tr>
+<tr class="memdesc:ad74a4378d55458f9f2dab8bf75e00d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to run actions base on command.  <a href="classscene_node.html#ad74a4378d55458f9f2dab8bf75e00d2c">More...</a><br /></td></tr>
+<tr class="separator:ad74a4378d55458f9f2dab8bf75e00d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b1780e3fbd4f62f84dafe2f1ab3e503"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#a2b1780e3fbd4f62f84dafe2f1ab3e503">getCategory</a> () const</td></tr>
+<tr class="memdesc:a2b1780e3fbd4f62f84dafe2f1ab3e503"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used get the catefgory.  <a href="classscene_node.html#a2b1780e3fbd4f62f84dafe2f1ab3e503">More...</a><br /></td></tr>
+<tr class="separator:a2b1780e3fbd4f62f84dafe2f1ab3e503"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0d72dc9e183a579d6338f819a0219da"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#af0d72dc9e183a579d6338f819a0219da">draw</a> () const</td></tr>
+<tr class="memdesc:af0d72dc9e183a579d6338f819a0219da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to draw all childern in <a class="el" href="classscene_node.html" title="This class is used manage transform hierarchies.">sceneNode</a>.  <a href="classscene_node.html#af0d72dc9e183a579d6338f819a0219da">More...</a><br /></td></tr>
+<tr class="separator:af0d72dc9e183a579d6338f819a0219da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc1eb2641dd1d6ac46c9d6889b9a7e5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#afc1eb2641dd1d6ac46c9d6889b9a7e5f">move</a> (float x, float y, float z)</td></tr>
+<tr class="memdesc:afc1eb2641dd1d6ac46c9d6889b9a7e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the game object position.  <a href="classscene_node.html#afc1eb2641dd1d6ac46c9d6889b9a7e5f">More...</a><br /></td></tr>
+<tr class="separator:afc1eb2641dd1d6ac46c9d6889b9a7e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a6a9122b14b03583f22774d8a570aa8e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game.html">Game</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#a6a9122b14b03583f22774d8a570aa8e2">mGame</a></td></tr>
+<tr class="separator:a6a9122b14b03583f22774d8a570aa8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60595a6d2e3d81109ac77b05deab0b24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_render_item.html">RenderItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscene_node.html#a60595a6d2e3d81109ac77b05deab0b24">renderer</a></td></tr>
+<tr class="separator:a60595a6d2e3d81109ac77b05deab0b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This class is used manage transform hierarchies. </p>
@@ -171,8 +197,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9d0f364b4159293d871bcc85666a2b97" name="a9d0f364b4159293d871bcc85666a2b97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d0f364b4159293d871bcc85666a2b97">&#9670;&nbsp;</a></span>sceneNode()</h2>
+<a id="a72431ed14b60354b5ff6186ef69bef3b" name="a72431ed14b60354b5ff6186ef69bef3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72431ed14b60354b5ff6186ef69bef3b">&#9670;&nbsp;</a></span>sceneNode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,7 +206,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">sceneNode::sceneNode </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -243,6 +270,83 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="af0d72dc9e183a579d6338f819a0219da" name="af0d72dc9e183a579d6338f819a0219da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0d72dc9e183a579d6338f819a0219da">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sceneNode::draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to draw all childern in <a class="el" href="classscene_node.html" title="This class is used manage transform hierarchies.">sceneNode</a>. </p>
+
+</div>
+</div>
+<a id="a2b1780e3fbd4f62f84dafe2f1ab3e503" name="a2b1780e3fbd4f62f84dafe2f1ab3e503"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b1780e3fbd4f62f84dafe2f1ab3e503">&#9670;&nbsp;</a></span>getCategory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int sceneNode::getCategory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used get the catefgory. </p>
+<dl class="section return"><dt>Returns</dt><dd>: <a class="el" href="struct_command.html" title="This struct is use as a template to create commands.">Command</a>&amp; </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_aircraft.html#a01f9042934c08ef18b62351e6bca320d">Aircraft</a>.</p>
+
+</div>
+</div>
+<a id="a77b367b669ada26d734fb4073d8373a5" name="a77b367b669ada26d734fb4073d8373a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77b367b669ada26d734fb4073d8373a5">&#9670;&nbsp;</a></span>getTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XMFLOAT4X4 sceneNode::getTransform </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Used to get the objects transforms. </p>
+<dl class="section return"><dt>Returns</dt><dd>: XMFLOAT4X4 </dd></dl>
+
+</div>
+</div>
 <a id="ad99cf805a23515aa816b12bb8f06021b" name="ad99cf805a23515aa816b12bb8f06021b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad99cf805a23515aa816b12bb8f06021b">&#9670;&nbsp;</a></span>getWorldPosition()</h2>
 
@@ -300,6 +404,107 @@ Public Member Functions</h2></td></tr>
 
 <p>Used to get game object's world scale. </p>
 <dl class="section return"><dt>Returns</dt><dd>DirectX::XMFLOAT3 </dd></dl>
+
+</div>
+</div>
+<a id="ab27e1b0913c52cf24b47e2cb2ecf0075" name="ab27e1b0913c52cf24b47e2cb2ecf0075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab27e1b0913c52cf24b47e2cb2ecf0075">&#9670;&nbsp;</a></span>getWorldTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XMFLOAT4X4 sceneNode::getWorldTransform </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Used to get the world transform. </p>
+<dl class="section return"><dt>Returns</dt><dd>: XMFLOAT4X4 </dd></dl>
+
+</div>
+</div>
+<a id="afc1eb2641dd1d6ac46c9d6889b9a7e5f" name="afc1eb2641dd1d6ac46c9d6889b9a7e5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc1eb2641dd1d6ac46c9d6889b9a7e5f">&#9670;&nbsp;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sceneNode::move </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Move the game object position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>float x </td></tr>
+    <tr><td class="paramname"></td><td>float x </td></tr>
+    <tr><td class="paramname"></td><td>float z </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad74a4378d55458f9f2dab8bf75e00d2c" name="ad74a4378d55458f9f2dab8bf75e00d2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad74a4378d55458f9f2dab8bf75e00d2c">&#9670;&nbsp;</a></span>onCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sceneNode::onCommand </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_command.html">Command</a> &amp;&#160;</td>
+          <td class="paramname"><em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const GameTimer &amp;&#160;</td>
+          <td class="paramname"><em>gt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Used to run actions base on command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td><a class="el" href="struct_command.html" title="This struct is use as a template to create commands.">Command</a>&amp; </td></tr>
+    <tr><td class="paramname"></td><td>GameTimer&amp; </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -458,6 +663,51 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a6a9122b14b03583f22774d8a570aa8e2" name="a6a9122b14b03583f22774d8a570aa8e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a9122b14b03583f22774d8a570aa8e2">&#9670;&nbsp;</a></span>mGame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game.html">Game</a>* sceneNode::mGame</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60595a6d2e3d81109ac77b05deab0b24" name="a60595a6d2e3d81109ac77b05deab0b24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60595a6d2e3d81109ac77b05deab0b24">&#9670;&nbsp;</a></span>renderer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_render_item.html">RenderItem</a>* sceneNode::renderer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['_7ecrateapp_0',['~CrateApp',['../class_crate_app.html#a800e8be34f9ba08ff87ec15cefe26e16',1,'CrateApp']]],
-  ['_7eframeresource_1',['~FrameResource',['../struct_frame_resource.html#a93d669d1d4db3b4ed5cd6f0f6b921809',1,'FrameResource']]],
-  ['_7egame_2',['~Game',['../class_game.html#ae3d112ca6e0e55150d2fdbc704474530',1,'Game']]]
+  ['vertex_0',['Vertex',['../struct_vertex.html',1,'']]],
+  ['view_1',['View',['../struct_pass_constants.html#a31fec7617b89727cc44c9802c57bb57a',1,'PassConstants']]],
+  ['viewproj_2',['ViewProj',['../struct_pass_constants.html#aa44b7dd1a9692065876bd8d2d6efb76c',1,'PassConstants']]]
 ];

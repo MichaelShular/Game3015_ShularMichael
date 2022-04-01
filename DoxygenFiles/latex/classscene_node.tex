@@ -23,7 +23,7 @@ typedef std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classscene_node}{scene\+Node}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classscene_node_a9d0f364b4159293d871bcc85666a2b97}{scene\+Node}} ()
+\mbox{\hyperlink{classscene_node_a72431ed14b60354b5ff6186ef69bef3b}{scene\+Node}} (\mbox{\hyperlink{class_game}{Game}} $\ast$game)
 \begin{DoxyCompactList}\small\item\em The defualt conconstructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classscene_node_ab208a5760c8e1abb12902bacda7328bb}{attach\+Child}} (\mbox{\hyperlink{classscene_node_a21c67aa425d7a41f2d49d277b4192a50}{Ptr}} child)
 \begin{DoxyCompactList}\small\item\em Used attach game objects to \mbox{\hyperlink{classscene_node}{scene\+Node}}. \end{DoxyCompactList}\item 
@@ -42,7 +42,26 @@ void \mbox{\hyperlink{classscene_node_a5e043216420c64193027275f63b9a044}{set\+Wo
 XMFLOAT3 \mbox{\hyperlink{classscene_node_ad387755feb78ed58905c8da11a96f80e}{get\+World\+Scale}} ()
 \begin{DoxyCompactList}\small\item\em Used to get game object\textquotesingle{}s world scale. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classscene_node_a04a8ab1a9e3a01f211d14c42ec6ee18c}{set\+World\+Scale}} (float x, float y, float z)
-\begin{DoxyCompactList}\small\item\em Used to set game object\textquotesingle{}s world scale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used to set game object\textquotesingle{}s world scale. \end{DoxyCompactList}\item 
+XMFLOAT4\+X4 \mbox{\hyperlink{classscene_node_ab27e1b0913c52cf24b47e2cb2ecf0075}{get\+World\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em Used to get the world transform. \end{DoxyCompactList}\item 
+XMFLOAT4\+X4 \mbox{\hyperlink{classscene_node_a77b367b669ada26d734fb4073d8373a5}{get\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em Used to get the objects transforms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classscene_node_ad74a4378d55458f9f2dab8bf75e00d2c}{on\+Command}} (const \mbox{\hyperlink{struct_command}{Command}} \&command, const Game\+Timer \&gt)
+\begin{DoxyCompactList}\small\item\em Used to run actions base on command. \end{DoxyCompactList}\item 
+virtual unsigned int \mbox{\hyperlink{classscene_node_a2b1780e3fbd4f62f84dafe2f1ab3e503}{get\+Category}} () const
+\begin{DoxyCompactList}\small\item\em Used get the catefgory. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classscene_node_af0d72dc9e183a579d6338f819a0219da}{draw}} () const
+\begin{DoxyCompactList}\small\item\em Used to draw all childern in \mbox{\hyperlink{classscene_node}{scene\+Node}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classscene_node_afc1eb2641dd1d6ac46c9d6889b9a7e5f}{move}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Move the game object position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game}{Game}} $\ast$ \mbox{\hyperlink{classscene_node_a6a9122b14b03583f22774d8a570aa8e2}{m\+Game}}
+\item 
+\mbox{\hyperlink{struct_render_item}{Render\+Item}} $\ast$ \mbox{\hyperlink{classscene_node_a60595a6d2e3d81109ac77b05deab0b24}{renderer}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -58,11 +77,11 @@ This class is used manage transform hierarchies.
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classscene_node_a9d0f364b4159293d871bcc85666a2b97}\label{classscene_node_a9d0f364b4159293d871bcc85666a2b97}} 
+\mbox{\Hypertarget{classscene_node_a72431ed14b60354b5ff6186ef69bef3b}\label{classscene_node_a72431ed14b60354b5ff6186ef69bef3b}} 
 \index{sceneNode@{sceneNode}!sceneNode@{sceneNode}}
 \index{sceneNode@{sceneNode}!sceneNode@{sceneNode}}
 \doxysubsubsection{\texorpdfstring{sceneNode()}{sceneNode()}}
-{\footnotesize\ttfamily scene\+Node\+::scene\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily scene\+Node\+::scene\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game}{Game}} $\ast$}]{game }\end{DoxyParamCaption})}
 
 
 
@@ -101,6 +120,46 @@ Used detach game objects from \mbox{\hyperlink{classscene_node}{scene\+Node}}.
 {\em } & const \mbox{\hyperlink{classscene_node}{scene\+Node}}\& \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classscene_node_af0d72dc9e183a579d6338f819a0219da}\label{classscene_node_af0d72dc9e183a579d6338f819a0219da}} 
+\index{sceneNode@{sceneNode}!draw@{draw}}
+\index{draw@{draw}!sceneNode@{sceneNode}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void scene\+Node\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Used to draw all childern in \mbox{\hyperlink{classscene_node}{scene\+Node}}. 
+
+\mbox{\Hypertarget{classscene_node_a2b1780e3fbd4f62f84dafe2f1ab3e503}\label{classscene_node_a2b1780e3fbd4f62f84dafe2f1ab3e503}} 
+\index{sceneNode@{sceneNode}!getCategory@{getCategory}}
+\index{getCategory@{getCategory}!sceneNode@{sceneNode}}
+\doxysubsubsection{\texorpdfstring{getCategory()}{getCategory()}}
+{\footnotesize\ttfamily unsigned int scene\+Node\+::get\+Category (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Used get the catefgory. 
+
+\begin{DoxyReturn}{Returns}
+\+: \mbox{\hyperlink{struct_command}{Command}}\& 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_aircraft_a01f9042934c08ef18b62351e6bca320d}{Aircraft}}.
+
+\mbox{\Hypertarget{classscene_node_a77b367b669ada26d734fb4073d8373a5}\label{classscene_node_a77b367b669ada26d734fb4073d8373a5}} 
+\index{sceneNode@{sceneNode}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!sceneNode@{sceneNode}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily XMFLOAT4\+X4 scene\+Node\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Used to get the objects transforms. 
+
+\begin{DoxyReturn}{Returns}
+\+: XMFLOAT4\+X4 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classscene_node_ad99cf805a23515aa816b12bb8f06021b}\label{classscene_node_ad99cf805a23515aa816b12bb8f06021b}} 
 \index{sceneNode@{sceneNode}!getWorldPosition@{getWorldPosition}}
 \index{getWorldPosition@{getWorldPosition}!sceneNode@{sceneNode}}
@@ -140,6 +199,55 @@ Used to get game object\textquotesingle{}s world scale.
 \begin{DoxyReturn}{Returns}
 Direct\+X\+::\+XMFLOAT3 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classscene_node_ab27e1b0913c52cf24b47e2cb2ecf0075}\label{classscene_node_ab27e1b0913c52cf24b47e2cb2ecf0075}} 
+\index{sceneNode@{sceneNode}!getWorldTransform@{getWorldTransform}}
+\index{getWorldTransform@{getWorldTransform}!sceneNode@{sceneNode}}
+\doxysubsubsection{\texorpdfstring{getWorldTransform()}{getWorldTransform()}}
+{\footnotesize\ttfamily XMFLOAT4\+X4 scene\+Node\+::get\+World\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Used to get the world transform. 
+
+\begin{DoxyReturn}{Returns}
+\+: XMFLOAT4\+X4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classscene_node_afc1eb2641dd1d6ac46c9d6889b9a7e5f}\label{classscene_node_afc1eb2641dd1d6ac46c9d6889b9a7e5f}} 
+\index{sceneNode@{sceneNode}!move@{move}}
+\index{move@{move}!sceneNode@{sceneNode}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void scene\+Node\+::move (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+
+
+Move the game object position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & float x \\
+\hline
+{\em } & float x \\
+\hline
+{\em } & float z \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classscene_node_ad74a4378d55458f9f2dab8bf75e00d2c}\label{classscene_node_ad74a4378d55458f9f2dab8bf75e00d2c}} 
+\index{sceneNode@{sceneNode}!onCommand@{onCommand}}
+\index{onCommand@{onCommand}!sceneNode@{sceneNode}}
+\doxysubsubsection{\texorpdfstring{onCommand()}{onCommand()}}
+{\footnotesize\ttfamily void scene\+Node\+::on\+Command (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_command}{Command}} \&}]{command,  }\item[{const Game\+Timer \&}]{gt }\end{DoxyParamCaption})}
+
+
+
+Used to run actions base on command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \mbox{\hyperlink{struct_command}{Command}}\& \\
+\hline
+{\em } & Game\+Timer\& \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classscene_node_aeedc9b6916936a3393f3b10318cc7cef}\label{classscene_node_aeedc9b6916936a3393f3b10318cc7cef}} 
 \index{sceneNode@{sceneNode}!setWorldPosition@{setWorldPosition}}
 \index{setWorldPosition@{setWorldPosition}!sceneNode@{sceneNode}}
@@ -212,6 +320,21 @@ Used to update.
 {\em } & const Game\+Timer\& \\
 \hline
 \end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classscene_node_a6a9122b14b03583f22774d8a570aa8e2}\label{classscene_node_a6a9122b14b03583f22774d8a570aa8e2}} 
+\index{sceneNode@{sceneNode}!mGame@{mGame}}
+\index{mGame@{mGame}!sceneNode@{sceneNode}}
+\doxysubsubsection{\texorpdfstring{mGame}{mGame}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game}{Game}}$\ast$ scene\+Node\+::m\+Game\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classscene_node_a60595a6d2e3d81109ac77b05deab0b24}\label{classscene_node_a60595a6d2e3d81109ac77b05deab0b24}} 
+\index{sceneNode@{sceneNode}!renderer@{renderer}}
+\index{renderer@{renderer}!sceneNode@{sceneNode}}
+\doxysubsubsection{\texorpdfstring{renderer}{renderer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_render_item}{Render\+Item}}$\ast$ scene\+Node\+::renderer\hspace{0.3cm}{\ttfamily [protected]}}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

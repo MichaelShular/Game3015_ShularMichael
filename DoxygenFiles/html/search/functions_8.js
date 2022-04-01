@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['loadtextures_0',['LoadTextures',['../class_game.html#a62dae15e7e1828427b696f017ce6241c',1,'Game']]]
+  ['initialize_0',['Initialize',['../class_game.html#a16354d232327f6c21319713bf6983674',1,'Game::Initialize()'],['../class_crate_app.html#afa4f6dbb11ae0d9bb467175803800529',1,'CrateApp::Initialize()']]],
+  ['isempty_1',['isEmpty',['../class_command_queue.html#a3a6eb6a7c83d9b20ad7a6cac63795ec1',1,'CommandQueue']]]
 ];

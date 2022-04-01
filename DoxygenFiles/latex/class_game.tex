@@ -74,7 +74,72 @@ void \mbox{\hyperlink{class_game_ab4c32e9bd2226c780e1dcd5939f4e1db}{Build\+Rende
 void \mbox{\hyperlink{class_game_a58fb5b65b969ba19ac0f5517c91bf9ae}{Draw\+Render\+Items}} (ID3\+D12\+Graphics\+Command\+List $\ast$cmd\+List, const std\+::vector$<$ \mbox{\hyperlink{struct_render_item}{Render\+Item}} $\ast$ $>$ \&ritems)
 \begin{DoxyCompactList}\small\item\em Used to draw game objects. \end{DoxyCompactList}\item 
 std\+::array$<$ const CD3\+DX12\+\_\+\+STATIC\+\_\+\+SAMPLER\+\_\+\+DESC, 6 $>$ \mbox{\hyperlink{class_game_a6e8f674ef01b7480d39fe90374301c2d}{Get\+Static\+Samplers}} ()
-\begin{DoxyCompactList}\small\item\em Used to define samplers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used to define samplers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a79f698dda206dd7a9bed28b3f88bdc38}{process\+Events}} ()
+\begin{DoxyCompactList}\small\item\em Held any commands once or real time input. \end{DoxyCompactList}\item 
+ID3\+D12\+Graphics\+Command\+List $\ast$ \mbox{\hyperlink{class_game_a9283a2ccc7cad9fdd4b25f7979d3c5c1}{get\+Cmd\+List}} ()
+\begin{DoxyCompactList}\small\item\em Used to get command list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} $\ast$ \mbox{\hyperlink{class_game_a6119ac12b9dafae4e105ac9b4e80c1b2}{m\+Curr\+Frame\+Resource}} = nullptr
+\item 
+\mbox{\hyperlink{class_world}{World}} $\ast$ \mbox{\hyperlink{class_game_a859d72feb8f851807c72075806dca8d3}{m\+Game\+World}}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} $>$ $>$ \mbox{\hyperlink{class_game_a2a9401ba48c48468ceef6771309ddff7}{m\+Frame\+Resources}}
+\item 
+int \mbox{\hyperlink{class_game_a1f687875ba94b87162a7dc90b80b0092}{m\+Curr\+Frame\+Resource\+Index}} = 0
+\item 
+UINT \mbox{\hyperlink{class_game_ad7a064571877d4b8becd1f53c98cafa9}{m\+Cbv\+Srv\+Descriptor\+Size}} = 0
+\item 
+Com\+Ptr$<$ ID3\+D12\+Root\+Signature $>$ \mbox{\hyperlink{class_game_a987fac1aded1b4f4b9495eb0f1464c12}{m\+Root\+Signature}} = nullptr
+\item 
+Com\+Ptr$<$ ID3\+D12\+Descriptor\+Heap $>$ \mbox{\hyperlink{class_game_a85befdbe03bbcdd30ad94cd64e0a1bd1}{m\+Srv\+Descriptor\+Heap}} = nullptr
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ Mesh\+Geometry $>$ $>$ \mbox{\hyperlink{class_game_a0e53612a0a54bdd46ea1d8b071260b77}{m\+Geometries}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ Material $>$ $>$ \mbox{\hyperlink{class_game_a871400f233e46cc637f383106e89dd71}{m\+Materials}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ Texture $>$ $>$ \mbox{\hyperlink{class_game_a914940e399d2418018640ef3da130371}{m\+Textures}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, Com\+Ptr$<$ ID3\+DBlob $>$ $>$ \mbox{\hyperlink{class_game_a5d821a872c24ff21b97300d24e37ac23}{m\+Shaders}}
+\item 
+std\+::vector$<$ D3\+D12\+\_\+\+INPUT\+\_\+\+ELEMENT\+\_\+\+DESC $>$ \mbox{\hyperlink{class_game_a4f5868aab9c96810369a9ab91dec1d2b}{m\+Input\+Layout}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, Com\+Ptr$<$ ID3\+D12\+Pipeline\+State $>$ $>$ \mbox{\hyperlink{class_game_a43bb2ff24bf92a5d8dfb1a8ba110d33d}{m\+PSOs}}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_render_item}{Render\+Item}} $>$ $>$ \mbox{\hyperlink{class_game_aa8184a727f9071c3db7e5efa3a6dce49}{m\+All\+Ritems}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_render_item}{Render\+Item}} $\ast$ $>$ \mbox{\hyperlink{class_game_a76919fa066801494d7ec09b5a7c0eea9}{m\+Ritem\+Layer}} \mbox{[}(int) \mbox{\hyperlink{_game_8h_aa63ede3e7371d4bc358f651428d23159ae93f994f01c537c4e2f7d8528c3eb5e9}{Render\+Layer\+::\+Count}}\mbox{]}
+\item 
+\mbox{\hyperlink{struct_pass_constants}{Pass\+Constants}} \mbox{\hyperlink{class_game_ad2759008a4629646703b6e34e0501f6c}{m\+Main\+Pass\+CB}}
+\item 
+XMFLOAT3 \mbox{\hyperlink{class_game_ae4e246d4ac7d6ab877581697072669d4}{m\+Eye\+Pos}} = \{ 0.\+0f, 0.\+0f, 0.\+0f \}
+\item 
+XMFLOAT4\+X4 \mbox{\hyperlink{class_game_abfaa440795c3610368a994a3045d04ba}{m\+View}} = Math\+Helper\+::\+Identity4x4()
+\item 
+XMFLOAT4\+X4 \mbox{\hyperlink{class_game_ad1dd57100e8c53bb9523d66eaa6b2821}{m\+Proj}} = Math\+Helper\+::\+Identity4x4()
+\item 
+float \mbox{\hyperlink{class_game_a39e59e1dd11a26f857e39d0e4451cbb6}{m\+Theta}} = 1.\+3f $\ast$ XM\+\_\+\+PI
+\item 
+float \mbox{\hyperlink{class_game_aad19b4d9a7e09a7afa86f4116a1bea00}{m\+Phi}} = 0.\+4f $\ast$ XM\+\_\+\+PI
+\item 
+float \mbox{\hyperlink{class_game_a2efdc520841a8ea10c504f3536f92f13}{m\+Radius}} = 2.\+5f
+\item 
+POINT \mbox{\hyperlink{class_game_ab5cce9551fdd8b346b36747d6f4d3a38}{m\+Last\+Mouse\+Pos}}
+\item 
+int \mbox{\hyperlink{class_game_aac0224418441df8cb826efcb38ecec23}{Material\+CBIndex\+Count}}
+\item 
+int \mbox{\hyperlink{class_game_aa3eb76b8fe8247b22d8666c469946889}{Diffuse\+Srv\+Heap\+Index\+Count}}
+\item 
+int \mbox{\hyperlink{class_game_a886816436be0cb0f17c4e2e8f9ac5001}{Object\+CBIndex}}
+\item 
+\mbox{\hyperlink{class_player}{Player}} \mbox{\hyperlink{class_game_a1633a90f20203779bc1a1171c2d7ad77}{m\+Player}}
+\item 
+int \mbox{\hyperlink{class_game_a089e8645375ecf0f8a45f6f6472f1d8a}{key}}
+\item 
+int \mbox{\hyperlink{class_game_ab2bd13a04ab0f1d22cc911127f9f400f}{key\+List}} \mbox{[}4\mbox{]} = \{ 66, 62, 44, 47 \}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -268,6 +333,19 @@ Used to draw game objects.
 {\em } & const std\+::vector$<$\+Render\+Item$\ast$$>$\& \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_game_a9283a2ccc7cad9fdd4b25f7979d3c5c1}\label{class_game_a9283a2ccc7cad9fdd4b25f7979d3c5c1}} 
+\index{Game@{Game}!getCmdList@{getCmdList}}
+\index{getCmdList@{getCmdList}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getCmdList()}{getCmdList()}}
+{\footnotesize\ttfamily ID3\+D12\+Graphics\+Command\+List $\ast$ Game\+::get\+Cmd\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used to get command list. 
+
+\begin{DoxyReturn}{Returns}
+ID3\+D12\+Graphics\+Command\+List 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_game_a6e8f674ef01b7480d39fe90374301c2d}\label{class_game_a6e8f674ef01b7480d39fe90374301c2d}} 
 \index{Game@{Game}!GetStaticSamplers@{GetStaticSamplers}}
 \index{GetStaticSamplers@{GetStaticSamplers}!Game@{Game}}
@@ -396,6 +474,16 @@ Used to update the aspect ratio and recompute the projection matrix when window 
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_game}{Game}} \& Game\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game}{Game}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
+\mbox{\Hypertarget{class_game_a79f698dda206dd7a9bed28b3f88bdc38}\label{class_game_a79f698dda206dd7a9bed28b3f88bdc38}} 
+\index{Game@{Game}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{processEvents()}{processEvents()}}
+{\footnotesize\ttfamily void Game\+::process\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Held any commands once or real time input. 
+
 \mbox{\Hypertarget{class_game_ab9244991993b5a1cbde3f1f2d73f2745}\label{class_game_ab9244991993b5a1cbde3f1f2d73f2745}} 
 \index{Game@{Game}!Update@{Update}}
 \index{Update@{Update}!Game@{Game}}
@@ -471,6 +559,183 @@ Used to update game object\textquotesingle{}s CBs.
 {\em } & const Game\+Timer \\
 \hline
 \end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_aa3eb76b8fe8247b22d8666c469946889}\label{class_game_aa3eb76b8fe8247b22d8666c469946889}} 
+\index{Game@{Game}!DiffuseSrvHeapIndexCount@{DiffuseSrvHeapIndexCount}}
+\index{DiffuseSrvHeapIndexCount@{DiffuseSrvHeapIndexCount}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{DiffuseSrvHeapIndexCount}{DiffuseSrvHeapIndexCount}}
+{\footnotesize\ttfamily int Game\+::\+Diffuse\+Srv\+Heap\+Index\+Count}
+
+\mbox{\Hypertarget{class_game_a089e8645375ecf0f8a45f6f6472f1d8a}\label{class_game_a089e8645375ecf0f8a45f6f6472f1d8a}} 
+\index{Game@{Game}!key@{key}}
+\index{key@{key}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily int Game\+::key}
+
+\mbox{\Hypertarget{class_game_ab2bd13a04ab0f1d22cc911127f9f400f}\label{class_game_ab2bd13a04ab0f1d22cc911127f9f400f}} 
+\index{Game@{Game}!keyList@{keyList}}
+\index{keyList@{keyList}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{keyList}{keyList}}
+{\footnotesize\ttfamily int Game\+::key\+List\mbox{[}4\mbox{]} = \{ 66, 62, 44, 47 \}}
+
+\mbox{\Hypertarget{class_game_aa8184a727f9071c3db7e5efa3a6dce49}\label{class_game_aa8184a727f9071c3db7e5efa3a6dce49}} 
+\index{Game@{Game}!mAllRitems@{mAllRitems}}
+\index{mAllRitems@{mAllRitems}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mAllRitems}{mAllRitems}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{struct_render_item}{Render\+Item}}$>$ $>$ Game\+::m\+All\+Ritems}
+
+\mbox{\Hypertarget{class_game_aac0224418441df8cb826efcb38ecec23}\label{class_game_aac0224418441df8cb826efcb38ecec23}} 
+\index{Game@{Game}!MaterialCBIndexCount@{MaterialCBIndexCount}}
+\index{MaterialCBIndexCount@{MaterialCBIndexCount}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{MaterialCBIndexCount}{MaterialCBIndexCount}}
+{\footnotesize\ttfamily int Game\+::\+Material\+CBIndex\+Count}
+
+\mbox{\Hypertarget{class_game_ad7a064571877d4b8becd1f53c98cafa9}\label{class_game_ad7a064571877d4b8becd1f53c98cafa9}} 
+\index{Game@{Game}!mCbvSrvDescriptorSize@{mCbvSrvDescriptorSize}}
+\index{mCbvSrvDescriptorSize@{mCbvSrvDescriptorSize}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mCbvSrvDescriptorSize}{mCbvSrvDescriptorSize}}
+{\footnotesize\ttfamily UINT Game\+::m\+Cbv\+Srv\+Descriptor\+Size = 0}
+
+\mbox{\Hypertarget{class_game_a6119ac12b9dafae4e105ac9b4e80c1b2}\label{class_game_a6119ac12b9dafae4e105ac9b4e80c1b2}} 
+\index{Game@{Game}!mCurrFrameResource@{mCurrFrameResource}}
+\index{mCurrFrameResource@{mCurrFrameResource}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mCurrFrameResource}{mCurrFrameResource}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}}$\ast$ Game\+::m\+Curr\+Frame\+Resource = nullptr}
+
+\mbox{\Hypertarget{class_game_a1f687875ba94b87162a7dc90b80b0092}\label{class_game_a1f687875ba94b87162a7dc90b80b0092}} 
+\index{Game@{Game}!mCurrFrameResourceIndex@{mCurrFrameResourceIndex}}
+\index{mCurrFrameResourceIndex@{mCurrFrameResourceIndex}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mCurrFrameResourceIndex}{mCurrFrameResourceIndex}}
+{\footnotesize\ttfamily int Game\+::m\+Curr\+Frame\+Resource\+Index = 0}
+
+\mbox{\Hypertarget{class_game_ae4e246d4ac7d6ab877581697072669d4}\label{class_game_ae4e246d4ac7d6ab877581697072669d4}} 
+\index{Game@{Game}!mEyePos@{mEyePos}}
+\index{mEyePos@{mEyePos}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mEyePos}{mEyePos}}
+{\footnotesize\ttfamily XMFLOAT3 Game\+::m\+Eye\+Pos = \{ 0.\+0f, 0.\+0f, 0.\+0f \}}
+
+\mbox{\Hypertarget{class_game_a2a9401ba48c48468ceef6771309ddff7}\label{class_game_a2a9401ba48c48468ceef6771309ddff7}} 
+\index{Game@{Game}!mFrameResources@{mFrameResources}}
+\index{mFrameResources@{mFrameResources}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mFrameResources}{mFrameResources}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}}$>$ $>$ Game\+::m\+Frame\+Resources}
+
+\mbox{\Hypertarget{class_game_a859d72feb8f851807c72075806dca8d3}\label{class_game_a859d72feb8f851807c72075806dca8d3}} 
+\index{Game@{Game}!mGameWorld@{mGameWorld}}
+\index{mGameWorld@{mGameWorld}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mGameWorld}{mGameWorld}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_world}{World}}$\ast$ Game\+::m\+Game\+World}
+
+\mbox{\Hypertarget{class_game_a0e53612a0a54bdd46ea1d8b071260b77}\label{class_game_a0e53612a0a54bdd46ea1d8b071260b77}} 
+\index{Game@{Game}!mGeometries@{mGeometries}}
+\index{mGeometries@{mGeometries}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mGeometries}{mGeometries}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::unique\+\_\+ptr$<$Mesh\+Geometry$>$ $>$ Game\+::m\+Geometries}
+
+\mbox{\Hypertarget{class_game_a4f5868aab9c96810369a9ab91dec1d2b}\label{class_game_a4f5868aab9c96810369a9ab91dec1d2b}} 
+\index{Game@{Game}!mInputLayout@{mInputLayout}}
+\index{mInputLayout@{mInputLayout}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mInputLayout}{mInputLayout}}
+{\footnotesize\ttfamily std\+::vector$<$D3\+D12\+\_\+\+INPUT\+\_\+\+ELEMENT\+\_\+\+DESC$>$ Game\+::m\+Input\+Layout}
+
+\mbox{\Hypertarget{class_game_ab5cce9551fdd8b346b36747d6f4d3a38}\label{class_game_ab5cce9551fdd8b346b36747d6f4d3a38}} 
+\index{Game@{Game}!mLastMousePos@{mLastMousePos}}
+\index{mLastMousePos@{mLastMousePos}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mLastMousePos}{mLastMousePos}}
+{\footnotesize\ttfamily POINT Game\+::m\+Last\+Mouse\+Pos}
+
+\mbox{\Hypertarget{class_game_ad2759008a4629646703b6e34e0501f6c}\label{class_game_ad2759008a4629646703b6e34e0501f6c}} 
+\index{Game@{Game}!mMainPassCB@{mMainPassCB}}
+\index{mMainPassCB@{mMainPassCB}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mMainPassCB}{mMainPassCB}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pass_constants}{Pass\+Constants}} Game\+::m\+Main\+Pass\+CB}
+
+\mbox{\Hypertarget{class_game_a871400f233e46cc637f383106e89dd71}\label{class_game_a871400f233e46cc637f383106e89dd71}} 
+\index{Game@{Game}!mMaterials@{mMaterials}}
+\index{mMaterials@{mMaterials}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mMaterials}{mMaterials}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::unique\+\_\+ptr$<$Material$>$ $>$ Game\+::m\+Materials}
+
+\mbox{\Hypertarget{class_game_aad19b4d9a7e09a7afa86f4116a1bea00}\label{class_game_aad19b4d9a7e09a7afa86f4116a1bea00}} 
+\index{Game@{Game}!mPhi@{mPhi}}
+\index{mPhi@{mPhi}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mPhi}{mPhi}}
+{\footnotesize\ttfamily float Game\+::m\+Phi = 0.\+4f $\ast$ XM\+\_\+\+PI}
+
+\mbox{\Hypertarget{class_game_a1633a90f20203779bc1a1171c2d7ad77}\label{class_game_a1633a90f20203779bc1a1171c2d7ad77}} 
+\index{Game@{Game}!mPlayer@{mPlayer}}
+\index{mPlayer@{mPlayer}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mPlayer}{mPlayer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player}{Player}} Game\+::m\+Player}
+
+\mbox{\Hypertarget{class_game_ad1dd57100e8c53bb9523d66eaa6b2821}\label{class_game_ad1dd57100e8c53bb9523d66eaa6b2821}} 
+\index{Game@{Game}!mProj@{mProj}}
+\index{mProj@{mProj}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mProj}{mProj}}
+{\footnotesize\ttfamily XMFLOAT4\+X4 Game\+::m\+Proj = Math\+Helper\+::\+Identity4x4()}
+
+\mbox{\Hypertarget{class_game_a43bb2ff24bf92a5d8dfb1a8ba110d33d}\label{class_game_a43bb2ff24bf92a5d8dfb1a8ba110d33d}} 
+\index{Game@{Game}!mPSOs@{mPSOs}}
+\index{mPSOs@{mPSOs}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mPSOs}{mPSOs}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, Com\+Ptr$<$ID3\+D12\+Pipeline\+State$>$ $>$ Game\+::m\+PSOs}
+
+\mbox{\Hypertarget{class_game_a2efdc520841a8ea10c504f3536f92f13}\label{class_game_a2efdc520841a8ea10c504f3536f92f13}} 
+\index{Game@{Game}!mRadius@{mRadius}}
+\index{mRadius@{mRadius}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mRadius}{mRadius}}
+{\footnotesize\ttfamily float Game\+::m\+Radius = 2.\+5f}
+
+\mbox{\Hypertarget{class_game_a76919fa066801494d7ec09b5a7c0eea9}\label{class_game_a76919fa066801494d7ec09b5a7c0eea9}} 
+\index{Game@{Game}!mRitemLayer@{mRitemLayer}}
+\index{mRitemLayer@{mRitemLayer}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mRitemLayer}{mRitemLayer}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_render_item}{Render\+Item}}$\ast$$>$ Game\+::m\+Ritem\+Layer\mbox{[}(int) \mbox{\hyperlink{_game_8h_aa63ede3e7371d4bc358f651428d23159ae93f994f01c537c4e2f7d8528c3eb5e9}{Render\+Layer\+::\+Count}}\mbox{]}}
+
+\mbox{\Hypertarget{class_game_a987fac1aded1b4f4b9495eb0f1464c12}\label{class_game_a987fac1aded1b4f4b9495eb0f1464c12}} 
+\index{Game@{Game}!mRootSignature@{mRootSignature}}
+\index{mRootSignature@{mRootSignature}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mRootSignature}{mRootSignature}}
+{\footnotesize\ttfamily Com\+Ptr$<$ID3\+D12\+Root\+Signature$>$ Game\+::m\+Root\+Signature = nullptr}
+
+\mbox{\Hypertarget{class_game_a5d821a872c24ff21b97300d24e37ac23}\label{class_game_a5d821a872c24ff21b97300d24e37ac23}} 
+\index{Game@{Game}!mShaders@{mShaders}}
+\index{mShaders@{mShaders}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mShaders}{mShaders}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, Com\+Ptr$<$ID3\+DBlob$>$ $>$ Game\+::m\+Shaders}
+
+\mbox{\Hypertarget{class_game_a85befdbe03bbcdd30ad94cd64e0a1bd1}\label{class_game_a85befdbe03bbcdd30ad94cd64e0a1bd1}} 
+\index{Game@{Game}!mSrvDescriptorHeap@{mSrvDescriptorHeap}}
+\index{mSrvDescriptorHeap@{mSrvDescriptorHeap}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mSrvDescriptorHeap}{mSrvDescriptorHeap}}
+{\footnotesize\ttfamily Com\+Ptr$<$ID3\+D12\+Descriptor\+Heap$>$ Game\+::m\+Srv\+Descriptor\+Heap = nullptr}
+
+\mbox{\Hypertarget{class_game_a914940e399d2418018640ef3da130371}\label{class_game_a914940e399d2418018640ef3da130371}} 
+\index{Game@{Game}!mTextures@{mTextures}}
+\index{mTextures@{mTextures}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mTextures}{mTextures}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::unique\+\_\+ptr$<$Texture$>$ $>$ Game\+::m\+Textures}
+
+\mbox{\Hypertarget{class_game_a39e59e1dd11a26f857e39d0e4451cbb6}\label{class_game_a39e59e1dd11a26f857e39d0e4451cbb6}} 
+\index{Game@{Game}!mTheta@{mTheta}}
+\index{mTheta@{mTheta}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mTheta}{mTheta}}
+{\footnotesize\ttfamily float Game\+::m\+Theta = 1.\+3f $\ast$ XM\+\_\+\+PI}
+
+\mbox{\Hypertarget{class_game_abfaa440795c3610368a994a3045d04ba}\label{class_game_abfaa440795c3610368a994a3045d04ba}} 
+\index{Game@{Game}!mView@{mView}}
+\index{mView@{mView}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mView}{mView}}
+{\footnotesize\ttfamily XMFLOAT4\+X4 Game\+::m\+View = Math\+Helper\+::\+Identity4x4()}
+
+\mbox{\Hypertarget{class_game_a886816436be0cb0f17c4e2e8f9ac5001}\label{class_game_a886816436be0cb0f17c4e2e8f9ac5001}} 
+\index{Game@{Game}!ObjectCBIndex@{ObjectCBIndex}}
+\index{ObjectCBIndex@{ObjectCBIndex}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{ObjectCBIndex}{ObjectCBIndex}}
+{\footnotesize\ttfamily int Game\+::\+Object\+CBIndex}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

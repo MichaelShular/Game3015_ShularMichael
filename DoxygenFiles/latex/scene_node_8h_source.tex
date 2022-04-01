@@ -12,42 +12,96 @@
 \DoxyCodeLine{8 \textcolor{preprocessor}{\#include <vector>}}
 \DoxyCodeLine{9 \textcolor{preprocessor}{\#include <memory>}}
 \DoxyCodeLine{10 }
-\DoxyCodeLine{11 \textcolor{keyword}{using} Microsoft::WRL::ComPtr;}
-\DoxyCodeLine{12 \textcolor{keyword}{using namespace }DirectX;}
-\DoxyCodeLine{13 \textcolor{keyword}{using namespace }DirectX::PackedVector;}
-\DoxyCodeLine{14 }
-\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma comment(lib, "{}d3dcompiler.lib"{}})}
-\DoxyCodeLine{16 \textcolor{preprocessor}{\#pragma comment(lib, "{}D3D12.lib"{}})}
-\DoxyCodeLine{17 }
-\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classscene_node}{sceneNode}}}
-\DoxyCodeLine{20 \{}
-\DoxyCodeLine{21 \textcolor{keyword}{public}:}
-\DoxyCodeLine{22     \textcolor{keyword}{typedef} std::unique\_ptr<sceneNode> \mbox{\hyperlink{classscene_node_a21c67aa425d7a41f2d49d277b4192a50}{Ptr}};}
-\DoxyCodeLine{23 \textcolor{keyword}{public}:}
-\DoxyCodeLine{24     \mbox{\hyperlink{classscene_node_a9d0f364b4159293d871bcc85666a2b97}{sceneNode}}();}
-\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{classscene_node_ab208a5760c8e1abb12902bacda7328bb}{attachChild}}(\mbox{\hyperlink{classscene_node_a21c67aa425d7a41f2d49d277b4192a50}{Ptr}} child);}
-\DoxyCodeLine{26     \mbox{\hyperlink{classscene_node_a21c67aa425d7a41f2d49d277b4192a50}{Ptr}} \mbox{\hyperlink{classscene_node_a4f76b067d297ba0910d7b452dff926a6}{detachChild}}(\textcolor{keyword}{const} \mbox{\hyperlink{classscene_node}{sceneNode}}\& node);}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{classscene_node_a838a34341398f8b9056f0c46aca76261}{update}}(\textcolor{keyword}{const} GameTimer\& gt);}
-\DoxyCodeLine{29     XMFLOAT3 \mbox{\hyperlink{classscene_node_ad99cf805a23515aa816b12bb8f06021b}{getWorldPosition}}();}
-\DoxyCodeLine{30     \textcolor{keywordtype}{void} \mbox{\hyperlink{classscene_node_aeedc9b6916936a3393f3b10318cc7cef}{setWorldPosition}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z) ;}
-\DoxyCodeLine{31     XMFLOAT3 \mbox{\hyperlink{classscene_node_aa82ae55b7add12477b16350a79dabebe}{getWorldRotation}}();}
-\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{classscene_node_a5e043216420c64193027275f63b9a044}{setWorldRotation}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z) ;}
-\DoxyCodeLine{33     XMFLOAT3 \mbox{\hyperlink{classscene_node_ad387755feb78ed58905c8da11a96f80e}{getWorldScale}}() ;}
-\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{classscene_node_a04a8ab1a9e3a01f211d14c42ec6ee18c}{setWorldScale}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z);}
-\DoxyCodeLine{35 \textcolor{keyword}{private}:}
-\DoxyCodeLine{36     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} updateCurrent(\textcolor{keyword}{const} GameTimer\& gt);}
-\DoxyCodeLine{37     \textcolor{keywordtype}{void} updateChildren(\textcolor{keyword}{const} GameTimer\& gt);}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_category_8h}{Category.h}}"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{using} Microsoft::WRL::ComPtr;}
+\DoxyCodeLine{14 \textcolor{keyword}{using namespace }DirectX;}
+\DoxyCodeLine{15 \textcolor{keyword}{using namespace }DirectX::PackedVector;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#pragma comment(lib, "{}d3dcompiler.lib"{}})}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#pragma comment(lib, "{}D3D12.lib"{}})}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// Lightweight structure stores parameters to draw a shape.  This will}}
+\DoxyCodeLine{21 \textcolor{comment}{// vary from app-\/to-\/app.}}
+\DoxyCodeLine{22 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_render_item}{RenderItem}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24     \mbox{\hyperlink{struct_render_item_ad6c4cbd7fea14ab4b71bd3be38208487}{RenderItem}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{comment}{// World matrix of the shape that describes the object's local space}}
+\DoxyCodeLine{27     \textcolor{comment}{// relative to the world space, which defines the position, orientation,}}
+\DoxyCodeLine{28     \textcolor{comment}{// and scale of the object in the world.}}
+\DoxyCodeLine{29     XMFLOAT4X4 \mbox{\hyperlink{class_world}{World}} = MathHelper::Identity4x4();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     XMFLOAT4X4 \mbox{\hyperlink{struct_render_item_ac6799548474209d172cbb3d337f56074}{TexTransform}} = MathHelper::Identity4x4();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{comment}{// Dirty flag indicating the object data has changed and we need to update the constant buffer.}}
+\DoxyCodeLine{34     \textcolor{comment}{// Because we have an object cbuffer for each FrameResource, we have to apply the}}
+\DoxyCodeLine{35     \textcolor{comment}{// update to each FrameResource.  Thus, when we modify obect data we should set }}
+\DoxyCodeLine{36     \textcolor{comment}{// NumFramesDirty = gNumFrameResources so that each frame resource gets the update.}}
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_render_item_aca6ae2de91638af530fd5ce91fea3306}{NumFramesDirty}} = \mbox{\hyperlink{_game_8cpp_a7c82b7821d2662eb6e0cfdc08a6c4bd4}{gNumFrameResources}};}
 \DoxyCodeLine{38 }
-\DoxyCodeLine{39     \textcolor{comment}{/*virtual void draw(const GameTimer\& gt) const;}}
-\DoxyCodeLine{40 \textcolor{comment}{    virtual void drawCurrent(const GameTimer\& gt) const;}}
-\DoxyCodeLine{41 \textcolor{comment}{    void drawChildren(const GameTimer\& gt) const;*/}}
-\DoxyCodeLine{42 \textcolor{keyword}{private}:}
-\DoxyCodeLine{43     std::vector<Ptr> mChildren;}
-\DoxyCodeLine{44     \mbox{\hyperlink{classscene_node}{sceneNode}}* mParent;}
-\DoxyCodeLine{45     XMFLOAT3 mWorldPosition = \{0,0,0\};}
-\DoxyCodeLine{46     XMFLOAT3 mWorldRotation = \{ 0,0,0 \};}
-\DoxyCodeLine{47     XMFLOAT3 mWorldScale = \{ 1,1,1 \};}
-\DoxyCodeLine{48 \};}
+\DoxyCodeLine{39     \textcolor{comment}{// Index into GPU constant buffer corresponding to the ObjectCB for this render item.}}
+\DoxyCodeLine{40     UINT \mbox{\hyperlink{struct_render_item_a4a4015284acd79469b70c358b6c1c2a1}{ObjCBIndex}} = -\/1;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     Material* \mbox{\hyperlink{struct_render_item_a47f9e6fad8619fccc9caa92e3c7c9793}{Mat}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{43     MeshGeometry* \mbox{\hyperlink{struct_render_item_a61681a415ceebcbc0b8f07d616124deb}{Geo}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{comment}{// Primitive topology.}}
+\DoxyCodeLine{46     D3D12\_PRIMITIVE\_TOPOLOGY \mbox{\hyperlink{struct_render_item_ab3aad9050526250c4877956789e50b3a}{PrimitiveType}} = D3D\_PRIMITIVE\_TOPOLOGY\_TRIANGLELIST;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{comment}{// DrawIndexedInstanced parameters.}}
+\DoxyCodeLine{49     UINT \mbox{\hyperlink{struct_render_item_ad95fafa012c0d99c216b998f11207e38}{IndexCount}} = 0;}
+\DoxyCodeLine{50     UINT \mbox{\hyperlink{struct_render_item_a979179c6dd354cd329563e3599245463}{StartIndexLocation}} = 0;}
+\DoxyCodeLine{51     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_render_item_a3750ef7b2791ea922df46e222649f3dc}{BaseVertexLocation}} = 0;}
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{class }\mbox{\hyperlink{class_game}{Game}};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_command}{Command}};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59 \textcolor{keyword}{class }\mbox{\hyperlink{classscene_node}{sceneNode}}}
+\DoxyCodeLine{60 \{}
+\DoxyCodeLine{61 \textcolor{keyword}{public}:}
+\DoxyCodeLine{62     \textcolor{keyword}{typedef} std::unique\_ptr<sceneNode> \mbox{\hyperlink{classscene_node_a21c67aa425d7a41f2d49d277b4192a50}{Ptr}};}
+\DoxyCodeLine{63 \textcolor{keyword}{public}: }
+\DoxyCodeLine{64     \mbox{\hyperlink{classscene_node_a72431ed14b60354b5ff6186ef69bef3b}{sceneNode}}(\mbox{\hyperlink{class_game}{Game}}* game);}
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} \mbox{\hyperlink{classscene_node_ab208a5760c8e1abb12902bacda7328bb}{attachChild}}(\mbox{\hyperlink{classscene_node_a21c67aa425d7a41f2d49d277b4192a50}{Ptr}} child);}
+\DoxyCodeLine{66     \mbox{\hyperlink{classscene_node_a21c67aa425d7a41f2d49d277b4192a50}{Ptr}} \mbox{\hyperlink{classscene_node_a4f76b067d297ba0910d7b452dff926a6}{detachChild}}(\textcolor{keyword}{const} \mbox{\hyperlink{classscene_node}{sceneNode}}\& node);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{classscene_node_a838a34341398f8b9056f0c46aca76261}{update}}(\textcolor{keyword}{const} GameTimer\& gt);}
+\DoxyCodeLine{69     XMFLOAT3 \mbox{\hyperlink{classscene_node_ad99cf805a23515aa816b12bb8f06021b}{getWorldPosition}}();}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{classscene_node_aeedc9b6916936a3393f3b10318cc7cef}{setWorldPosition}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z) ;}
+\DoxyCodeLine{71     XMFLOAT3 \mbox{\hyperlink{classscene_node_aa82ae55b7add12477b16350a79dabebe}{getWorldRotation}}();}
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} \mbox{\hyperlink{classscene_node_a5e043216420c64193027275f63b9a044}{setWorldRotation}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z) ;}
+\DoxyCodeLine{73     XMFLOAT3 \mbox{\hyperlink{classscene_node_ad387755feb78ed58905c8da11a96f80e}{getWorldScale}}() ;}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{classscene_node_a04a8ab1a9e3a01f211d14c42ec6ee18c}{setWorldScale}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     XMFLOAT4X4 \mbox{\hyperlink{classscene_node_ab27e1b0913c52cf24b47e2cb2ecf0075}{getWorldTransform}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{77     XMFLOAT4X4 \mbox{\hyperlink{classscene_node_a77b367b669ada26d734fb4073d8373a5}{getTransform}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{keywordtype}{void} \mbox{\hyperlink{classscene_node_ad74a4378d55458f9f2dab8bf75e00d2c}{onCommand}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_command}{Command}}\& command, \textcolor{keyword}{const} GameTimer\& gt);}
+\DoxyCodeLine{81     \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classscene_node_a2b1780e3fbd4f62f84dafe2f1ab3e503}{getCategory}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{82     }
+\DoxyCodeLine{83     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classscene_node_af0d72dc9e183a579d6338f819a0219da}{draw}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{classscene_node_afc1eb2641dd1d6ac46c9d6889b9a7e5f}{move}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z);}
+\DoxyCodeLine{86 \textcolor{keyword}{private}:}
+\DoxyCodeLine{87     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} updateCurrent(\textcolor{keyword}{const} GameTimer\& gt);}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} updateChildren(\textcolor{keyword}{const} GameTimer\& gt);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     }
+\DoxyCodeLine{91     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} drawCurrent() \textcolor{keyword}{const};}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} drawChildren() \textcolor{keyword}{const};}
+\DoxyCodeLine{93 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{94     \mbox{\hyperlink{class_game}{Game}}* \mbox{\hyperlink{classscene_node_a6a9122b14b03583f22774d8a570aa8e2}{mGame}};}
+\DoxyCodeLine{95     \mbox{\hyperlink{struct_render_item}{RenderItem}}* \mbox{\hyperlink{classscene_node_a60595a6d2e3d81109ac77b05deab0b24}{renderer}};}
+\DoxyCodeLine{96 \textcolor{keyword}{private}:}
+\DoxyCodeLine{97     std::vector<Ptr> mChildren;}
+\DoxyCodeLine{98     \mbox{\hyperlink{classscene_node}{sceneNode}}* mParent;}
+\DoxyCodeLine{99     XMFLOAT3 mWorldPosition = \{0,0,0\};}
+\DoxyCodeLine{100     XMFLOAT3 mWorldRotation = \{ 0,0,0 \};}
+\DoxyCodeLine{101     XMFLOAT3 mWorldScale = \{ 1,1,1 \};}
+\DoxyCodeLine{102 \};}
 
 \end{DoxyCode}

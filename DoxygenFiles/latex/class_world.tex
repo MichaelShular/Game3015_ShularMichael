@@ -21,7 +21,9 @@ void \mbox{\hyperlink{class_world_a2b1049691edabbeca3be712f2be8c36e}{draw}} (con
 std\+::unordered\+\_\+map$<$ std\+::string, std\+::wstring $>$ $\ast$ \mbox{\hyperlink{class_world_a4cca68d1c7ea4bbbbdd6b07bce2ebc78}{get\+Textures}} ()
 \begin{DoxyCompactList}\small\item\em Used to pass information about textures to game. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_world_ae7df49f5d488e5cd1254bf360966f410}{build\+Scene}} ()
-\begin{DoxyCompactList}\small\item\em Used to construct materials for scene and game objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used to construct materials for scene and game objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_command_queue}{Command\+Queue}} \& \mbox{\hyperlink{class_world_af224b413f30c86ec99d042d0f4df56ee}{get\+Command\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em USed to get the command queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -71,6 +73,19 @@ Used draw.
 {\em } & const Game\+Timer\& \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_world_af224b413f30c86ec99d042d0f4df56ee}\label{class_world_af224b413f30c86ec99d042d0f4df56ee}} 
+\index{World@{World}!getCommandQueue@{getCommandQueue}}
+\index{getCommandQueue@{getCommandQueue}!World@{World}}
+\doxysubsubsection{\texorpdfstring{getCommandQueue()}{getCommandQueue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_command_queue}{Command\+Queue}} \& World\+::get\+Command\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+USed to get the command queue. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_command_queue}{Command\+Queue}}\& 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_world_a4cca68d1c7ea4bbbbdd6b07bce2ebc78}\label{class_world_a4cca68d1c7ea4bbbbdd6b07bce2ebc78}} 
 \index{World@{World}!getTextures@{getTextures}}
 \index{getTextures@{getTextures}!World@{World}}

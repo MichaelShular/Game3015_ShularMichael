@@ -14,15 +14,19 @@
 \DoxyCodeLine{11         \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acdaf080b57c0c515dea65f056395cc6d59b}{Raptor}},}
 \DoxyCodeLine{12     \};}
 \DoxyCodeLine{13 \textcolor{keyword}{public}:}
-\DoxyCodeLine{14     \mbox{\hyperlink{class_aircraft_a7182c04a7e319c1a63beb4015cdd6029}{Aircraft}}(\mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}} type);}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_aircraft_ae9d52b44a62c33bf411185829158fba4}{Aircraft}}(\mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}} type, \mbox{\hyperlink{class_game}{Game}}* game);}
 \DoxyCodeLine{15 }
-\DoxyCodeLine{16  }
-\DoxyCodeLine{17 \textcolor{keyword}{private}:}
-\DoxyCodeLine{18     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} drawCurrent() \textcolor{keyword}{const};}
-\DoxyCodeLine{19 \textcolor{keyword}{private}:}
-\DoxyCodeLine{20     \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}} mType;}
-\DoxyCodeLine{21     std::string mSprite;}
-\DoxyCodeLine{22 \};}
+\DoxyCodeLine{16     \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_aircraft_a01f9042934c08ef18b62351e6bca320d}{getCategory}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{17     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_aircraft_ad8f3efef042dae09a8a35255d042741f}{buildAircraft}}();}
+\DoxyCodeLine{18 \textcolor{keyword}{private}:}
+\DoxyCodeLine{19     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} drawCurrent() \textcolor{keyword}{const};}
+\DoxyCodeLine{20 \textcolor{keyword}{private}:}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}} mType;}
+\DoxyCodeLine{22     std::string mSprite;}
 \DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_game}{Game}}* \mbox{\hyperlink{class_aircraft_ae5ed0ff6307e3238597f70741e924a7d}{mGame}};}
+\DoxyCodeLine{26 \};}
+\DoxyCodeLine{27 }
 
 \end{DoxyCode}

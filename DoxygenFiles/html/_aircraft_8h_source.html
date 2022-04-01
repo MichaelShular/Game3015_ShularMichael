@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Assignment_1_ShularMichael: D:/Semester 6/Game Engine Dev 2/Game3015_ShularMichael/Game3015_ShularMichael/Project1/Aircraft.h Source File</title>
+<title>Assignment_2_ShularMichael: D:/Semester 6/Game Engine Dev 2/Game3015_ShularMichael/Game3015_ShularMichael/Project1/Aircraft.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Assignment_1_ShularMichael
+   <div id="projectname">Assignment_2_ShularMichael
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -106,22 +106,30 @@ $(document).ready(function(){initNavTree('_aircraft_8h_source.html',''); initRes
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_aircraft.html#a7dae28542933e088032b753600046acdaf080b57c0c515dea65f056395cc6d59b">   11</a></span>        <a class="code hl_enumvalue" href="class_aircraft.html#a7dae28542933e088032b753600046acdaf080b57c0c515dea65f056395cc6d59b">Raptor</a>,</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    };</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_function" href="class_aircraft.html#a7182c04a7e319c1a63beb4015cdd6029">Aircraft</a>(<a class="code hl_enumeration" href="class_aircraft.html#a7dae28542933e088032b753600046acd">Type</a> type);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_function" href="class_aircraft.html#ae9d52b44a62c33bf411185829158fba4">Aircraft</a>(<a class="code hl_enumeration" href="class_aircraft.html#a7dae28542933e088032b753600046acd">Type</a> type, <a class="code hl_class" href="class_game.html">Game</a>* game);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> drawCurrent() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_enumeration" href="class_aircraft.html#a7dae28542933e088032b753600046acd">Type</a> mType;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::string mSprite;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">virtual</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_aircraft.html#a01f9042934c08ef18b62351e6bca320d">getCategory</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_aircraft.html#ad8f3efef042dae09a8a35255d042741f">buildAircraft</a>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> drawCurrent() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_enumeration" href="class_aircraft.html#a7dae28542933e088032b753600046acd">Type</a> mType;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    std::string mSprite;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_aircraft.html#ae5ed0ff6307e3238597f70741e924a7d">   25</a></span>    <a class="code hl_class" href="class_game.html">Game</a>* <a class="code hl_variable" href="class_aircraft.html#ae5ed0ff6307e3238597f70741e924a7d">mGame</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="ttc" id="aclass_aircraft_html"><div class="ttname"><a href="class_aircraft.html">Aircraft</a></div><div class="ttdoc">This class is the derived class from entity but only of aircrafts.</div><div class="ttdef"><b>Definition:</b> Aircraft.h:6</div></div>
-<div class="ttc" id="aclass_aircraft_html_a7182c04a7e319c1a63beb4015cdd6029"><div class="ttname"><a href="class_aircraft.html#a7182c04a7e319c1a63beb4015cdd6029">Aircraft::Aircraft</a></div><div class="ttdeci">Aircraft(Type type)</div><div class="ttdoc">The defualt conconstructor.</div><div class="ttdef"><b>Definition:</b> Aircraft.cpp:6</div></div>
+<div class="ttc" id="aclass_aircraft_html_a01f9042934c08ef18b62351e6bca320d"><div class="ttname"><a href="class_aircraft.html#a01f9042934c08ef18b62351e6bca320d">Aircraft::getCategory</a></div><div class="ttdeci">virtual unsigned int getCategory() const</div><div class="ttdoc">Used get the catefgory.</div><div class="ttdef"><b>Definition:</b> Aircraft.cpp:56</div></div>
 <div class="ttc" id="aclass_aircraft_html_a7dae28542933e088032b753600046acd"><div class="ttname"><a href="class_aircraft.html#a7dae28542933e088032b753600046acd">Aircraft::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> Aircraft.h:9</div></div>
 <div class="ttc" id="aclass_aircraft_html_a7dae28542933e088032b753600046acdaed1ed20dae2d2d8eaa1d2186c6ee9315"><div class="ttname"><a href="class_aircraft.html#a7dae28542933e088032b753600046acdaed1ed20dae2d2d8eaa1d2186c6ee9315">Aircraft::Eagle</a></div><div class="ttdeci">@ Eagle</div><div class="ttdef"><b>Definition:</b> Aircraft.h:10</div></div>
 <div class="ttc" id="aclass_aircraft_html_a7dae28542933e088032b753600046acdaf080b57c0c515dea65f056395cc6d59b"><div class="ttname"><a href="class_aircraft.html#a7dae28542933e088032b753600046acdaf080b57c0c515dea65f056395cc6d59b">Aircraft::Raptor</a></div><div class="ttdeci">@ Raptor</div><div class="ttdef"><b>Definition:</b> Aircraft.h:11</div></div>
+<div class="ttc" id="aclass_aircraft_html_ad8f3efef042dae09a8a35255d042741f"><div class="ttname"><a href="class_aircraft.html#ad8f3efef042dae09a8a35255d042741f">Aircraft::buildAircraft</a></div><div class="ttdeci">void buildAircraft()</div><div class="ttdef"><b>Definition:</b> Aircraft.cpp:68</div></div>
+<div class="ttc" id="aclass_aircraft_html_ae5ed0ff6307e3238597f70741e924a7d"><div class="ttname"><a href="class_aircraft.html#ae5ed0ff6307e3238597f70741e924a7d">Aircraft::mGame</a></div><div class="ttdeci">Game * mGame</div><div class="ttdef"><b>Definition:</b> Aircraft.h:25</div></div>
+<div class="ttc" id="aclass_aircraft_html_ae9d52b44a62c33bf411185829158fba4"><div class="ttname"><a href="class_aircraft.html#ae9d52b44a62c33bf411185829158fba4">Aircraft::Aircraft</a></div><div class="ttdeci">Aircraft(Type type, Game *game)</div><div class="ttdoc">The defualt conconstructor.</div><div class="ttdef"><b>Definition:</b> Aircraft.cpp:9</div></div>
 <div class="ttc" id="aclass_entity_html"><div class="ttname"><a href="class_entity.html">Entity</a></div><div class="ttdoc">This class game object that are part of the world which could use velocity.</div><div class="ttdef"><b>Definition:</b> entity.h:9</div></div>
+<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdoc">This class is used to Initialize the application, control game loop and hold the D3D12 game engine fu...</div><div class="ttdef"><b>Definition:</b> Game.h:31</div></div>
 <div class="ttc" id="aentity_8h_html"><div class="ttname"><a href="entity_8h.html">entity.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

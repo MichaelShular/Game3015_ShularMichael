@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['objcbindex_0',['ObjCBIndex',['../struct_render_item.html#a4a4015284acd79469b70c358b6c1c2a1',1,'RenderItem']]],
-  ['objectcb_1',['ObjectCB',['../struct_frame_resource.html#adec81cdfb788278fac8ad38066e6c18f',1,'FrameResource']]]
+  ['nearz_0',['NearZ',['../struct_pass_constants.html#affe3124795eccdba77dae8cef5399e7d',1,'PassConstants']]],
+  ['normal_1',['Normal',['../struct_vertex.html#a553ed48ae98dda36da8e57cfa53877d4',1,'Vertex']]],
+  ['numframesdirty_2',['NumFramesDirty',['../struct_render_item.html#aca6ae2de91638af530fd5ce91fea3306',1,'RenderItem']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Assignment_1_ShularMichael: Game Class Reference</title>
+<title>Assignment_2_ShularMichael: Game Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Assignment_1_ShularMichael
+   <div id="projectname">Assignment_2_ShularMichael
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('class_game.html',''); initResizable();
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_game-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Game Class Reference</div></div>
 </div><!--header-->
@@ -194,6 +195,73 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6e8f674ef01b7480d39fe90374301c2d"><td class="memItemLeft" align="right" valign="top">std::array&lt; const CD3DX12_STATIC_SAMPLER_DESC, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a6e8f674ef01b7480d39fe90374301c2d">GetStaticSamplers</a> ()</td></tr>
 <tr class="memdesc:a6e8f674ef01b7480d39fe90374301c2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to define samplers.  <a href="class_game.html#a6e8f674ef01b7480d39fe90374301c2d">More...</a><br /></td></tr>
 <tr class="separator:a6e8f674ef01b7480d39fe90374301c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79f698dda206dd7a9bed28b3f88bdc38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38">processEvents</a> ()</td></tr>
+<tr class="memdesc:a79f698dda206dd7a9bed28b3f88bdc38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Held any commands once or real time input.  <a href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38">More...</a><br /></td></tr>
+<tr class="separator:a79f698dda206dd7a9bed28b3f88bdc38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9283a2ccc7cad9fdd4b25f7979d3c5c1"><td class="memItemLeft" align="right" valign="top">ID3D12GraphicsCommandList *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a9283a2ccc7cad9fdd4b25f7979d3c5c1">getCmdList</a> ()</td></tr>
+<tr class="memdesc:a9283a2ccc7cad9fdd4b25f7979d3c5c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to get command list.  <a href="class_game.html#a9283a2ccc7cad9fdd4b25f7979d3c5c1">More...</a><br /></td></tr>
+<tr class="separator:a9283a2ccc7cad9fdd4b25f7979d3c5c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a6119ac12b9dafae4e105ac9b4e80c1b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_frame_resource.html">FrameResource</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a6119ac12b9dafae4e105ac9b4e80c1b2">mCurrFrameResource</a> = nullptr</td></tr>
+<tr class="separator:a6119ac12b9dafae4e105ac9b4e80c1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a859d72feb8f851807c72075806dca8d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_world.html">World</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a859d72feb8f851807c72075806dca8d3">mGameWorld</a></td></tr>
+<tr class="separator:a859d72feb8f851807c72075806dca8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a9401ba48c48468ceef6771309ddff7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="struct_frame_resource.html">FrameResource</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a2a9401ba48c48468ceef6771309ddff7">mFrameResources</a></td></tr>
+<tr class="separator:a2a9401ba48c48468ceef6771309ddff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f687875ba94b87162a7dc90b80b0092"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a1f687875ba94b87162a7dc90b80b0092">mCurrFrameResourceIndex</a> = 0</td></tr>
+<tr class="separator:a1f687875ba94b87162a7dc90b80b0092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7a064571877d4b8becd1f53c98cafa9"><td class="memItemLeft" align="right" valign="top">UINT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ad7a064571877d4b8becd1f53c98cafa9">mCbvSrvDescriptorSize</a> = 0</td></tr>
+<tr class="separator:ad7a064571877d4b8becd1f53c98cafa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a987fac1aded1b4f4b9495eb0f1464c12"><td class="memItemLeft" align="right" valign="top">ComPtr&lt; ID3D12RootSignature &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a987fac1aded1b4f4b9495eb0f1464c12">mRootSignature</a> = nullptr</td></tr>
+<tr class="separator:a987fac1aded1b4f4b9495eb0f1464c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85befdbe03bbcdd30ad94cd64e0a1bd1"><td class="memItemLeft" align="right" valign="top">ComPtr&lt; ID3D12DescriptorHeap &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a85befdbe03bbcdd30ad94cd64e0a1bd1">mSrvDescriptorHeap</a> = nullptr</td></tr>
+<tr class="separator:a85befdbe03bbcdd30ad94cd64e0a1bd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e53612a0a54bdd46ea1d8b071260b77"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::unique_ptr&lt; MeshGeometry &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a0e53612a0a54bdd46ea1d8b071260b77">mGeometries</a></td></tr>
+<tr class="separator:a0e53612a0a54bdd46ea1d8b071260b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a871400f233e46cc637f383106e89dd71"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::unique_ptr&lt; Material &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a871400f233e46cc637f383106e89dd71">mMaterials</a></td></tr>
+<tr class="separator:a871400f233e46cc637f383106e89dd71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a914940e399d2418018640ef3da130371"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::unique_ptr&lt; Texture &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a914940e399d2418018640ef3da130371">mTextures</a></td></tr>
+<tr class="separator:a914940e399d2418018640ef3da130371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d821a872c24ff21b97300d24e37ac23"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, ComPtr&lt; ID3DBlob &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a5d821a872c24ff21b97300d24e37ac23">mShaders</a></td></tr>
+<tr class="separator:a5d821a872c24ff21b97300d24e37ac23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f5868aab9c96810369a9ab91dec1d2b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; D3D12_INPUT_ELEMENT_DESC &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a4f5868aab9c96810369a9ab91dec1d2b">mInputLayout</a></td></tr>
+<tr class="separator:a4f5868aab9c96810369a9ab91dec1d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43bb2ff24bf92a5d8dfb1a8ba110d33d"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, ComPtr&lt; ID3D12PipelineState &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a43bb2ff24bf92a5d8dfb1a8ba110d33d">mPSOs</a></td></tr>
+<tr class="separator:a43bb2ff24bf92a5d8dfb1a8ba110d33d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8184a727f9071c3db7e5efa3a6dce49"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="struct_render_item.html">RenderItem</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aa8184a727f9071c3db7e5efa3a6dce49">mAllRitems</a></td></tr>
+<tr class="separator:aa8184a727f9071c3db7e5efa3a6dce49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76919fa066801494d7ec09b5a7c0eea9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_render_item.html">RenderItem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a76919fa066801494d7ec09b5a7c0eea9">mRitemLayer</a> [(int) <a class="el" href="_game_8h.html#aa63ede3e7371d4bc358f651428d23159ae93f994f01c537c4e2f7d8528c3eb5e9">RenderLayer::Count</a>]</td></tr>
+<tr class="separator:a76919fa066801494d7ec09b5a7c0eea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2759008a4629646703b6e34e0501f6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_pass_constants.html">PassConstants</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ad2759008a4629646703b6e34e0501f6c">mMainPassCB</a></td></tr>
+<tr class="separator:ad2759008a4629646703b6e34e0501f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e246d4ac7d6ab877581697072669d4"><td class="memItemLeft" align="right" valign="top">XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ae4e246d4ac7d6ab877581697072669d4">mEyePos</a> = { 0.0f, 0.0f, 0.0f }</td></tr>
+<tr class="separator:ae4e246d4ac7d6ab877581697072669d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfaa440795c3610368a994a3045d04ba"><td class="memItemLeft" align="right" valign="top">XMFLOAT4X4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#abfaa440795c3610368a994a3045d04ba">mView</a> = MathHelper::Identity4x4()</td></tr>
+<tr class="separator:abfaa440795c3610368a994a3045d04ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1dd57100e8c53bb9523d66eaa6b2821"><td class="memItemLeft" align="right" valign="top">XMFLOAT4X4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ad1dd57100e8c53bb9523d66eaa6b2821">mProj</a> = MathHelper::Identity4x4()</td></tr>
+<tr class="separator:ad1dd57100e8c53bb9523d66eaa6b2821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39e59e1dd11a26f857e39d0e4451cbb6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a39e59e1dd11a26f857e39d0e4451cbb6">mTheta</a> = 1.3f * XM_PI</td></tr>
+<tr class="separator:a39e59e1dd11a26f857e39d0e4451cbb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad19b4d9a7e09a7afa86f4116a1bea00"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aad19b4d9a7e09a7afa86f4116a1bea00">mPhi</a> = 0.4f * XM_PI</td></tr>
+<tr class="separator:aad19b4d9a7e09a7afa86f4116a1bea00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2efdc520841a8ea10c504f3536f92f13"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a2efdc520841a8ea10c504f3536f92f13">mRadius</a> = 2.5f</td></tr>
+<tr class="separator:a2efdc520841a8ea10c504f3536f92f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5cce9551fdd8b346b36747d6f4d3a38"><td class="memItemLeft" align="right" valign="top">POINT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ab5cce9551fdd8b346b36747d6f4d3a38">mLastMousePos</a></td></tr>
+<tr class="separator:ab5cce9551fdd8b346b36747d6f4d3a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac0224418441df8cb826efcb38ecec23"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aac0224418441df8cb826efcb38ecec23">MaterialCBIndexCount</a></td></tr>
+<tr class="separator:aac0224418441df8cb826efcb38ecec23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3eb76b8fe8247b22d8666c469946889"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aa3eb76b8fe8247b22d8666c469946889">DiffuseSrvHeapIndexCount</a></td></tr>
+<tr class="separator:aa3eb76b8fe8247b22d8666c469946889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a886816436be0cb0f17c4e2e8f9ac5001"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a886816436be0cb0f17c4e2e8f9ac5001">ObjectCBIndex</a></td></tr>
+<tr class="separator:a886816436be0cb0f17c4e2e8f9ac5001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1633a90f20203779bc1a1171c2d7ad77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player.html">Player</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a1633a90f20203779bc1a1171c2d7ad77">mPlayer</a></td></tr>
+<tr class="separator:a1633a90f20203779bc1a1171c2d7ad77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a089e8645375ecf0f8a45f6f6472f1d8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a089e8645375ecf0f8a45f6f6472f1d8a">key</a></td></tr>
+<tr class="separator:a089e8645375ecf0f8a45f6f6472f1d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2bd13a04ab0f1d22cc911127f9f400f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ab2bd13a04ab0f1d22cc911127f9f400f">keyList</a> [4] = { 66, 62, 44, 47 }</td></tr>
+<tr class="separator:ab2bd13a04ab0f1d22cc911127f9f400f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This class is used to Initialize the application, control game loop and hold the D3D12 game engine function. <br  />
@@ -584,6 +652,26 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a9283a2ccc7cad9fdd4b25f7979d3c5c1" name="a9283a2ccc7cad9fdd4b25f7979d3c5c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9283a2ccc7cad9fdd4b25f7979d3c5c1">&#9670;&nbsp;</a></span>getCmdList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ID3D12GraphicsCommandList * Game::getCmdList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Used to get command list. </p>
+<dl class="section return"><dt>Returns</dt><dd>ID3D12GraphicsCommandList </dd></dl>
+
+</div>
+</div>
 <a id="a6e8f674ef01b7480d39fe90374301c2d" name="a6e8f674ef01b7480d39fe90374301c2d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e8f674ef01b7480d39fe90374301c2d">&#9670;&nbsp;</a></span>GetStaticSamplers()</h2>
 
@@ -903,6 +991,25 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a79f698dda206dd7a9bed28b3f88bdc38" name="a79f698dda206dd7a9bed28b3f88bdc38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79f698dda206dd7a9bed28b3f88bdc38">&#9670;&nbsp;</a></span>processEvents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::processEvents </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Held any commands once or real time input. </p>
+
+</div>
+</div>
 <a id="ab9244991993b5a1cbde3f1f2d73f2745" name="ab9244991993b5a1cbde3f1f2d73f2745"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9244991993b5a1cbde3f1f2d73f2745">&#9670;&nbsp;</a></span>Update()</h2>
 
@@ -1038,6 +1145,413 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa3eb76b8fe8247b22d8666c469946889" name="aa3eb76b8fe8247b22d8666c469946889"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3eb76b8fe8247b22d8666c469946889">&#9670;&nbsp;</a></span>DiffuseSrvHeapIndexCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Game::DiffuseSrvHeapIndexCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a089e8645375ecf0f8a45f6f6472f1d8a" name="a089e8645375ecf0f8a45f6f6472f1d8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a089e8645375ecf0f8a45f6f6472f1d8a">&#9670;&nbsp;</a></span>key</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Game::key</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2bd13a04ab0f1d22cc911127f9f400f" name="ab2bd13a04ab0f1d22cc911127f9f400f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2bd13a04ab0f1d22cc911127f9f400f">&#9670;&nbsp;</a></span>keyList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Game::keyList[4] = { 66, 62, 44, 47 }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8184a727f9071c3db7e5efa3a6dce49" name="aa8184a727f9071c3db7e5efa3a6dce49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8184a727f9071c3db7e5efa3a6dce49">&#9670;&nbsp;</a></span>mAllRitems</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::unique_ptr&lt;<a class="el" href="struct_render_item.html">RenderItem</a>&gt; &gt; Game::mAllRitems</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aac0224418441df8cb826efcb38ecec23" name="aac0224418441df8cb826efcb38ecec23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac0224418441df8cb826efcb38ecec23">&#9670;&nbsp;</a></span>MaterialCBIndexCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Game::MaterialCBIndexCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad7a064571877d4b8becd1f53c98cafa9" name="ad7a064571877d4b8becd1f53c98cafa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7a064571877d4b8becd1f53c98cafa9">&#9670;&nbsp;</a></span>mCbvSrvDescriptorSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UINT Game::mCbvSrvDescriptorSize = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6119ac12b9dafae4e105ac9b4e80c1b2" name="a6119ac12b9dafae4e105ac9b4e80c1b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6119ac12b9dafae4e105ac9b4e80c1b2">&#9670;&nbsp;</a></span>mCurrFrameResource</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_frame_resource.html">FrameResource</a>* Game::mCurrFrameResource = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f687875ba94b87162a7dc90b80b0092" name="a1f687875ba94b87162a7dc90b80b0092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f687875ba94b87162a7dc90b80b0092">&#9670;&nbsp;</a></span>mCurrFrameResourceIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Game::mCurrFrameResourceIndex = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4e246d4ac7d6ab877581697072669d4" name="ae4e246d4ac7d6ab877581697072669d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4e246d4ac7d6ab877581697072669d4">&#9670;&nbsp;</a></span>mEyePos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XMFLOAT3 Game::mEyePos = { 0.0f, 0.0f, 0.0f }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2a9401ba48c48468ceef6771309ddff7" name="a2a9401ba48c48468ceef6771309ddff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a9401ba48c48468ceef6771309ddff7">&#9670;&nbsp;</a></span>mFrameResources</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::unique_ptr&lt;<a class="el" href="struct_frame_resource.html">FrameResource</a>&gt; &gt; Game::mFrameResources</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a859d72feb8f851807c72075806dca8d3" name="a859d72feb8f851807c72075806dca8d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a859d72feb8f851807c72075806dca8d3">&#9670;&nbsp;</a></span>mGameWorld</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_world.html">World</a>* Game::mGameWorld</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0e53612a0a54bdd46ea1d8b071260b77" name="a0e53612a0a54bdd46ea1d8b071260b77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e53612a0a54bdd46ea1d8b071260b77">&#9670;&nbsp;</a></span>mGeometries</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, std::unique_ptr&lt;MeshGeometry&gt; &gt; Game::mGeometries</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4f5868aab9c96810369a9ab91dec1d2b" name="a4f5868aab9c96810369a9ab91dec1d2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f5868aab9c96810369a9ab91dec1d2b">&#9670;&nbsp;</a></span>mInputLayout</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;D3D12_INPUT_ELEMENT_DESC&gt; Game::mInputLayout</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab5cce9551fdd8b346b36747d6f4d3a38" name="ab5cce9551fdd8b346b36747d6f4d3a38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5cce9551fdd8b346b36747d6f4d3a38">&#9670;&nbsp;</a></span>mLastMousePos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">POINT Game::mLastMousePos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad2759008a4629646703b6e34e0501f6c" name="ad2759008a4629646703b6e34e0501f6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2759008a4629646703b6e34e0501f6c">&#9670;&nbsp;</a></span>mMainPassCB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_pass_constants.html">PassConstants</a> Game::mMainPassCB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a871400f233e46cc637f383106e89dd71" name="a871400f233e46cc637f383106e89dd71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a871400f233e46cc637f383106e89dd71">&#9670;&nbsp;</a></span>mMaterials</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, std::unique_ptr&lt;Material&gt; &gt; Game::mMaterials</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad19b4d9a7e09a7afa86f4116a1bea00" name="aad19b4d9a7e09a7afa86f4116a1bea00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad19b4d9a7e09a7afa86f4116a1bea00">&#9670;&nbsp;</a></span>mPhi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Game::mPhi = 0.4f * XM_PI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1633a90f20203779bc1a1171c2d7ad77" name="a1633a90f20203779bc1a1171c2d7ad77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1633a90f20203779bc1a1171c2d7ad77">&#9670;&nbsp;</a></span>mPlayer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_player.html">Player</a> Game::mPlayer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1dd57100e8c53bb9523d66eaa6b2821" name="ad1dd57100e8c53bb9523d66eaa6b2821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1dd57100e8c53bb9523d66eaa6b2821">&#9670;&nbsp;</a></span>mProj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XMFLOAT4X4 Game::mProj = MathHelper::Identity4x4()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a43bb2ff24bf92a5d8dfb1a8ba110d33d" name="a43bb2ff24bf92a5d8dfb1a8ba110d33d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43bb2ff24bf92a5d8dfb1a8ba110d33d">&#9670;&nbsp;</a></span>mPSOs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, ComPtr&lt;ID3D12PipelineState&gt; &gt; Game::mPSOs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2efdc520841a8ea10c504f3536f92f13" name="a2efdc520841a8ea10c504f3536f92f13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2efdc520841a8ea10c504f3536f92f13">&#9670;&nbsp;</a></span>mRadius</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Game::mRadius = 2.5f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76919fa066801494d7ec09b5a7c0eea9" name="a76919fa066801494d7ec09b5a7c0eea9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76919fa066801494d7ec09b5a7c0eea9">&#9670;&nbsp;</a></span>mRitemLayer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="struct_render_item.html">RenderItem</a>*&gt; Game::mRitemLayer[(int) <a class="el" href="_game_8h.html#aa63ede3e7371d4bc358f651428d23159ae93f994f01c537c4e2f7d8528c3eb5e9">RenderLayer::Count</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a987fac1aded1b4f4b9495eb0f1464c12" name="a987fac1aded1b4f4b9495eb0f1464c12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a987fac1aded1b4f4b9495eb0f1464c12">&#9670;&nbsp;</a></span>mRootSignature</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComPtr&lt;ID3D12RootSignature&gt; Game::mRootSignature = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5d821a872c24ff21b97300d24e37ac23" name="a5d821a872c24ff21b97300d24e37ac23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d821a872c24ff21b97300d24e37ac23">&#9670;&nbsp;</a></span>mShaders</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, ComPtr&lt;ID3DBlob&gt; &gt; Game::mShaders</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85befdbe03bbcdd30ad94cd64e0a1bd1" name="a85befdbe03bbcdd30ad94cd64e0a1bd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85befdbe03bbcdd30ad94cd64e0a1bd1">&#9670;&nbsp;</a></span>mSrvDescriptorHeap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComPtr&lt;ID3D12DescriptorHeap&gt; Game::mSrvDescriptorHeap = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a914940e399d2418018640ef3da130371" name="a914940e399d2418018640ef3da130371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a914940e399d2418018640ef3da130371">&#9670;&nbsp;</a></span>mTextures</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, std::unique_ptr&lt;Texture&gt; &gt; Game::mTextures</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a39e59e1dd11a26f857e39d0e4451cbb6" name="a39e59e1dd11a26f857e39d0e4451cbb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39e59e1dd11a26f857e39d0e4451cbb6">&#9670;&nbsp;</a></span>mTheta</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Game::mTheta = 1.3f * XM_PI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abfaa440795c3610368a994a3045d04ba" name="abfaa440795c3610368a994a3045d04ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfaa440795c3610368a994a3045d04ba">&#9670;&nbsp;</a></span>mView</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XMFLOAT4X4 Game::mView = MathHelper::Identity4x4()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a886816436be0cb0f17c4e2e8f9ac5001" name="a886816436be0cb0f17c4e2e8f9ac5001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a886816436be0cb0f17c4e2e8f9ac5001">&#9670;&nbsp;</a></span>ObjectCBIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Game::ObjectCBIndex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

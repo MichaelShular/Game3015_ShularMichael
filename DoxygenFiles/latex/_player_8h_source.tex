@@ -1,0 +1,45 @@
+\hypertarget{_player_8h_source}{}\doxysection{Player.\+h}
+\label{_player_8h_source}\index{D:/Semester 6/Game Engine Dev 2/Game3015\_ShularMichael/Game3015\_ShularMichael/Project1/Player.h@{D:/Semester 6/Game Engine Dev 2/Game3015\_ShularMichael/Game3015\_ShularMichael/Project1/Player.h}}
+\mbox{\hyperlink{_player_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_command_8h}{Command.h}}"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}map"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_command_queue}{CommandQueue}};}
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_player}{Player}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11     \mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}}();}
+\DoxyCodeLine{12     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a970b29d843de1140390639243985c857}{handleEvent}}(\mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands, \textcolor{keywordtype}{int} key);}
+\DoxyCodeLine{13     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_af2302f4e7701c7487dfb12ffc1a25d61}{handleRealtimeInput}}(\mbox{\hyperlink{class_command_queue}{CommandQueue}}\& commands, \textcolor{keywordtype}{int} key);}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#pragma region step 1}}
+\DoxyCodeLine{15     \textcolor{comment}{//static const float        PlayerSpeed;}}
+\DoxyCodeLine{16     \textcolor{keyword}{enum} \mbox{\hyperlink{class_player_a2da5df212d083bbb1460237f34ab0d88}{Action}}}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_player_a2da5df212d083bbb1460237f34ab0d88a0166b28e57a9a8553a603a4c0fbe5807}{MoveLeft}},}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_player_a2da5df212d083bbb1460237f34ab0d88aa89dbd9060b77566a66b115531df631b}{MoveRight}},}
+\DoxyCodeLine{20         \mbox{\hyperlink{class_player_a2da5df212d083bbb1460237f34ab0d88a6c74df21e9d4e850dd175a23b78c6540}{MoveUp}},}
+\DoxyCodeLine{21         \mbox{\hyperlink{class_player_a2da5df212d083bbb1460237f34ab0d88a685fada3f0a5111b3b8e56f5357a05b0}{MoveDown}},}
+\DoxyCodeLine{22         \mbox{\hyperlink{class_player_a2da5df212d083bbb1460237f34ab0d88a0b5dc1e9ee9644d81f6198e23da6dc74}{ActionCount}}}
+\DoxyCodeLine{23     \};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_ac671c6ae1b7d768d59de06e4778ea756}{assignKey}}(\mbox{\hyperlink{class_player_a2da5df212d083bbb1460237f34ab0d88}{Action}} action, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} key);}
+\DoxyCodeLine{26     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_af64c061ada178e5c3cb7cb97058dc3c1}{getAssignedKey}}(\mbox{\hyperlink{class_player_a2da5df212d083bbb1460237f34ab0d88}{Action}} action) \textcolor{keyword}{const};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{private}:}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} initializeActions();}
+\DoxyCodeLine{31     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} isRealtimeAction(\mbox{\hyperlink{class_player_a2da5df212d083bbb1460237f34ab0d88}{Action}} action);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{private}:}
+\DoxyCodeLine{35     std::map<unsigned int, Action> mKeyBinding;}
+\DoxyCodeLine{36     std::map<Action, Command> mActionBinding;}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \};}
+
+\end{DoxyCode}

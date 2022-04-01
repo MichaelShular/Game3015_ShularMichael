@@ -25,8 +25,17 @@ enum \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}} \
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_aircraft_a7182c04a7e319c1a63beb4015cdd6029}{Aircraft}} (\mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}} type)
-\begin{DoxyCompactList}\small\item\em The defualt conconstructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_aircraft_ae9d52b44a62c33bf411185829158fba4}{Aircraft}} (\mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}} type, \mbox{\hyperlink{class_game}{Game}} $\ast$game)
+\begin{DoxyCompactList}\small\item\em The defualt conconstructor. \end{DoxyCompactList}\item 
+virtual unsigned int \mbox{\hyperlink{class_aircraft_a01f9042934c08ef18b62351e6bca320d}{get\+Category}} () const
+\begin{DoxyCompactList}\small\item\em Used get the catefgory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_aircraft_ad8f3efef042dae09a8a35255d042741f}{build\+Aircraft}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game}{Game}} $\ast$ \mbox{\hyperlink{class_aircraft_ae5ed0ff6307e3238597f70741e924a7d}{m\+Game}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -53,11 +62,11 @@ Raptor&\\
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_aircraft_a7182c04a7e319c1a63beb4015cdd6029}\label{class_aircraft_a7182c04a7e319c1a63beb4015cdd6029}} 
+\mbox{\Hypertarget{class_aircraft_ae9d52b44a62c33bf411185829158fba4}\label{class_aircraft_ae9d52b44a62c33bf411185829158fba4}} 
 \index{Aircraft@{Aircraft}!Aircraft@{Aircraft}}
 \index{Aircraft@{Aircraft}!Aircraft@{Aircraft}}
 \doxysubsubsection{\texorpdfstring{Aircraft()}{Aircraft()}}
-{\footnotesize\ttfamily Aircraft\+::\+Aircraft (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}}}]{type }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Aircraft\+::\+Aircraft (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}}}]{type,  }\item[{\mbox{\hyperlink{class_game}{Game}} $\ast$}]{game }\end{DoxyParamCaption})}
 
 
 
@@ -68,6 +77,41 @@ The defualt conconstructor.
 {\em } & enum Type\+: use to switch sprites \\
 \hline
 \end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_aircraft_ad8f3efef042dae09a8a35255d042741f}\label{class_aircraft_ad8f3efef042dae09a8a35255d042741f}} 
+\index{Aircraft@{Aircraft}!buildAircraft@{buildAircraft}}
+\index{buildAircraft@{buildAircraft}!Aircraft@{Aircraft}}
+\doxysubsubsection{\texorpdfstring{buildAircraft()}{buildAircraft()}}
+{\footnotesize\ttfamily void Aircraft\+::build\+Aircraft (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_aircraft_a01f9042934c08ef18b62351e6bca320d}\label{class_aircraft_a01f9042934c08ef18b62351e6bca320d}} 
+\index{Aircraft@{Aircraft}!getCategory@{getCategory}}
+\index{getCategory@{getCategory}!Aircraft@{Aircraft}}
+\doxysubsubsection{\texorpdfstring{getCategory()}{getCategory()}}
+{\footnotesize\ttfamily unsigned int Aircraft\+::get\+Category (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Used get the catefgory. 
+
+\begin{DoxyReturn}{Returns}
+\+: \mbox{\hyperlink{struct_command}{Command}}\& 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classscene_node_a2b1780e3fbd4f62f84dafe2f1ab3e503}{scene\+Node}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_aircraft_ae5ed0ff6307e3238597f70741e924a7d}\label{class_aircraft_ae5ed0ff6307e3238597f70741e924a7d}} 
+\index{Aircraft@{Aircraft}!mGame@{mGame}}
+\index{mGame@{mGame}!Aircraft@{Aircraft}}
+\doxysubsubsection{\texorpdfstring{mGame}{mGame}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game}{Game}}$\ast$ Aircraft\+::m\+Game\hspace{0.3cm}{\ttfamily [protected]}}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

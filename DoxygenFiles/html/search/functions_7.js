@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['initialize_0',['Initialize',['../class_game.html#a16354d232327f6c21319713bf6983674',1,'Game::Initialize()'],['../class_crate_app.html#afa4f6dbb11ae0d9bb467175803800529',1,'CrateApp::Initialize()']]]
+  ['handleevent_0',['handleEvent',['../class_player.html#a970b29d843de1140390639243985c857',1,'Player']]],
+  ['handlerealtimeinput_1',['handleRealtimeInput',['../class_player.html#af2302f4e7701c7487dfb12ffc1a25d61',1,'Player']]]
 ];

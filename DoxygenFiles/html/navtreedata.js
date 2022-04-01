@@ -24,8 +24,16 @@
 */
 var NAVTREE =
 [
-  [ "Assignment_1_ShularMichael", "index.html", [
+  [ "Assignment_2_ShularMichael", "index.html", [
     [ "README", "md__d___semester_6__game__engine__dev_2__game3015__shular_michael__game3015__shular_michael__project1__r_e_a_d_m_e.html", null ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -54,7 +62,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_aircraft_8cpp.html"
+"_aircraft_8cpp.html",
+"struct_pass_constants.html#af25015138bf3b92384560ec1eed1e6aa"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

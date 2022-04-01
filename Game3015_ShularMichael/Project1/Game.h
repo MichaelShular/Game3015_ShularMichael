@@ -124,6 +124,7 @@ public:
 	Player mPlayer;
 
 	int key;
+	int keyList[4] = { 66, 62, 44, 47 };
 };
 
 #endif 

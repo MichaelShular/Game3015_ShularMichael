@@ -22,6 +22,9 @@ public:
 		ActionCount
 	};
 
+	void assignKey(Action action, unsigned int key);
+	unsigned int getAssignedKey(Action action) const;
+
 
 private:
 	void initializeActions();
@@ -29,7 +32,7 @@ private:
 
 
 private:
-	std::map<int, Action> mKeyBinding;
+	std::map<unsigned int, Action> mKeyBinding;
 	std::map<Action, Command> mActionBinding;
 #pragma endregion
 

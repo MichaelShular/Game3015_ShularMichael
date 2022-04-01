@@ -27,10 +27,10 @@ struct AircraftMover
 Player::Player()
 {
 	// Set initial key bindings
-	mKeyBinding[44] = MoveLeft;
-	mKeyBinding[47] = MoveRight;
-	mKeyBinding[66] = MoveUp;
-	mKeyBinding[62] = MoveDown;
+	mKeyBinding[VK_LEFT] = MoveLeft;
+	mKeyBinding[VK_RIGHT] = MoveRight;
+	mKeyBinding[VK_UP] = MoveUp;
+	mKeyBinding[VK_DOWN] = MoveDown;
 
 	// Set initial action bindings
 	initializeActions();
@@ -57,7 +57,7 @@ void Player::handleRealtimeInput(CommandQueue& commands, int key)
 	for (auto pair : mKeyBinding)
 	{
 		// If key is pressed, lookup action and trigger corresponding command
-		if (key == pair.first && isRealtimeAction(pair.second))
+		if (GetAsyncKeyState(pair.first) && isRealtimeAction(pair.second))
 			commands.push(mActionBinding[pair.second]);
 	}
 }
@@ -67,10 +67,10 @@ void Player::initializeActions()
 {
 	const float playerSpeed = 1.0f;
 
-	mActionBinding[MoveLeft].action = derivedAction<Aircraft>(AircraftMover(-playerSpeed, 0.f));
-	mActionBinding[MoveRight].action = derivedAction<Aircraft>(AircraftMover(+playerSpeed, 0.f));
-	mActionBinding[MoveUp].action = derivedAction<Aircraft>(AircraftMover(0.f, -playerSpeed));
-	mActionBinding[MoveDown].action = derivedAction<Aircraft>(AircraftMover(0.f, +playerSpeed));
+	mActionBinding[MoveLeft].action = derivedAction<Aircraft>(AircraftMover(playerSpeed, 0.f));
+	mActionBinding[MoveRight].action = derivedAction<Aircraft>(AircraftMover(-playerSpeed, 0.f));
+	mActionBinding[MoveUp].action = derivedAction<Aircraft>(AircraftMover(0.f, playerSpeed));
+	mActionBinding[MoveDown].action = derivedAction<Aircraft>(AircraftMover(0.f, -playerSpeed));
 }
 
 bool Player::isRealtimeAction(Action action)
@@ -86,6 +86,31 @@ bool Player::isRealtimeAction(Action action)
 	default:
 		return false;
 	}
+}
+
+void Player::assignKey(Action action, unsigned int key)
+{
+	// Remove all keys that already map to action
+	for (auto itr = mKeyBinding.begin(); itr != mKeyBinding.end(); )
+	{
+		if (itr->second == action)
+			mKeyBinding.erase(itr++);
+		else
+			++itr;
+	}
+
+	// Insert new binding
+	mKeyBinding[key] = action;
+}
+
+unsigned int Player::getAssignedKey(Action action) const
+{
+	for (auto pair : mKeyBinding)
+	{
+		if (pair.second == action)
+			return pair.first;
+	}
+	return  0x000;
 }
 
 #pragma endregion

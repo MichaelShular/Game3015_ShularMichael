@@ -56,6 +56,8 @@ bool Game::Initialize()
 	// Wait until initialization is complete.
 	FlushCommandQueue();
 
+	//mPlayer.assignKey(mPlayer.MoveDown, VK_SPACE);
+
 	return true;
 }
 /// Used to update the aspect ratio and recompute the projection matrix when window is resized
@@ -108,22 +110,6 @@ void Game::Update(const GameTimer& gt)
 void Game::processEvents()
 {
 	CommandQueue& commands = mGameWorld->getCommandQueue();
-	/*sf::Event event;
-
-	
-
-	while (mWindow.pollEvent(event))
-	{
-		switch (event.type)
-		{
-			mPlayer.handleEvent(commands);
-		case sf::Event::Closed:
-			mWindow.close();
-			break;
-		}
-
-		mPlayer.handleRealtimeInput(commands);
-	}*/
 
 	mPlayer.handleEvent(commands, key);
 	mPlayer.handleRealtimeInput(commands, key);
@@ -268,20 +254,22 @@ void Game::OnMouseMove(WPARAM btnState, int x, int y)
 void Game::OnKeyboardInput(const GameTimer& gt)
 {
 	key = 0;
+	//
 
-	if (GetAsyncKeyState('W') & 0x8000)
-		key = 66;
+	//
+	//if (GetAsyncKeyState('W') & 0x8000)
+	//	key = 66;
 
-	if (GetAsyncKeyState('S') & 0x8000)
-		key = 62;
-
-
-	if (GetAsyncKeyState('A') & 0x8000)
-		key = 44;
+	//if (GetAsyncKeyState('S') & 0x8000)
+	//	key = 62;
 
 
-	if (GetAsyncKeyState('D') & 0x8000)
-		key = 47;
+	//if (GetAsyncKeyState('A') & 0x8000)
+	//	key = 44;
+
+
+	//if (GetAsyncKeyState('D') & 0x8000)
+	//	key = 47;
 
 
 }

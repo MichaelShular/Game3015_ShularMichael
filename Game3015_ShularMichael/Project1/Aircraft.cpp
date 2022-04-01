@@ -70,8 +70,8 @@ void Aircraft::buildAircraft()
 	auto render = std::make_unique<RenderItem>();
 	renderer = render.get();
 
-	XMStoreFloat4x4(&renderer->World, XMMatrixScaling(0.05f, 0.05f, 0.0f) * XMMatrixRotationRollPitchYaw(0.0f, 1.0f, 0.2f) * XMMatrixTranslation(0.7f, -1.5f, 0.6f));
-	renderer->ObjCBIndex =(UINT) mGame->mAllRitems.size();
+	renderer->World = getTransform();
+	renderer->ObjCBIndex = mGame->mAllRitems.size();
 	renderer->Mat = mGame->mMaterials["eagle"].get();
 	renderer->Geo = mGame->mGeometries["box"].get();
 	renderer->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;

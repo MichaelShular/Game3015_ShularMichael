@@ -29,7 +29,7 @@ public:
 
 
 public:
-	State(StateStack& stack, Context context, Game* game);
+	State(StateStack& stack, Context context, Game& game);
 	virtual				~State();
 
 	virtual void draw() = 0;

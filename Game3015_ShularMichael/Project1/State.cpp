@@ -7,10 +7,10 @@ State::Context::Context(Player& player)
 {
 }
 
-State::State(StateStack& stack, Context context, Game * game)
+State::State(StateStack& stack, Context context, Game& game)
 	: mStack(&stack)
 	, mContext(context)
-	, mGame(game)
+	, mGame(&game)
 {
 }
 

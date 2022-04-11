@@ -1,7 +1,7 @@
 #include "TitleState.h"
 
 
-TitleState::TitleState(StateStack& stack, Context context, Game* game)
+TitleState::TitleState(StateStack& stack, Context context, Game& game)
 	: State(stack, context, game)
 	/*, mText()
 	, mShowText(true)

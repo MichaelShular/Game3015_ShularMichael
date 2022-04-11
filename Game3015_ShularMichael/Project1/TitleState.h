@@ -8,7 +8,7 @@
 class TitleState : public State
 {
 public:
-	TitleState(StateStack& stack, Context context, Game* game);
+	TitleState(StateStack& stack, Context context, Game& game);
 
 	virtual void		draw();
 	virtual bool		update(const GameTimer& gt);

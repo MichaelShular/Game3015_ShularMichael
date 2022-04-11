@@ -63,20 +63,30 @@ void World::buildScene()
 
 	std::unique_ptr<SpriteNode> BGGround(new SpriteNode(mGame));
 	mGround = BGGround.get();
-	mGround->setWorldPosition(0.0f, 0.0f, -1.0f);
+	mGround->setWorldPosition(0.0f, 10.0f, -5.0f);
 	mGround->setWorldRotation(0.0f, 0.0f, 0.0f);
-	mGround->setWorldScale(10.0f, 60.5f, 0.0f);
-	mGame->BuildRenderItems("desert", "box", mGround->getWorldPosition(), mGround->getWorldRotation(), mGround->getWorldScale());
+	mGround->setWorldScale(30.0f, 30.0f, 0.1f);
+	
+	//mGame->BuildRenderItems("desert", "box", mGround->getWorldPosition(), mGround->getWorldRotation(), mGround->getWorldScale());
+	mGround->buildSprite("desert", "box");
+	
 	sceneGraph->attachChild(std::move(BGGround));
 
 	std::unique_ptr<SpriteNode> BGSky(new SpriteNode(mGame));
 	mSky = BGSky.get();
-	mSky->setWorldPosition(50.0f, 100.0f, 0.5f);
-	mSky->setWorldRotation(1.57f, 0.0f, 0.0f);
-	mSky->setWorldScale(0.0f, 50.0f, 200.5f);
+	mSky->setWorldPosition(2.0f, 15.0f, 0.f);
+	mSky->setWorldRotation(90.0f, 0.0f, 0.0f);
+	mSky->setWorldScale(0.1f, 30.0f, 30.0f);
+	
 	sceneGraph->attachChild(std::move(BGSky));
+	mSky->buildSprite("sky", "box");
+	
+	//mGame->BuildRenderItems("sky", "box", mSky->getWorldPosition(), mSky->getWorldRotation(), mSky->getWorldScale());
 
-	mGame->BuildRenderItems("sky", "box", mSky->getWorldPosition(), mSky->getWorldRotation(), mSky->getWorldScale());
+
+
+
+
 
 	/*std::unique_ptr<Aircraft> eaglePlane(new Aircraft(Aircraft::Eagle, mGame));
 	mplayerAircraftOne = eaglePlane.get();
@@ -96,6 +106,9 @@ void World::buildScene()
 
 	//mGame->BuildRenderItems("raptor", "box", mplayerAircraftTwo->getWorldPosition(), mplayerAircraftTwo->getWorldRotation(), mplayerAircraftTwo->getWorldScale());
 	
+
+
+
 
 	std::unique_ptr<Aircraft> eaglePlane(new Aircraft(Aircraft::Eagle, mGame));
 	mplayerAircraftOne = eaglePlane.get();

@@ -166,11 +166,11 @@ XMFLOAT4X4 sceneNode::getTransform() const
 {
 	XMFLOAT4X4 transform;
 
-	XMMATRIX T(XMMatrixTranslation(mWorldPosition.x, mWorldPosition.y, mWorldPosition.z) 
+	XMMATRIX T(XMMatrixScaling(mWorldScale.x, mWorldScale.y, mWorldScale.z)
 		* XMMatrixRotationX(XMConvertToRadians(mWorldRotation.x))
 			* XMMatrixRotationY(XMConvertToRadians(mWorldRotation.y))
 				* XMMatrixRotationZ(XMConvertToRadians(mWorldRotation.z))
-					* XMMatrixScaling(mWorldScale.x, mWorldScale.y, mWorldScale.z));
+					*XMMatrixTranslation(mWorldPosition.x, mWorldPosition.y, mWorldPosition.z));
 
 	//*XMMatrixRotationX(XMConvertToRadians(mWorldRotation.x))
 	//	* XMMatrixRotationY(XMConvertToRadians(mWorldRotation.y))

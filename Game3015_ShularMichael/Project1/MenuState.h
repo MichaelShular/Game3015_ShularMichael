@@ -8,7 +8,7 @@
 class MenuState : public State
 {
 public:
-	MenuState(StateStack& stack, Context context, Game* game);
+	MenuState(StateStack& stack, Context context, Game& game);
 
 	virtual void			draw();
 	virtual bool			update(const GameTimer& gt);

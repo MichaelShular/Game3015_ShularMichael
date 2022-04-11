@@ -1,7 +1,7 @@
 #include "MenuState.h"
 
-MenuState::MenuState(StateStack& stack, Context context,Game* game)
-	: State(stack, context,game)
+MenuState::MenuState(StateStack& stack, Context context,Game& game)
+	: State(stack, context, game)
 	//, mOptions()
 	//, mOptionIndex(0)
 {

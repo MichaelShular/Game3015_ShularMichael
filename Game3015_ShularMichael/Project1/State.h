@@ -36,7 +36,8 @@ public:
 	virtual void draw() = 0;
 	virtual bool update(const GameTimer& gt) = 0;
 	virtual bool handleEvent() = 0;
-	Game* mGame;
+	virtual void BuildScene() = 0;
+	
 
 protected:
 	void requestStackPush(States::ID stateID);
@@ -46,6 +47,7 @@ protected:
 	Context getContext() const;
 
 	StateStack* mStack;
+	Game* mGame;
 private:
 	
 	Context mContext;

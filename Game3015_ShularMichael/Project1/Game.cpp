@@ -14,7 +14,7 @@ Game::Game(HINSTANCE hInstance)
 	mGameWorld(this),
 	mStateStack(State::Context(mPlayer, this))
 {
-	
+	loadTextures();
 }
 /// Deconstructor
 Game::~Game()
@@ -35,37 +35,33 @@ bool Game::Initialize()
 	// so we have to query this information.
 	mCbvSrvDescriptorSize = md3dDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
 
-	registerStates();
-	mStateStack.pushState(States::Game);
 
-	for (auto& it : *mGameWorld.getTextures()) {
+
+	for (auto& it : mTexture) {
 		LoadTextures(it.first, it.second);
 	}
 	BuildRootSignature();
 	BuildDescriptorHeaps();
 	BuildShadersAndInputLayout();
-	
+
 	GeometryGenerator geoGen;
-	BuildShapeGeometry(geoGen.CreateBox(2.0f,2.0f,2,2), "box");
+	BuildShapeGeometry(geoGen.CreateBox(2.0f, 2.0f, 2, 2), "box");
 
 	MaterialCBIndexCount = 0;
 	DiffuseSrvHeapIndexCount = 0;
 	ObjectCBIndex = 0;
 
+	registerStates();
+	mStateStack.pushState(States::Game);
+
 	//mGameWorld->buildScene();
-	BuildFrameResources();
-	BuildPSOs();
+	//BuildFrameResources();
 
-	// Execute the initialization commands.
-	ThrowIfFailed(mCommandList->Close());
-	ID3D12CommandList* cmdsLists[] = { mCommandList.Get() };
-	mCommandQueue->ExecuteCommandLists(_countof(cmdsLists), cmdsLists);
 
-	// Wait until initialization is complete.
-	FlushCommandQueue();
+
 
 	//mPlayer.assignKey(mPlayer.MoveDown, VK_SPACE);
-	
+
 	return true;
 }
 /// Used to update the aspect ratio and recompute the projection matrix when window is resized
@@ -87,8 +83,8 @@ void Game::Update(const GameTimer& gt)
 	//mGameWorld->update(gt);
 	mStateStack.update(gt);
 	UpdateCamera(gt);
-	
-	
+
+
 
 	// Cycle through the circular frame resource array.
 	mCurrFrameResourceIndex = (mCurrFrameResourceIndex + 1) % gNumFrameResources;
@@ -103,16 +99,16 @@ void Game::Update(const GameTimer& gt)
 		WaitForSingleObject(eventHandle, INFINITE);
 		CloseHandle(eventHandle);
 	}
-	
+
 	AnimateMaterials(gt);
 	UpdateObjectCBs(gt);
 	UpdateMaterialCBs(gt);
 	UpdateMainPassCB(gt);
-	
-	
-	
-	
-	
+
+
+
+
+
 }
 
 ///Held any commands once or real time input
@@ -138,8 +134,21 @@ void Game::registerStates()
 	//mStateStack.registerState<TitleState>(States::Title);
 	//mStateStack.registerState<MenuState>(States::Menu);
 	mStateStack.registerState<GameState>(States::Game);
-	
 
+
+}
+
+void Game::CreateTexture(std::string name, std::wstring fileName)
+{
+	mTexture[name] = fileName;
+}
+
+void Game::loadTextures()
+{
+	CreateTexture("desert", L"Desert.dds");
+	CreateTexture("sky", L"sky.dds");
+	CreateTexture("eagle", L"Eagle.dds");
+	CreateTexture("raptor", L"Raptor.dds");
 }
 
 
@@ -185,10 +194,10 @@ void Game::Draw(const GameTimer& gt)
 	//DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::Opaque]);
 
 	mCommandList->SetPipelineState(mPSOs["alphaTested"].Get());
-	
+
 	//mGameWorld->draw(gt);
 	mStateStack.draw();
-	
+
 	DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::AlphaTested]);
 
 
@@ -470,24 +479,24 @@ void Game::BuildDescriptorHeaps()
 	// Fill out the heap with actual descriptors.
 	//
 	CD3DX12_CPU_DESCRIPTOR_HANDLE hDescriptor(mSrvDescriptorHeap->GetCPUDescriptorHandleForHeapStart());
-	
+
 	D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
 	srvDesc.Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING;
 	srvDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2D;
 	srvDesc.Texture2D.MostDetailedMip = 0;
 	srvDesc.Texture2D.ResourceMinLODClamp = 0.0f;
 
-	for ( auto& it : mTextures) {
+	for (auto& it : mTextures) {
 		auto woodCrateTex = it.second->Resource;
-		
+
 
 		srvDesc.Format = woodCrateTex->GetDesc().Format;
 		srvDesc.Texture2D.MipLevels = woodCrateTex->GetDesc().MipLevels;
 		md3dDevice->CreateShaderResourceView(woodCrateTex.Get(), &srvDesc, hDescriptor);
-		
+
 		hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 	}
-	
+
 }
 /// Use build shaders and input layout
 void Game::BuildShadersAndInputLayout()
@@ -617,6 +626,16 @@ void Game::BuildFrameResources()
 		mFrameResources.push_back(std::make_unique<FrameResource>(md3dDevice.Get(),
 			1, (UINT)mAllRitems.size(), (UINT)mMaterials.size()));
 	}
+
+	BuildPSOs();
+	// Execute the initialization commands.
+	ThrowIfFailed(mCommandList->Close());
+	ID3D12CommandList* cmdsLists[] = { mCommandList.Get() };
+	mCommandQueue->ExecuteCommandLists(_countof(cmdsLists), cmdsLists);
+
+	// Wait until initialization is complete.
+	FlushCommandQueue();
+
 }
 /// Used to build materials for game objects
 /// 

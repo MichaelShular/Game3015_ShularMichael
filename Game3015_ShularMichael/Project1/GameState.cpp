@@ -41,5 +41,9 @@ bool GameState::handleEvent()
 void GameState::BuildScene()
 {
 	mWorld->buildScene();
+
+
+	mGame->BuildFrameResources();
+	
 }
 

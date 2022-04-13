@@ -13,6 +13,7 @@ State::State(StateStack& stack, Context context)
 	: mStack(&stack)
 	, mContext(context)
 {
+	mGame = context.mGame;
 }
 
 State::~State()

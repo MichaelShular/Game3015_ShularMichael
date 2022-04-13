@@ -35,8 +35,8 @@ public:
 	CommandQueue& getCommandQueue();
 
 private:
-	void CreateTexture(std::string name, std::wstring fileName);
-	void loadTextures();
+	//void CreateTexture(std::string name, std::wstring fileName);
+	//void loadTextures();
 private:
 	Game *mGame;
 	SpriteNode* mGround;

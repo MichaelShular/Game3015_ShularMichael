@@ -72,6 +72,9 @@ public:
 	ID3D12GraphicsCommandList* getCmdList();
 
 	void registerStates();
+
+	void CreateTexture(std::string name, std::wstring fileName);
+	void loadTextures();
 public:
 	FrameResource* mCurrFrameResource = nullptr;
 
@@ -127,6 +130,8 @@ public:
 	Player mPlayer;
 
 	StateStack mStateStack;
+
+	std::unordered_map<std::string, std::wstring> mTexture;
 
 	int key;
 	int keyList[4] = { 66, 62, 44, 47 };

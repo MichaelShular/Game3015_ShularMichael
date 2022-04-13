@@ -4,10 +4,10 @@
 ///
 /// @param: Game
 World::World(Game* game):
-	sceneGraph(new sceneNode(game))
+	sceneGraph(new sceneNode(game)),
+	mGame(game)
 {
-	mGame = game;
-	loadTextures();
+	
 	
 }
 
@@ -54,6 +54,8 @@ std::unordered_map<std::string, std::wstring>* World::getTextures()
 /// Used to construct materials for scene and game objects
 void World::buildScene()
 {
+	
+
 	mGame->BuildMaterials("desert");
 	mGame->BuildMaterials("sky");
 	mGame->BuildMaterials("eagle");
@@ -119,19 +121,19 @@ void World::buildScene()
 	mplayerAircraftOne->buildAircraft();
 	sceneGraph->attachChild(std::move(eaglePlane));
 }
-/// Used get set all information for textures
-void World::loadTextures()
-{
-	CreateTexture("desert", L"Desert.dds");
-	CreateTexture("sky", L"sky.dds");
-	CreateTexture("eagle", L"Eagle.dds");
-	CreateTexture("raptor", L"Raptor.dds");
-}
-/// Used save information about textures name and file path
-/// 
-/// @param: std::string
-/// @param: std::wstring
-void World::CreateTexture(std::string name, std::wstring fileName)
-{
-	mTexture[name] = fileName;
-}
+///// Used get set all information for textures
+//void World::loadTextures()
+//{
+//	CreateTexture("desert", L"Desert.dds");
+//	CreateTexture("sky", L"sky.dds");
+//	CreateTexture("eagle", L"Eagle.dds");
+//	CreateTexture("raptor", L"Raptor.dds");
+//}
+///// Used save information about textures name and file path
+///// 
+///// @param: std::string
+///// @param: std::wstring
+//void World::CreateTexture(std::string name, std::wstring fileName)
+//{
+//	mTexture[name] = fileName;
+//}

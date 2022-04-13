@@ -14,11 +14,16 @@ public:
 	virtual void draw();
 	virtual bool update(const GameTimer& gt);
 	virtual bool handleEvent();
-	void BuildScene();
+	virtual void BuildScene();
 
 private:
 	World* mWorld;
 	Player& mPlayer;
+
+	SpriteNode* mGround;
+	SpriteNode* mSky;
+	Aircraft* mplayerAircraftOne;
+	Aircraft* mplayerAircraftTwo;
 };
 
 #endif // BOOK_GAMESTATE_HPP

@@ -64,13 +64,12 @@ private:
 	std::map<States::ID, std::function<State::Ptr()>>	mFactories;
 };
 
-
-template <typename T>
-void StateStack::registerState(States::ID stateID)
+template<typename T>
+void StateStack::registerState(States::ID stateID) 
 {
-	mFactories[stateID] = [this]()
+	mFactories[stateID] = [this] () 
 	{
-		return State::Ptr(new T(*this, mContext));
+		return State::Ptr(new T(*this, mContext) );
 	};
 }
 

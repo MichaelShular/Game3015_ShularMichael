@@ -1,15 +1,15 @@
 #include "TitleState.h"
 
 
-TitleState::TitleState(StateStack& stack, Context context, Game& game)
-	: State(stack, context, game)
+TitleState::TitleState(StateStack& stack, Context context)
+	: State(stack, context)
 	/*, mText()
 	, mShowText(true)
 	, mTextEffectTime(sf::Time::Zero)*/
 {
-	/*mBackgroundSprite.setTexture(context.textures->get(Textures::TitleScreen));
+	//mBackgroundSprite.setTexture(context.textures->get(Textures::TitleScreen));
 
-	mText.setFont(context.fonts->get(Fonts::Main));
+	/*mText.setFont(context.fonts->get(Fonts::Main));
 	mText.setString("Press any key to start");
 	centerOrigin(mText);
 	mText.setPosition(context.window->getView().getSize() / 2.f);*/

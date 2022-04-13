@@ -1,14 +1,15 @@
-#ifndef BOOK_TITLESTATE_HPP
-#define BOOK_TITLESTATE_HPP
+#ifndef BOOK_TITLESTATE_H
+#define BOOK_TITLESTATE_H
 
 #include "State.h"
 #include "../../Common/d3dApp.h"
+#include "SpriteNode.h"
 
 
 class TitleState : public State
 {
 public:
-	TitleState(StateStack& stack, Context context, Game& game);
+	TitleState(StateStack& stack, Context context);
 
 	virtual void		draw();
 	virtual bool		update(const GameTimer& gt);
@@ -16,8 +17,8 @@ public:
 
 
 private:
-	/*sf::Sprite			mBackgroundSprite;
-	sf::Text			mText;
+	SpriteNode* mBackgroundSprite;
+	/*sf::Text			mText;
 
 	bool				mShowText;
 	sf::Time			mTextEffectTime;*/

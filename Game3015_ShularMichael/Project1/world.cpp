@@ -40,7 +40,7 @@ void World::update(const GameTimer& gt)
 /// Used draw
 /// 
 /// @param: const GameTimer&
-void World::draw(const GameTimer& gt)
+void World::draw()
 {
 	sceneGraph->draw();
 }

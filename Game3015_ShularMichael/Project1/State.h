@@ -22,14 +22,15 @@ public:
 
 	struct Context
 	{
-		Context(Player& player);
+		Context(Player& player, Game * game);
 		
 		Player* player;
+		Game* mGame;
 	};
 
 
 public:
-	State(StateStack& stack, Context context, Game& game);
+	State(StateStack& stack, Context context);
 	virtual				~State();
 
 	virtual void draw() = 0;

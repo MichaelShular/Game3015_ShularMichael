@@ -9,6 +9,7 @@
 #include "../../Common/GeometryGenerator.h"
 #include "world.h"
 #include "Player.h"
+#include "StateStack.h"
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
 using namespace DirectX::PackedVector;
@@ -69,10 +70,12 @@ public:
 
 	void processEvents();
 	ID3D12GraphicsCommandList* getCmdList();
+
+	void registerStates();
 public:
 	FrameResource* mCurrFrameResource = nullptr;
 
-	World* mGameWorld;
+	World mGameWorld;
 
 	std::vector<std::unique_ptr<FrameResource>> mFrameResources;
 
@@ -122,6 +125,8 @@ public:
 	int ObjectCBIndex;
 
 	Player mPlayer;
+
+	StateStack mStateStack;
 
 	int key;
 	int keyList[4] = { 66, 62, 44, 47 };

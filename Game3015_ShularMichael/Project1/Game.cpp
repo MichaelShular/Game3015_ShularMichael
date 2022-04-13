@@ -1,4 +1,8 @@
 #include "Game.h"
+#include "State.h"
+#include "TitleState.h"
+#include "MenuState.h"
+#include "GameState.h"
 
 const int gNumFrameResources = 3;
 
@@ -7,9 +11,10 @@ const int gNumFrameResources = 3;
 /// @param: HINSTANCE
 Game::Game(HINSTANCE hInstance)
 	: D3DApp(hInstance),
-	mGameWorld()
+	mGameWorld(this),
+	mStateStack(State::Context(mPlayer, this))
 {
-	mGameWorld = new World(this);
+	
 }
 /// Deconstructor
 Game::~Game()
@@ -30,7 +35,10 @@ bool Game::Initialize()
 	// so we have to query this information.
 	mCbvSrvDescriptorSize = md3dDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
 
-	for (auto& it : *mGameWorld->getTextures()) {
+	registerStates();
+	mStateStack.pushState(States::Game);
+
+	for (auto& it : *mGameWorld.getTextures()) {
 		LoadTextures(it.first, it.second);
 	}
 	BuildRootSignature();
@@ -44,7 +52,7 @@ bool Game::Initialize()
 	DiffuseSrvHeapIndexCount = 0;
 	ObjectCBIndex = 0;
 
-	mGameWorld->buildScene();
+	//mGameWorld->buildScene();
 	BuildFrameResources();
 	BuildPSOs();
 
@@ -57,7 +65,7 @@ bool Game::Initialize()
 	FlushCommandQueue();
 
 	//mPlayer.assignKey(mPlayer.MoveDown, VK_SPACE);
-
+	
 	return true;
 }
 /// Used to update the aspect ratio and recompute the projection matrix when window is resized
@@ -76,8 +84,8 @@ void Game::Update(const GameTimer& gt)
 {
 	OnKeyboardInput(gt);
 	processEvents();
-	mGameWorld->update(gt);
-
+	//mGameWorld->update(gt);
+	mStateStack.update(gt);
 	UpdateCamera(gt);
 	
 	
@@ -111,10 +119,10 @@ void Game::Update(const GameTimer& gt)
 
 void Game::processEvents()
 {
-	CommandQueue& commands = mGameWorld->getCommandQueue();
-
-	mPlayer.handleEvent(commands, key);
-	mPlayer.handleRealtimeInput(commands, key);
+	//CommandQueue& commands = mGameWorld->getCommandQueue();
+	mStateStack.handleEvent();
+	/*mPlayer.handleEvent(commands, key);
+	mPlayer.handleRealtimeInput(commands, key);*/
 }
 
 /// Used to get command list
@@ -123,6 +131,15 @@ void Game::processEvents()
 ID3D12GraphicsCommandList* Game::getCmdList()
 {
 	return mCommandList.Get();
+}
+
+void Game::registerStates()
+{
+	//mStateStack.registerState<TitleState>(States::Title);
+	//mStateStack.registerState<MenuState>(States::Menu);
+	mStateStack.registerState<GameState>(States::Game);
+	
+
 }
 
 
@@ -169,7 +186,9 @@ void Game::Draw(const GameTimer& gt)
 
 	mCommandList->SetPipelineState(mPSOs["alphaTested"].Get());
 	
-	mGameWorld->draw(gt);
+	//mGameWorld->draw(gt);
+	mStateStack.draw();
+	
 	DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::AlphaTested]);
 
 

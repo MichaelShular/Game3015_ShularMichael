@@ -55,7 +55,7 @@ void Player::handleEvent(CommandQueue& commands, int key)
 /// Key presses that are held down
 /// 
 /// @param: CommandQueue&
-void Player::handleRealtimeInput(CommandQueue& commands, int key)
+void Player::handleRealtimeInput(CommandQueue& commands)
 {
 	// Traverse all assigned keys and check if they are pressed
 	for (auto pair : mKeyBinding)

@@ -10,7 +10,7 @@ class Player
 public:
 	Player();
 	void handleEvent(CommandQueue& commands, int key);
-	void handleRealtimeInput(CommandQueue& commands, int key);
+	void handleRealtimeInput(CommandQueue& commands);
 #pragma region step 1
 	//static const float		PlayerSpeed;
 	enum Action

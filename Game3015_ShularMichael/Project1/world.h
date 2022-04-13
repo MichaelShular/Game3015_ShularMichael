@@ -28,7 +28,7 @@ class World
 public:
 	World(Game * game);
 	void update(const GameTimer& gt);
-	void draw(const GameTimer& gt);
+	void draw();
 	std::unordered_map<std::string, std::wstring> *getTextures();
 	void buildScene();
 	

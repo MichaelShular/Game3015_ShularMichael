@@ -1,5 +1,5 @@
-#ifndef BOOK_MENUSTATE_HPP
-#define BOOK_MENUSTATE_HPP
+#ifndef BOOK_MENUSTATE_H
+#define BOOK_MENUSTATE_H
 
 #include "State.h"
 #include "../../Common/d3dApp.h"
@@ -8,7 +8,7 @@
 class MenuState : public State
 {
 public:
-	MenuState(StateStack& stack, Context context, Game& game);
+	MenuState(StateStack& stack, Context context);
 
 	virtual void			draw();
 	virtual bool			update(const GameTimer& gt);

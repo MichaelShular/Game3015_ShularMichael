@@ -11,7 +11,7 @@ World::World(Game* game) :
 
 }
 
-/// USed to get the command queue
+/// Used to get the command queue
 /// 
 /// @returns CommandQueue&
 CommandQueue& World::getCommandQueue()

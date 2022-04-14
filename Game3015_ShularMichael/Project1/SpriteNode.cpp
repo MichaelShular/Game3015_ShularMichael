@@ -1,8 +1,6 @@
 #include "SpriteNode.h"
 #include "Game.h"
 
-
-
 /// The defualt conconstructor
 SpriteNode::SpriteNode(Game* game) : sceneNode(game)
 {
@@ -10,7 +8,7 @@ SpriteNode::SpriteNode(Game* game) : sceneNode(game)
 
 }
 
-
+///Used to build an Alhpatested sprite's position, shape and material
 void SpriteNode::buildSprite(std::string MatName, std::string GeoName)
 {
 	auto render = std::make_unique<RenderItem>();
@@ -30,6 +28,7 @@ void SpriteNode::buildSprite(std::string MatName, std::string GeoName)
 	mGame->mAllRitems.push_back(std::move(render));
 }
 
+///Used to build an opaque sprite's position, shape and material
 void SpriteNode::buildSpriteOpaque(std::string MatName, std::string GeoName)
 {
 	auto render = std::make_unique<RenderItem>();
@@ -49,6 +48,7 @@ void SpriteNode::buildSpriteOpaque(std::string MatName, std::string GeoName)
 	mGame->mAllRitems.push_back(std::move(render));
 }
 
+/// Used to redraw game object
 void SpriteNode::drawCurrent() const
 {
 	UINT objCBByteSize = d3dUtil::CalcConstantBufferByteSize(sizeof(ObjectConstants));
@@ -77,7 +77,9 @@ void SpriteNode::drawCurrent() const
 
 	}
 }
-
+/// USe to scroll textrure on sprite (No functioning properly)
+/// 
+/// @param: XMFLOAT2: the direction texture moves in 
 void SpriteNode::ScrollTexture(XMFLOAT2 val)
 {
 	mTexturePosition.x += val.x;

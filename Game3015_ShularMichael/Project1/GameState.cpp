@@ -1,6 +1,10 @@
 #include "GameState.h"
 #include "Game.h"
 
+/// The defualt conconstructor
+/// 
+/// @param: StateStack&
+/// @param: Context 
 GameState::GameState(StateStack& stack, Context context)
 	: State(stack, context)
 	, mWorld(&(mGame->mGameWorld))
@@ -11,11 +15,15 @@ GameState::GameState(StateStack& stack, Context context)
 	BuildScene();
 }
 
+/// Used draw state's game objects
 void GameState::draw()
 {
 	mWorld->draw();
 }
 
+/// Used to keep game paused
+/// 
+/// @param: const GameTimer&
 bool GameState::update(const GameTimer& gt)
 {
 	mWorld->update(gt);
@@ -26,17 +34,15 @@ bool GameState::update(const GameTimer& gt)
 	return true;
 }
 
+///Handle any commands once or real time input
 bool GameState::handleEvent()
 {
 	// Game input handling
 	CommandQueue& commands = mWorld->getCommandQueue();
 	mPlayer.handleEvent(commands, 46);
 	mPlayer.handleRealtimeInput(commands);
-//	// Escape pressed, trigger the pause screen
-//#pragma region step 1
-//	if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
-//		requestStackPush(States::Pause);
-//#pragma endregionif 
+
+	//Pause the game
 #pragma region
 	if(GetAsyncKeyState('P') & 0x8000)
 	{
@@ -47,6 +53,7 @@ bool GameState::handleEvent()
 	return true;
 }
 
+///Build game objects for game state and pause state
 void GameState::BuildScene()
 {
 	mGame->mAllRitems.clear();

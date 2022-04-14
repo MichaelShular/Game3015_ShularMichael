@@ -127,7 +127,7 @@ void Game::Update(const GameTimer& gt)
 
 }
 
-///Held any commands once or real time input
+///Handle any commands once or real time input
 
 void Game::processEvents()
 {

@@ -6,6 +6,7 @@
 /// The defualt conconstructor
 /// 
 /// @param: enum Type: use to switch sprites
+/// @param: Game 
 Aircraft::Aircraft(Type type, Game* game) : Entity(game)
 {
 	mGame = game;
@@ -23,6 +24,7 @@ Aircraft::Aircraft(Type type, Game* game) : Entity(game)
 	}
 }
 
+/// Used to redraw game object
 void Aircraft::drawCurrent() const
 {
 	UINT objCBByteSize = d3dUtil::CalcConstantBufferByteSize(sizeof(ObjectConstants));
@@ -52,7 +54,9 @@ void Aircraft::drawCurrent() const
 	}
 
 }
-
+/// Get type of ship
+/// 
+/// @returns: enum Type: use to switch sprites
 unsigned int Aircraft::getCategory() const
 {
 	switch (mType)
@@ -64,7 +68,7 @@ unsigned int Aircraft::getCategory() const
 		return Category::EnemyAircraft;
 	}
 }
-
+///Used to build the gameobject position, shape and material
 void Aircraft::buildAircraft()
 {
 	auto render = std::make_unique<RenderItem>();

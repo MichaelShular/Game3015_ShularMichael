@@ -6,10 +6,10 @@
 #include "Player.h"
 #include "../../Common/d3dApp.h"
 
-
 #pragma comment(lib, "d3dcompiler.lib")
 #pragma comment(lib, "D3D12.lib")
 
+///This class is the derived class from state, which to hold the game world
 class GameState : public State
 {
 public:

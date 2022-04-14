@@ -3,7 +3,9 @@
 
 #include "State.h"
 #include "../../Common/d3dApp.h"
-
+#include "../../Common/d3dApp.h"
+#include "SpriteNode.h"
+#include "sceneNode.h"
 
 class MenuState : public State
 {
@@ -13,7 +15,7 @@ public:
 	virtual void			draw();
 	virtual bool			update(const GameTimer& gt);
 	virtual bool			handleEvent();
-
+	virtual void			BuildScene();
 	void					updateOptionText();
 
 
@@ -23,7 +25,8 @@ private:
 		Play,
 		Exit,
 	};
-
+	sceneNode* sceneGraph;
+	SpriteNode* mBackgroundSprite;
 
 private:
 	//sf::Sprite				mBackgroundSprite;

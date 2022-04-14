@@ -147,7 +147,7 @@ ID3D12GraphicsCommandList* Game::getCmdList()
 void Game::registerStates()
 {
 	mStateStack.registerState<TitleState>(States::Title);
-	//mStateStack.registerState<MenuState>(States::Menu);
+	mStateStack.registerState<MenuState>(States::Menu);
 	mStateStack.registerState<GameState>(States::Game);
 
 
@@ -160,6 +160,7 @@ void Game::CreateTexture(std::string name, std::wstring fileName)
 
 void Game::loadTextures()
 {
+	CreateTexture("title", L"TitleScreen.dds");
 	CreateTexture("sky", L"sky.dds");
 	CreateTexture("desert", L"Desert.dds");
 	CreateTexture("eagle", L"Eagle.dds");

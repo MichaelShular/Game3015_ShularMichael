@@ -49,7 +49,7 @@ bool TitleState::handleEvent()
 		
 		requestStackPop();
 		mGame->FlushCommandList();
-		requestStackPush(States::Game);
+		requestStackPush(States::Menu);
 	}
 
 	return true;
@@ -57,15 +57,15 @@ bool TitleState::handleEvent()
 
 void TitleState::BuildScene()
 {
-	mGame->BuildMaterials("sky");
+	mGame->BuildMaterials("title");
 
 	std::unique_ptr<SpriteNode> BGSky(new SpriteNode(mGame));
 	mBackgroundSprite = BGSky.get();
-	mBackgroundSprite->setWorldPosition(2.0f, 15.0f, 0.f);
-	mBackgroundSprite->setWorldRotation(90.0f, 0.0f, 0.0f);
-	mBackgroundSprite->setWorldScale(0.1f, 30.0f, 30.0f);
+	mBackgroundSprite->setWorldPosition(7.0f, 11.0f, -3.6f);
+	mBackgroundSprite->setWorldRotation(90.0f, 13.0f, 45.0f);
+	mBackgroundSprite->setWorldScale(0.1f, 10.0f, 14.0f);
 	sceneGraph->attachChild(std::move(BGSky));
-	mBackgroundSprite->buildSprite("sky", "box");
+	mBackgroundSprite->buildSprite("title", "box");
 
 	mGame->BuildFrameResources();
 

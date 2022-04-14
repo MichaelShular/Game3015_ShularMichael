@@ -1,7 +1,9 @@
 #include "MenuState.h"
+#include "Game.h"
 
 MenuState::MenuState(StateStack& stack, Context context)
-	: State(stack, context)
+	: State(stack, context),
+	sceneGraph(new sceneNode(mGame))
 	//, mOptions()
 	//, mOptionIndex(0)
 {
@@ -26,10 +28,13 @@ MenuState::MenuState(StateStack& stack, Context context)
 	//mOptions.push_back(exitOption);
 
 	//updateOptionText();
+
+	BuildScene();
 }
 
 void MenuState::draw()
 {
+	sceneGraph->draw();
 	/*sf::RenderWindow& window = *getContext().window;
 
 	window.setView(window.getDefaultView());
@@ -41,11 +46,25 @@ void MenuState::draw()
 
 bool MenuState::update(const GameTimer& gt)
 {
+	sceneGraph->update(gt);
 	return true;
 }
 
 bool MenuState::handleEvent()
 {
+	//Game Scene
+	if (GetAsyncKeyState(VK_RETURN ) & 0x8000)
+	{
+		requestStackPop();
+		mGame->FlushCommandList();
+		requestStackPush(States::Game);
+	}
+	//Quit Game
+	if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
+	{
+		requestStackPop();
+	}
+
 	//// The demonstration menu logic
 	//if (event.type != sf::Event::KeyPressed)
 	//	return false;
@@ -85,8 +104,32 @@ bool MenuState::handleEvent()
 
 	//	updateOptionText();
 	//}
-
+	
 	return true;
+}
+
+void MenuState::BuildScene()
+{
+	mGame->mAllRitems.clear();
+	mGame->mFrameResources.clear();
+	mGame->mRitemLayer[(int)RenderLayer::AlphaTested].clear();
+	
+	mGame->mTexture.clear();
+	mGame->loadTextures();
+
+	mGame->BuildMaterials("title");
+	mGame->BuildMaterials("sky");
+
+
+	std::unique_ptr<SpriteNode> BGSky(new SpriteNode(mGame));
+	mBackgroundSprite = BGSky.get();
+	mBackgroundSprite->setWorldPosition(7.0f, 11.0f, -3.6f);
+	mBackgroundSprite->setWorldRotation(90.0f, 13.0f, 45.0f);
+	mBackgroundSprite->setWorldScale(0.1f, 10.0f, 14.0f);
+	sceneGraph->attachChild(std::move(BGSky));
+	mBackgroundSprite->buildSprite("sky", "box");
+
+	mGame->BuildFrameResources();
 }
 
 void MenuState::updateOptionText()

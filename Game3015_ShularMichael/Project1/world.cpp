@@ -55,7 +55,7 @@ std::unordered_map<std::string, std::wstring>* World::getTextures()
 /// Used to construct materials for scene and game objects
 void World::buildScene()
 {
-
+	mGame->BuildMaterials("title");
 	mGame->BuildMaterials("sky");
 	mGame->BuildMaterials("desert");
 	mGame->BuildMaterials("eagle");

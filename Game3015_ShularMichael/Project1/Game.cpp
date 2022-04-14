@@ -3,6 +3,7 @@
 #include "TitleState.h"
 #include "MenuState.h"
 #include "GameState.h"
+#include "PauseState.h"
 
 const int gNumFrameResources = 3;
 
@@ -149,8 +150,7 @@ void Game::registerStates()
 	mStateStack.registerState<TitleState>(States::Title);
 	mStateStack.registerState<MenuState>(States::Menu);
 	mStateStack.registerState<GameState>(States::Game);
-
-
+	mStateStack.registerState<PauseState>(States::Pause);
 }
 
 void Game::CreateTexture(std::string name, std::wstring fileName)

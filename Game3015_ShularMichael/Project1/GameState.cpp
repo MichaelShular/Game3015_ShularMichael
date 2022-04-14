@@ -26,6 +26,8 @@ bool GameState::update(const GameTimer& gt)
 
 bool GameState::handleEvent()
 {
+	
+
 	// Game input handling
 	CommandQueue& commands = mWorld->getCommandQueue();
 	mPlayer.handleEvent(commands, 46);
@@ -34,7 +36,13 @@ bool GameState::handleEvent()
 //#pragma region step 1
 //	if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
 //		requestStackPush(States::Pause);
-//#pragma endregion
+//#pragma endregionif 
+#pragma region
+	if(GetAsyncKeyState('P') & 0x8000)
+	{
+		requestStackPush(States::Pause);
+	}
+#pragma endregion
 	return true;
 }
 

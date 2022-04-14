@@ -15,8 +15,6 @@ public:
 
 	virtual	void updateCurrent(const GameTimer& gt);
 
-	
-
 public:
 	XMFLOAT2 mVelocity;
 	Game* mGame;

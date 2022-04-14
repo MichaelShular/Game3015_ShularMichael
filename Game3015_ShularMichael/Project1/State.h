@@ -2,19 +2,15 @@
 #define BOOK_STATE_HPP
 
 #include "StateIdentifiers.h"
-//#include "ResourceIdentifiers.h"
 #include "../../Common/d3dApp.h"
 
-//#include <SFML/System/Time.hpp>
-//#include <SFML/Window/Event.hpp>
-
 #include <memory>
-
 
 class StateStack;
 class Player;
 class Game;
 
+//This class is the base class for creating states
 class State
 {
 public:
@@ -28,16 +24,13 @@ public:
 		Game* mGame;
 	};
 
-
 public:
 	State(StateStack& stack, Context context);
-	virtual				~State();
-
+	virtual	~State();
 	virtual void draw() = 0;
 	virtual bool update(const GameTimer& gt) = 0;
 	virtual bool handleEvent() = 0;
 	virtual void BuildScene() = 0;
-	
 
 protected:
 	void requestStackPush(States::ID stateID);

@@ -1,7 +1,7 @@
 #ifndef BOOK_STATEIDENTIFIERS_HPP
 #define BOOK_STATEIDENTIFIERS_HPP
 
-
+/// Hold the state names
 namespace States
 {
 	enum ID

@@ -7,32 +7,19 @@
 #include "SpriteNode.h"
 #include "sceneNode.h"
 
+///This class is the derived class from state, which is used to stop gameplay
 class MenuState : public State
 {
 public:
 	MenuState(StateStack& stack, Context context);
 
-	virtual void			draw();
-	virtual bool			update(const GameTimer& gt);
-	virtual bool			handleEvent();
-	virtual void			BuildScene();
-	void					updateOptionText();
-
-
+	virtual void draw();
+	virtual bool update(const GameTimer& gt);
+	virtual bool handleEvent();
+	virtual void BuildScene();
 private:
-	enum OptionNames
-	{
-		Play,
-		Exit,
-	};
 	sceneNode* sceneGraph;
 	SpriteNode* mBackgroundSprite;
-
-private:
-	//sf::Sprite				mBackgroundSprite;
-
-	//std::vector<sf::Text>	mOptions;
-	//std::size_t				mOptionIndex;
 };
 
 #endif // BOOK_MENUSTATE_HPP

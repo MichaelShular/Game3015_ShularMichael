@@ -37,7 +37,6 @@ bool Game::Initialize()
 	mCbvSrvDescriptorSize = md3dDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
 
 
-
 	for (auto& it : mTexture) {
 		LoadTextures(it.first, it.second);
 	}
@@ -55,27 +54,16 @@ bool Game::Initialize()
 	registerStates();
 	mStateStack.pushState(States::Title);
 
-	//mGameWorld->buildScene();
-	//BuildFrameResources();
-
 	BuildPSOs();
 	// Execute the initialization commands.
 	ThrowIfFailed(mCommandList->Close());
 	ID3D12CommandList* cmdsLists[] = { mCommandList.Get() };
 	mCommandQueue->ExecuteCommandLists(_countof(cmdsLists), cmdsLists);
 
-	//mCommandList.Reset();
-
-
-	//BuildMaterials("desert");
-	/*BuildMaterials("sky");
-	BuildMaterials("eagle");
-	BuildMaterials("raptor");*/
-
 	// Wait until initialization is complete.
 	FlushCommandQueue();
 
-
+	//Used to check key reassignment 
 	//mPlayer.assignKey(mPlayer.MoveDown, VK_SPACE);
 
 	return true;
@@ -101,7 +89,6 @@ void Game::Update(const GameTimer& gt)
 	UpdateCamera(gt);
 
 
-
 	// Cycle through the circular frame resource array.
 	mCurrFrameResourceIndex = (mCurrFrameResourceIndex + 1) % gNumFrameResources;
 	mCurrFrameResource = mFrameResources[mCurrFrameResourceIndex].get();
@@ -120,21 +107,12 @@ void Game::Update(const GameTimer& gt)
 	UpdateObjectCBs(gt);
 	UpdateMaterialCBs(gt);
 	UpdateMainPassCB(gt);
-
-
-
-
-
 }
 
 ///Handle any commands once or real time input
-
 void Game::processEvents()
 {
-	//CommandQueue& commands = mGameWorld->getCommandQueue();
 	mStateStack.handleEvent();
-	/*mPlayer.handleEvent(commands, key);
-	mPlayer.handleRealtimeInput(commands, key);*/
 }
 
 /// Used to get command list
@@ -145,6 +123,7 @@ ID3D12GraphicsCommandList* Game::getCmdList()
 	return mCommandList.Get();
 }
 
+///Used to register all states to be used
 void Game::registerStates()
 {
 	mStateStack.registerState<TitleState>(States::Title);
@@ -153,11 +132,13 @@ void Game::registerStates()
 	mStateStack.registerState<PauseState>(States::Pause);
 }
 
+///Used to save loaded texture into map
 void Game::CreateTexture(std::string name, std::wstring fileName)
 {
 	mTexture[name] = fileName;
 }
 
+///Used to load textures
 void Game::loadTextures()
 {
 	CreateTexture("title", L"TitleScreen.dds");
@@ -166,7 +147,6 @@ void Game::loadTextures()
 	CreateTexture("eagle", L"Eagle.dds");
 	CreateTexture("raptor", L"Raptor.dds");
 	CreateTexture("pause", L"pause.dds");
-
 }
 
 
@@ -216,9 +196,11 @@ void Game::Draw(const GameTimer& gt)
 	//mGameWorld->draw(gt);
 	mStateStack.draw();
 
-	if (gamePaused) {
-		DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::Opaque]);
 
+	//During pause state stwitching to Opaque rendering to show pausestate gameobjects
+	if (gamePaused) 
+	{
+		DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::Opaque]);
 	}
 	else
 	{
@@ -313,7 +295,6 @@ void Game::OnMouseMove(WPARAM btnState, int x, int y)
 void Game::OnKeyboardInput(const GameTimer& gt)
 {
 	key = 0;
-
 }
 /// Used to update the transformation of camera
 /// 

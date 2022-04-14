@@ -1,52 +1,39 @@
 #include "TitleState.h"
 #include "Game.h"
 
+/// The defualt conconstructor
+/// 
+/// @param: StateStack&
+/// @param: Context 
 TitleState::TitleState(StateStack& stack, Context context)
 	: State(stack, context),
 	sceneGraph(new sceneNode(mGame))
-	/*, mWorld(&(mGame->mGameWorld))
-	, mPlayer(*context.player)*/
 {
-	//mBackgroundSprite.setTexture(context.textures->get(Textures::TitleScreen));
-
-	/*mText.setFont(context.fonts->get(Fonts::Main));
-	mText.setString("Press any key to start");
-	centerOrigin(mText);
-	mText.setPosition(context.window->getView().getSize() / 2.f);*/
-
 	BuildScene();
 }
 
+/// Used draw state's game objects
 void TitleState::draw()
 {
 	sceneGraph->draw();
-	/*sf::RenderWindow& window = *getContext().window;
-	window.draw(mBackgroundSprite);
-
-	if (mShowText)
-		window.draw(mText);*/
 }
 
+/// Used to keep game paused
+/// 
+/// @param: const GameTimer&
 bool TitleState::update(const GameTimer& gt)
 {
-
 	sceneGraph->update(gt);
-	//CommandQueue& commands = mWorld->getCommandQueue();
-	//mPlayer.handleRealtimeInput(commands);
 
 	return true;
 }
 
+///Handle any commands once or real time input
 bool TitleState::handleEvent()
 {
-	// If any key is pressed, trigger the next screen
-	/*CommandQueue& commands = mWorld->getCommandQueue();
-	mPlayer.handleEvent(commands, 46);
-	mPlayer.handleRealtimeInput(commands);*/
+	//Open Game menu
 	if (GetAsyncKeyState(VK_SPACE) & 0x8000)
-	{
-
-		
+	{		
 		requestStackPop();
 		mGame->FlushCommandList();
 		requestStackPush(States::Menu);
@@ -55,6 +42,7 @@ bool TitleState::handleEvent()
 	return true;
 }
 
+///Build game objects for scene
 void TitleState::BuildScene()
 {
 	mGame->BuildMaterials("title");
@@ -68,5 +56,4 @@ void TitleState::BuildScene()
 	mBackgroundSprite->buildSprite("title", "box");
 
 	mGame->BuildFrameResources();
-
 }

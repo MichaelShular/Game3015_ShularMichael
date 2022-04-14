@@ -87,10 +87,4 @@ void Aircraft::buildAircraft()
 
 	mGame->mAllRitems.push_back(std::move(render));
 
-	////step4: All the render items are not opaque this time.
-	//mRitemLayer[(int)RenderLayer::Opaque].push_back(renderer.get());
-	//mRitemLayer[(int)RenderLayer::AlphaTested].push_back(renderer.get());
-
-	
-
 }

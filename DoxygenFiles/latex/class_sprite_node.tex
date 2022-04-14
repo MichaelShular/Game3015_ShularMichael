@@ -18,8 +18,19 @@ Inheritance diagram for Sprite\+Node\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{class_sprite_node_a61fc9218c31a12aaef84105f6e45490e}{Scroll\+Texture}} (XMFLOAT2 val)
+\begin{DoxyCompactList}\small\item\em USe to scroll textrure on sprite (No functioning properly) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_sprite_node_af9a13269b4f3d7a194e1826c704155dc}{Sprite\+Node}} (\mbox{\hyperlink{class_game}{Game}} $\ast$game)
-\begin{DoxyCompactList}\small\item\em The defualt conconstructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The defualt conconstructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sprite_node_af37c87941d2d015f98d6f65faec76847}{build\+Sprite}} (std\+::string Mat\+Name, std\+::string Geo\+Name)
+\begin{DoxyCompactList}\small\item\em Used to build an Alhpatested sprite\textquotesingle{}s position, shape and material. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sprite_node_a8f4039527041d16e4384ad2bc80ca27a}{build\+Sprite\+Opaque}} (std\+::string Mat\+Name, std\+::string Geo\+Name)
+\begin{DoxyCompactList}\small\item\em Used to build an opaque sprite\textquotesingle{}s position, shape and material. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game}{Game}} $\ast$ \mbox{\hyperlink{class_sprite_node_a47247ba65ecd153315620d1695cf40c2}{m\+Game}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -36,6 +47,54 @@ This class is use to create game objects that are not affected by physics.
 
 
 The defualt conconstructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sprite_node_af37c87941d2d015f98d6f65faec76847}\label{class_sprite_node_af37c87941d2d015f98d6f65faec76847}} 
+\index{SpriteNode@{SpriteNode}!buildSprite@{buildSprite}}
+\index{buildSprite@{buildSprite}!SpriteNode@{SpriteNode}}
+\doxysubsubsection{\texorpdfstring{buildSprite()}{buildSprite()}}
+{\footnotesize\ttfamily void Sprite\+Node\+::build\+Sprite (\begin{DoxyParamCaption}\item[{std\+::string}]{Mat\+Name,  }\item[{std\+::string}]{Geo\+Name }\end{DoxyParamCaption})}
+
+
+
+Used to build an Alhpatested sprite\textquotesingle{}s position, shape and material. 
+
+\mbox{\Hypertarget{class_sprite_node_a8f4039527041d16e4384ad2bc80ca27a}\label{class_sprite_node_a8f4039527041d16e4384ad2bc80ca27a}} 
+\index{SpriteNode@{SpriteNode}!buildSpriteOpaque@{buildSpriteOpaque}}
+\index{buildSpriteOpaque@{buildSpriteOpaque}!SpriteNode@{SpriteNode}}
+\doxysubsubsection{\texorpdfstring{buildSpriteOpaque()}{buildSpriteOpaque()}}
+{\footnotesize\ttfamily void Sprite\+Node\+::build\+Sprite\+Opaque (\begin{DoxyParamCaption}\item[{std\+::string}]{Mat\+Name,  }\item[{std\+::string}]{Geo\+Name }\end{DoxyParamCaption})}
+
+
+
+Used to build an opaque sprite\textquotesingle{}s position, shape and material. 
+
+\mbox{\Hypertarget{class_sprite_node_a61fc9218c31a12aaef84105f6e45490e}\label{class_sprite_node_a61fc9218c31a12aaef84105f6e45490e}} 
+\index{SpriteNode@{SpriteNode}!ScrollTexture@{ScrollTexture}}
+\index{ScrollTexture@{ScrollTexture}!SpriteNode@{SpriteNode}}
+\doxysubsubsection{\texorpdfstring{ScrollTexture()}{ScrollTexture()}}
+{\footnotesize\ttfamily void Sprite\+Node\+::\+Scroll\+Texture (\begin{DoxyParamCaption}\item[{XMFLOAT2}]{val }\end{DoxyParamCaption})}
+
+
+
+USe to scroll textrure on sprite (No functioning properly) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & XMFLOAT2\+: the direction texture moves in ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sprite_node_a47247ba65ecd153315620d1695cf40c2}\label{class_sprite_node_a47247ba65ecd153315620d1695cf40c2}} 
+\index{SpriteNode@{SpriteNode}!mGame@{mGame}}
+\index{mGame@{mGame}!SpriteNode@{SpriteNode}}
+\doxysubsubsection{\texorpdfstring{mGame}{mGame}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game}{Game}}$\ast$ Sprite\+Node\+::m\+Game\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

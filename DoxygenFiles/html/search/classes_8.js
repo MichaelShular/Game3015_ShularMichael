@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['scenenode_0',['sceneNode',['../classscene_node.html',1,'']]],
-  ['spritenode_1',['SpriteNode',['../class_sprite_node.html',1,'']]]
+  ['renderitem_0',['RenderItem',['../struct_render_item.html',1,'']]]
 ];

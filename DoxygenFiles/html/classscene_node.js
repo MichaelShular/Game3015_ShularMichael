@@ -18,5 +18,6 @@ var classscene_node =
     [ "setWorldScale", "classscene_node.html#a04a8ab1a9e3a01f211d14c42ec6ee18c", null ],
     [ "update", "classscene_node.html#a838a34341398f8b9056f0c46aca76261", null ],
     [ "mGame", "classscene_node.html#a6a9122b14b03583f22774d8a570aa8e2", null ],
+    [ "mTexturePosition", "classscene_node.html#a10ce6dbda21d52fc9f432ddc4b005f3d", null ],
     [ "renderer", "classscene_node.html#a60595a6d2e3d81109ac77b05deab0b24", null ]
 ];

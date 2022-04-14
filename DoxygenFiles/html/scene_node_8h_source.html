@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Assignment_2_ShularMichael: D:/Semester 6/Game Engine Dev 2/Game3015_ShularMichael/Game3015_ShularMichael/Project1/sceneNode.h Source File</title>
+<title>Assignment_3_ShularMichael: D:/Semester 6/Game Engine Dev 2/Game3015_ShularMichael/Game3015_ShularMichael/Project1/sceneNode.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Assignment_2_ShularMichael
+   <div id="projectname">Assignment_3_ShularMichael
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -188,20 +188,22 @@ $(document).ready(function(){initNavTree('scene_node_8h_source.html',''); initRe
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">protected</span>:</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classscene_node.html#a6a9122b14b03583f22774d8a570aa8e2">   94</a></span>    <a class="code hl_class" href="class_game.html">Game</a>* <a class="code hl_variable" href="classscene_node.html#a6a9122b14b03583f22774d8a570aa8e2">mGame</a>;</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classscene_node.html#a60595a6d2e3d81109ac77b05deab0b24">   95</a></span>    <a class="code hl_struct" href="struct_render_item.html">RenderItem</a>* <a class="code hl_variable" href="classscene_node.html#a60595a6d2e3d81109ac77b05deab0b24">renderer</a>;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    std::vector&lt;Ptr&gt; mChildren;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_class" href="classscene_node.html">sceneNode</a>* mParent;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    XMFLOAT3 mWorldPosition = {0,0,0};</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    XMFLOAT3 mWorldRotation = { 0,0,0 };</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    XMFLOAT3 mWorldScale = { 1,1,1 };</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>};</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classscene_node.html#a10ce6dbda21d52fc9f432ddc4b005f3d">   96</a></span>    XMFLOAT2 <a class="code hl_variable" href="classscene_node.html#a10ce6dbda21d52fc9f432ddc4b005f3d">mTexturePosition</a>; </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    std::vector&lt;Ptr&gt; mChildren;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_class" href="classscene_node.html">sceneNode</a>* mParent;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    XMFLOAT3 mWorldPosition = {0,0,0};</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    XMFLOAT3 mWorldRotation = { 0,0,0 };</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    XMFLOAT3 mWorldScale = { 1,1,1 };</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>};</div>
 <div class="ttc" id="a_category_8h_html"><div class="ttname"><a href="_category_8h.html">Category.h</a></div></div>
 <div class="ttc" id="a_frame_resource_8h_html"><div class="ttname"><a href="_frame_resource_8h.html">FrameResource.h</a></div></div>
-<div class="ttc" id="a_game_8cpp_html_a7c82b7821d2662eb6e0cfdc08a6c4bd4"><div class="ttname"><a href="_game_8cpp.html#a7c82b7821d2662eb6e0cfdc08a6c4bd4">gNumFrameResources</a></div><div class="ttdeci">const int gNumFrameResources</div><div class="ttdef"><b>Definition:</b> Game.cpp:3</div></div>
-<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdoc">This class is used to Initialize the application, control game loop and hold the D3D12 game engine fu...</div><div class="ttdef"><b>Definition:</b> Game.h:31</div></div>
+<div class="ttc" id="a_game_8cpp_html_a7c82b7821d2662eb6e0cfdc08a6c4bd4"><div class="ttname"><a href="_game_8cpp.html#a7c82b7821d2662eb6e0cfdc08a6c4bd4">gNumFrameResources</a></div><div class="ttdeci">const int gNumFrameResources</div><div class="ttdef"><b>Definition:</b> Game.cpp:8</div></div>
+<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdoc">This class is used to Initialize the application, control game loop and hold the D3D12 game engine fu...</div><div class="ttdef"><b>Definition:</b> Game.h:32</div></div>
 <div class="ttc" id="aclass_world_html"><div class="ttname"><a href="class_world.html">World</a></div><div class="ttdoc">This class is use to build game objects and hold sceneNode which will hold all objects that are part ...</div><div class="ttdef"><b>Definition:</b> world.h:27</div></div>
 <div class="ttc" id="aclassscene_node_html"><div class="ttname"><a href="classscene_node.html">sceneNode</a></div><div class="ttdoc">This class is used manage transform hierarchies.</div><div class="ttdef"><b>Definition:</b> sceneNode.h:60</div></div>
 <div class="ttc" id="aclassscene_node_html_a04a8ab1a9e3a01f211d14c42ec6ee18c"><div class="ttname"><a href="classscene_node.html#a04a8ab1a9e3a01f211d14c42ec6ee18c">sceneNode::setWorldScale</a></div><div class="ttdeci">void setWorldScale(float x, float y, float z)</div><div class="ttdoc">Used to set game object's world scale.</div><div class="ttdef"><b>Definition:</b> sceneNode.cpp:139</div></div>
+<div class="ttc" id="aclassscene_node_html_a10ce6dbda21d52fc9f432ddc4b005f3d"><div class="ttname"><a href="classscene_node.html#a10ce6dbda21d52fc9f432ddc4b005f3d">sceneNode::mTexturePosition</a></div><div class="ttdeci">XMFLOAT2 mTexturePosition</div><div class="ttdef"><b>Definition:</b> sceneNode.h:96</div></div>
 <div class="ttc" id="aclassscene_node_html_a21c67aa425d7a41f2d49d277b4192a50"><div class="ttname"><a href="classscene_node.html#a21c67aa425d7a41f2d49d277b4192a50">sceneNode::Ptr</a></div><div class="ttdeci">std::unique_ptr&lt; sceneNode &gt; Ptr</div><div class="ttdef"><b>Definition:</b> sceneNode.h:62</div></div>
 <div class="ttc" id="aclassscene_node_html_a2b1780e3fbd4f62f84dafe2f1ab3e503"><div class="ttname"><a href="classscene_node.html#a2b1780e3fbd4f62f84dafe2f1ab3e503">sceneNode::getCategory</a></div><div class="ttdeci">virtual unsigned int getCategory() const</div><div class="ttdoc">Used get the catefgory.</div><div class="ttdef"><b>Definition:</b> sceneNode.cpp:200</div></div>
 <div class="ttc" id="aclassscene_node_html_a4f76b067d297ba0910d7b452dff926a6"><div class="ttname"><a href="classscene_node.html#a4f76b067d297ba0910d7b452dff926a6">sceneNode::detachChild</a></div><div class="ttdeci">Ptr detachChild(const sceneNode &amp;node)</div><div class="ttdoc">Used detach game objects from sceneNode.</div><div class="ttdef"><b>Definition:</b> sceneNode.cpp:25</div></div>

@@ -76,15 +76,25 @@ void \mbox{\hyperlink{class_game_a58fb5b65b969ba19ac0f5517c91bf9ae}{Draw\+Render
 std\+::array$<$ const CD3\+DX12\+\_\+\+STATIC\+\_\+\+SAMPLER\+\_\+\+DESC, 6 $>$ \mbox{\hyperlink{class_game_a6e8f674ef01b7480d39fe90374301c2d}{Get\+Static\+Samplers}} ()
 \begin{DoxyCompactList}\small\item\em Used to define samplers. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game_a79f698dda206dd7a9bed28b3f88bdc38}{process\+Events}} ()
-\begin{DoxyCompactList}\small\item\em Held any commands once or real time input. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Handle any commands once or real time input. \end{DoxyCompactList}\item 
 ID3\+D12\+Graphics\+Command\+List $\ast$ \mbox{\hyperlink{class_game_a9283a2ccc7cad9fdd4b25f7979d3c5c1}{get\+Cmd\+List}} ()
-\begin{DoxyCompactList}\small\item\em Used to get command list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used to get command list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a43aeeb86a84f07398014ba6e9f13b251}{register\+States}} ()
+\begin{DoxyCompactList}\small\item\em Used to register all states to be used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a51615a11815a1469baf0daab6130edb9}{Create\+Texture}} (std\+::string name, std\+::wstring file\+Name)
+\begin{DoxyCompactList}\small\item\em Used to save loaded texture into map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ac3ffa65a566c0cd5e286182d92e67646}{load\+Textures}} ()
+\begin{DoxyCompactList}\small\item\em Used to load textures. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a823fd39ac72c1c070f0d48421bb4d0db}{reset\+Command\+List}} ()
+\item 
+void \mbox{\hyperlink{class_game_a2cd2514730d8c39da5d9d05677bce4ee}{Flush\+Command\+List}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} $\ast$ \mbox{\hyperlink{class_game_a6119ac12b9dafae4e105ac9b4e80c1b2}{m\+Curr\+Frame\+Resource}} = nullptr
 \item 
-\mbox{\hyperlink{class_world}{World}} $\ast$ \mbox{\hyperlink{class_game_a859d72feb8f851807c72075806dca8d3}{m\+Game\+World}}
+\mbox{\hyperlink{class_world}{World}} \mbox{\hyperlink{class_game_a06b108dafd18c99e9390cf11d274ba79}{m\+Game\+World}}
 \item 
 std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} $>$ $>$ \mbox{\hyperlink{class_game_a2a9401ba48c48468ceef6771309ddff7}{m\+Frame\+Resources}}
 \item 
@@ -135,6 +145,12 @@ int \mbox{\hyperlink{class_game_aa3eb76b8fe8247b22d8666c469946889}{Diffuse\+Srv\
 int \mbox{\hyperlink{class_game_a886816436be0cb0f17c4e2e8f9ac5001}{Object\+CBIndex}}
 \item 
 \mbox{\hyperlink{class_player}{Player}} \mbox{\hyperlink{class_game_a1633a90f20203779bc1a1171c2d7ad77}{m\+Player}}
+\item 
+\mbox{\hyperlink{class_state_stack}{State\+Stack}} \mbox{\hyperlink{class_game_a0baead77f3725081b986fb9d569c17dd}{m\+State\+Stack}}
+\item 
+bool \mbox{\hyperlink{class_game_aee967f99d03adaa40e0281f4edc53f64}{game\+Paused}} = false
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::wstring $>$ \mbox{\hyperlink{class_game_aca106d901652db4cb7f902f77007b781}{m\+Texture}}
 \item 
 int \mbox{\hyperlink{class_game_a089e8645375ecf0f8a45f6f6472f1d8a}{key}}
 \item 
@@ -301,6 +317,16 @@ Used to build shapes from Geometry\+Generator.
 {\em } & std\+::string \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_game_a51615a11815a1469baf0daab6130edb9}\label{class_game_a51615a11815a1469baf0daab6130edb9}} 
+\index{Game@{Game}!CreateTexture@{CreateTexture}}
+\index{CreateTexture@{CreateTexture}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{CreateTexture()}{CreateTexture()}}
+{\footnotesize\ttfamily void Game\+::\+Create\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::wstring}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Used to save loaded texture into map. 
+
 \mbox{\Hypertarget{class_game_afc62dae28f3cd775d8110ff5386c1fe1}\label{class_game_afc62dae28f3cd775d8110ff5386c1fe1}} 
 \index{Game@{Game}!Draw@{Draw}}
 \index{Draw@{Draw}!Game@{Game}}
@@ -333,6 +359,12 @@ Used to draw game objects.
 {\em } & const std\+::vector$<$\+Render\+Item$\ast$$>$\& \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_game_a2cd2514730d8c39da5d9d05677bce4ee}\label{class_game_a2cd2514730d8c39da5d9d05677bce4ee}} 
+\index{Game@{Game}!FlushCommandList@{FlushCommandList}}
+\index{FlushCommandList@{FlushCommandList}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{FlushCommandList()}{FlushCommandList()}}
+{\footnotesize\ttfamily void Game\+::\+Flush\+Command\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{class_game_a9283a2ccc7cad9fdd4b25f7979d3c5c1}\label{class_game_a9283a2ccc7cad9fdd4b25f7979d3c5c1}} 
 \index{Game@{Game}!getCmdList@{getCmdList}}
 \index{getCmdList@{getCmdList}!Game@{Game}}
@@ -368,6 +400,16 @@ std\+::array$<$const CD3\+DX12\+\_\+\+STATIC\+\_\+\+SAMPLER\+\_\+\+DESC, 6$>$
 
 
 Used to run all function need before game loop. 
+
+\mbox{\Hypertarget{class_game_ac3ffa65a566c0cd5e286182d92e67646}\label{class_game_ac3ffa65a566c0cd5e286182d92e67646}} 
+\index{Game@{Game}!loadTextures@{loadTextures}}
+\index{loadTextures@{loadTextures}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{loadTextures()}{loadTextures()}}
+{\footnotesize\ttfamily void Game\+::load\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used to load textures. 
 
 \mbox{\Hypertarget{class_game_a62dae15e7e1828427b696f017ce6241c}\label{class_game_a62dae15e7e1828427b696f017ce6241c}} 
 \index{Game@{Game}!LoadTextures@{LoadTextures}}
@@ -482,7 +524,23 @@ Used to update the aspect ratio and recompute the projection matrix when window 
 
 
 
-Held any commands once or real time input. 
+Handle any commands once or real time input. 
+
+\mbox{\Hypertarget{class_game_a43aeeb86a84f07398014ba6e9f13b251}\label{class_game_a43aeeb86a84f07398014ba6e9f13b251}} 
+\index{Game@{Game}!registerStates@{registerStates}}
+\index{registerStates@{registerStates}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{registerStates()}{registerStates()}}
+{\footnotesize\ttfamily void Game\+::register\+States (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used to register all states to be used. 
+
+\mbox{\Hypertarget{class_game_a823fd39ac72c1c070f0d48421bb4d0db}\label{class_game_a823fd39ac72c1c070f0d48421bb4d0db}} 
+\index{Game@{Game}!resetCommandList@{resetCommandList}}
+\index{resetCommandList@{resetCommandList}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{resetCommandList()}{resetCommandList()}}
+{\footnotesize\ttfamily void Game\+::reset\+Command\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{class_game_ab9244991993b5a1cbde3f1f2d73f2745}\label{class_game_ab9244991993b5a1cbde3f1f2d73f2745}} 
 \index{Game@{Game}!Update@{Update}}
@@ -568,6 +626,12 @@ Used to update game object\textquotesingle{}s CBs.
 \doxysubsubsection{\texorpdfstring{DiffuseSrvHeapIndexCount}{DiffuseSrvHeapIndexCount}}
 {\footnotesize\ttfamily int Game\+::\+Diffuse\+Srv\+Heap\+Index\+Count}
 
+\mbox{\Hypertarget{class_game_aee967f99d03adaa40e0281f4edc53f64}\label{class_game_aee967f99d03adaa40e0281f4edc53f64}} 
+\index{Game@{Game}!gamePaused@{gamePaused}}
+\index{gamePaused@{gamePaused}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{gamePaused}{gamePaused}}
+{\footnotesize\ttfamily bool Game\+::game\+Paused = false}
+
 \mbox{\Hypertarget{class_game_a089e8645375ecf0f8a45f6f6472f1d8a}\label{class_game_a089e8645375ecf0f8a45f6f6472f1d8a}} 
 \index{Game@{Game}!key@{key}}
 \index{key@{key}!Game@{Game}}
@@ -622,11 +686,11 @@ Used to update game object\textquotesingle{}s CBs.
 \doxysubsubsection{\texorpdfstring{mFrameResources}{mFrameResources}}
 {\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}}$>$ $>$ Game\+::m\+Frame\+Resources}
 
-\mbox{\Hypertarget{class_game_a859d72feb8f851807c72075806dca8d3}\label{class_game_a859d72feb8f851807c72075806dca8d3}} 
+\mbox{\Hypertarget{class_game_a06b108dafd18c99e9390cf11d274ba79}\label{class_game_a06b108dafd18c99e9390cf11d274ba79}} 
 \index{Game@{Game}!mGameWorld@{mGameWorld}}
 \index{mGameWorld@{mGameWorld}!Game@{Game}}
 \doxysubsubsection{\texorpdfstring{mGameWorld}{mGameWorld}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_world}{World}}$\ast$ Game\+::m\+Game\+World}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_world}{World}} Game\+::m\+Game\+World}
 
 \mbox{\Hypertarget{class_game_a0e53612a0a54bdd46ea1d8b071260b77}\label{class_game_a0e53612a0a54bdd46ea1d8b071260b77}} 
 \index{Game@{Game}!mGeometries@{mGeometries}}
@@ -711,6 +775,18 @@ Used to update game object\textquotesingle{}s CBs.
 \index{mSrvDescriptorHeap@{mSrvDescriptorHeap}!Game@{Game}}
 \doxysubsubsection{\texorpdfstring{mSrvDescriptorHeap}{mSrvDescriptorHeap}}
 {\footnotesize\ttfamily Com\+Ptr$<$ID3\+D12\+Descriptor\+Heap$>$ Game\+::m\+Srv\+Descriptor\+Heap = nullptr}
+
+\mbox{\Hypertarget{class_game_a0baead77f3725081b986fb9d569c17dd}\label{class_game_a0baead77f3725081b986fb9d569c17dd}} 
+\index{Game@{Game}!mStateStack@{mStateStack}}
+\index{mStateStack@{mStateStack}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mStateStack}{mStateStack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_state_stack}{State\+Stack}} Game\+::m\+State\+Stack}
+
+\mbox{\Hypertarget{class_game_aca106d901652db4cb7f902f77007b781}\label{class_game_aca106d901652db4cb7f902f77007b781}} 
+\index{Game@{Game}!mTexture@{mTexture}}
+\index{mTexture@{mTexture}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mTexture}{mTexture}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::wstring$>$ Game\+::m\+Texture}
 
 \mbox{\Hypertarget{class_game_a914940e399d2418018640ef3da130371}\label{class_game_a914940e399d2418018640ef3da130371}} 
 \index{Game@{Game}!mTextures@{mTextures}}

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['_7ecrateapp_0',['~CrateApp',['../class_crate_app.html#a800e8be34f9ba08ff87ec15cefe26e16',1,'CrateApp']]],
-  ['_7eframeresource_1',['~FrameResource',['../struct_frame_resource.html#a93d669d1d4db3b4ed5cd6f0f6b921809',1,'FrameResource']]],
-  ['_7egame_2',['~Game',['../class_game.html#ae3d112ca6e0e55150d2fdbc704474530',1,'Game']]]
+  ['winmain_0',['WinMain',['../main_8cpp.html#aabcda87589d774901aa87061b8fd0176',1,'WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, int showCmd):&#160;main.cpp'],['../_week6-1-_crate_app___alpha_test_8cpp.html#aabcda87589d774901aa87061b8fd0176',1,'WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, int showCmd):&#160;Week6-1-CrateApp_AlphaTest.cpp']]],
+  ['world_1',['World',['../class_world.html#a358fecc8d0e42996d7bd1884f126a97c',1,'World']]]
 ];

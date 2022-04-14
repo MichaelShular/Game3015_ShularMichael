@@ -1,0 +1,41 @@
+\hypertarget{_game_state_8h_source}{}\doxysection{Game\+State.\+h}
+\label{_game_state_8h_source}\index{D:/Semester 6/Game Engine Dev 2/Game3015\_ShularMichael/Game3015\_ShularMichael/Project1/GameState.h@{D:/Semester 6/Game Engine Dev 2/Game3015\_ShularMichael/Game3015\_ShularMichael/Project1/GameState.h}}
+\mbox{\hyperlink{_game_state_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef BOOK\_GAMESTATE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define BOOK\_GAMESTATE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_state_8h}{State.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{world_8h}{World.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_player_8h}{Player.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}../../Common/d3dApp.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#pragma comment(lib, "{}d3dcompiler.lib"{}})}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#pragma comment(lib, "{}D3D12.lib"{}})}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_state}{GameState}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_game_state_aeb2e2598754640c694b989311b1aebfe}{GameState}}(\mbox{\hyperlink{class_state_stack}{StateStack}}\& stack, \mbox{\hyperlink{struct_state_1_1_context}{Context}} context);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_state_a3c511417d8934943ae65c04681f321a3}{draw}}();}
+\DoxyCodeLine{19     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_game_state_ac0bea22df7996fa7dd05520ff46199de}{update}}(\textcolor{keyword}{const} GameTimer\& gt);}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_game_state_a5ed0fcfe48aa111c69aef57e81ce2d17}{handleEvent}}();}
+\DoxyCodeLine{21     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_state_af36f800e90ea57c904f0e26254a2ab14}{BuildScene}}();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{private}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_world}{World}}* mWorld;}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_player}{Player}}\& mPlayer;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \mbox{\hyperlink{classscene_node}{sceneNode}}* pauseSceneGraph;}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_sprite_node}{SpriteNode}}* mPauseSprite;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \mbox{\hyperlink{class_sprite_node}{SpriteNode}}* mGround;}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_sprite_node}{SpriteNode}}* mSky;}
+\DoxyCodeLine{32     \mbox{\hyperlink{class_aircraft}{Aircraft}}* mplayerAircraftOne;}
+\DoxyCodeLine{33     \mbox{\hyperlink{class_aircraft}{Aircraft}}* mplayerAircraftTwo;}
+\DoxyCodeLine{34 \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_GAMESTATE\_HPP}}
+
+\end{DoxyCode}

@@ -9,8 +9,8 @@ var searchData=
   ['mcurrframeresourceindex_6',['mCurrFrameResourceIndex',['../class_game.html#a1f687875ba94b87162a7dc90b80b0092',1,'Game']]],
   ['meyepos_7',['mEyePos',['../class_game.html#ae4e246d4ac7d6ab877581697072669d4',1,'Game']]],
   ['mframeresources_8',['mFrameResources',['../class_game.html#a2a9401ba48c48468ceef6771309ddff7',1,'Game']]],
-  ['mgame_9',['mGame',['../class_aircraft.html#ae5ed0ff6307e3238597f70741e924a7d',1,'Aircraft::mGame()'],['../class_entity.html#ac90a1efbcce909e2e29eb3d3e9e1aba5',1,'Entity::mGame()'],['../classscene_node.html#a6a9122b14b03583f22774d8a570aa8e2',1,'sceneNode::mGame()']]],
-  ['mgameworld_10',['mGameWorld',['../class_game.html#a859d72feb8f851807c72075806dca8d3',1,'Game']]],
+  ['mgame_9',['mGame',['../class_aircraft.html#ae5ed0ff6307e3238597f70741e924a7d',1,'Aircraft::mGame()'],['../class_entity.html#ac90a1efbcce909e2e29eb3d3e9e1aba5',1,'Entity::mGame()'],['../classscene_node.html#a6a9122b14b03583f22774d8a570aa8e2',1,'sceneNode::mGame()'],['../class_sprite_node.html#a47247ba65ecd153315620d1695cf40c2',1,'SpriteNode::mGame()'],['../struct_state_1_1_context.html#a5214a1ea496d79edde459897b9fdf2e0',1,'State::Context::mGame()'],['../class_state.html#a0b2cc4d1f24881f8e0ac5dd5c80e4799',1,'State::mGame()']]],
+  ['mgameworld_10',['mGameWorld',['../class_game.html#a06b108dafd18c99e9390cf11d274ba79',1,'Game']]],
   ['mgeometries_11',['mGeometries',['../class_game.html#a0e53612a0a54bdd46ea1d8b071260b77',1,'Game']]],
   ['minputlayout_12',['mInputLayout',['../class_game.html#a4f5868aab9c96810369a9ab91dec1d2b',1,'Game']]],
   ['mlastmousepos_13',['mLastMousePos',['../class_game.html#ab5cce9551fdd8b346b36747d6f4d3a38',1,'Game']]],
@@ -25,8 +25,12 @@ var searchData=
   ['mrootsignature_22',['mRootSignature',['../class_game.html#a987fac1aded1b4f4b9495eb0f1464c12',1,'Game']]],
   ['mshaders_23',['mShaders',['../class_game.html#a5d821a872c24ff21b97300d24e37ac23',1,'Game']]],
   ['msrvdescriptorheap_24',['mSrvDescriptorHeap',['../class_game.html#a85befdbe03bbcdd30ad94cd64e0a1bd1',1,'Game']]],
-  ['mtextures_25',['mTextures',['../class_game.html#a914940e399d2418018640ef3da130371',1,'Game']]],
-  ['mtheta_26',['mTheta',['../class_game.html#a39e59e1dd11a26f857e39d0e4451cbb6',1,'Game']]],
-  ['mvelocity_27',['mVelocity',['../class_entity.html#a31d59d6f95b6084907efdf6f58bdd525',1,'Entity::mVelocity()'],['../struct_aircraft_mover.html#a04a2522114e370b520200a8a9afdca34',1,'AircraftMover::mVelocity()']]],
-  ['mview_28',['mView',['../class_game.html#abfaa440795c3610368a994a3045d04ba',1,'Game']]]
+  ['mstack_25',['mStack',['../class_state.html#af0424dd012cc1ceb6e0f416982aa9228',1,'State']]],
+  ['mstatestack_26',['mStateStack',['../class_game.html#a0baead77f3725081b986fb9d569c17dd',1,'Game']]],
+  ['mtexture_27',['mTexture',['../class_game.html#aca106d901652db4cb7f902f77007b781',1,'Game']]],
+  ['mtextureposition_28',['mTexturePosition',['../classscene_node.html#a10ce6dbda21d52fc9f432ddc4b005f3d',1,'sceneNode']]],
+  ['mtextures_29',['mTextures',['../class_game.html#a914940e399d2418018640ef3da130371',1,'Game']]],
+  ['mtheta_30',['mTheta',['../class_game.html#a39e59e1dd11a26f857e39d0e4451cbb6',1,'Game']]],
+  ['mvelocity_31',['mVelocity',['../class_entity.html#a31d59d6f95b6084907efdf6f58bdd525',1,'Entity::mVelocity()'],['../struct_aircraft_mover.html#a04a2522114e370b520200a8a9afdca34',1,'AircraftMover::mVelocity()']]],
+  ['mview_32',['mView',['../class_game.html#abfaa440795c3610368a994a3045d04ba',1,'Game']]]
 ];

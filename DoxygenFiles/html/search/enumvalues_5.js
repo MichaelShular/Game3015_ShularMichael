@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['opaque_0',['Opaque',['../_game_8h.html#aa63ede3e7371d4bc358f651428d23159afaa90538de35640e4b1e31ccf35b6eb5',1,'Opaque():&#160;Game.h'],['../_week6-1-_crate_app___alpha_test_8cpp.html#aa63ede3e7371d4bc358f651428d23159afaa90538de35640e4b1e31ccf35b6eb5',1,'Opaque():&#160;Week6-1-CrateApp_AlphaTest.cpp'],['../_game_8h.html#aa63ede3e7371d4bc358f651428d23159afaa90538de35640e4b1e31ccf35b6eb5',1,'Opaque():&#160;Game.h'],['../_week6-1-_crate_app___alpha_test_8cpp.html#aa63ede3e7371d4bc358f651428d23159afaa90538de35640e4b1e31ccf35b6eb5',1,'Opaque():&#160;Week6-1-CrateApp_AlphaTest.cpp']]]
+  ['menu_0',['Menu',['../namespace_states.html#a571a0dc62822f97bb9511eb013d8e1c3a3d097da841211f87096e55962a1bd73f',1,'States']]],
+  ['movedown_1',['MoveDown',['../class_player.html#a2da5df212d083bbb1460237f34ab0d88a685fada3f0a5111b3b8e56f5357a05b0',1,'Player']]],
+  ['moveleft_2',['MoveLeft',['../class_player.html#a2da5df212d083bbb1460237f34ab0d88a0166b28e57a9a8553a603a4c0fbe5807',1,'Player']]],
+  ['moveright_3',['MoveRight',['../class_player.html#a2da5df212d083bbb1460237f34ab0d88aa89dbd9060b77566a66b115531df631b',1,'Player']]],
+  ['moveup_4',['MoveUp',['../class_player.html#a2da5df212d083bbb1460237f34ab0d88a6c74df21e9d4e850dd175a23b78c6540',1,'Player']]]
 ];

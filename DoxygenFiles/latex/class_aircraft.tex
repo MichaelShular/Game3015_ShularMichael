@@ -28,9 +28,9 @@ enum \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}} \
 \mbox{\hyperlink{class_aircraft_ae9d52b44a62c33bf411185829158fba4}{Aircraft}} (\mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}} type, \mbox{\hyperlink{class_game}{Game}} $\ast$game)
 \begin{DoxyCompactList}\small\item\em The defualt conconstructor. \end{DoxyCompactList}\item 
 virtual unsigned int \mbox{\hyperlink{class_aircraft_a01f9042934c08ef18b62351e6bca320d}{get\+Category}} () const
-\begin{DoxyCompactList}\small\item\em Used get the catefgory. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get type of ship. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_aircraft_ad8f3efef042dae09a8a35255d042741f}{build\+Aircraft}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used to build the gameobject position, shape and material. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -76,6 +76,9 @@ The defualt conconstructor.
 \begin{DoxyParams}{Parameters}
 {\em } & enum Type\+: use to switch sprites \\
 \hline
+{\em } & \mbox{\hyperlink{class_game}{Game}} ~\newline
+ \\
+\hline
 \end{DoxyParams}
 
 
@@ -86,6 +89,10 @@ The defualt conconstructor.
 \doxysubsubsection{\texorpdfstring{buildAircraft()}{buildAircraft()}}
 {\footnotesize\ttfamily void Aircraft\+::build\+Aircraft (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Used to build the gameobject position, shape and material. 
+
 \mbox{\Hypertarget{class_aircraft_a01f9042934c08ef18b62351e6bca320d}\label{class_aircraft_a01f9042934c08ef18b62351e6bca320d}} 
 \index{Aircraft@{Aircraft}!getCategory@{getCategory}}
 \index{getCategory@{getCategory}!Aircraft@{Aircraft}}
@@ -94,10 +101,10 @@ The defualt conconstructor.
 
 
 
-Used get the catefgory. 
+Get type of ship. 
 
 \begin{DoxyReturn}{Returns}
-\+: \mbox{\hyperlink{struct_command}{Command}}\& 
+\+: enum Type\+: use to switch sprites 
 \end{DoxyReturn}
 
 

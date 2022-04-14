@@ -5,15 +5,29 @@
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{2 }
 \DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{scene_node_8h}{sceneNode.h}}"{}}}
-\DoxyCodeLine{4 }
-\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_sprite_node}{SpriteNode}} : \textcolor{keyword}{public} \mbox{\hyperlink{classscene_node}{sceneNode}}}
-\DoxyCodeLine{7 \{}
-\DoxyCodeLine{8 \textcolor{keyword}{public}:}
-\DoxyCodeLine{9     \mbox{\hyperlink{class_sprite_node_af9a13269b4f3d7a194e1826c704155dc}{SpriteNode}}(\mbox{\hyperlink{class_game}{Game}}* game);}
-\DoxyCodeLine{10 \textcolor{keyword}{private}:}
-\DoxyCodeLine{11     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} drawCurrent() \textcolor{keyword}{const};}
-\DoxyCodeLine{12 \textcolor{keyword}{private}:}
-\DoxyCodeLine{13     std::string mSprite;}
-\DoxyCodeLine{14 \};}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}../../Common/d3dApp.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../../Common/MathHelper.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}../../Common/UploadBuffer.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../../Common/d3dApp.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#pragma comment(lib, "{}d3dcompiler.lib"{}})}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#pragma comment(lib, "{}D3D12.lib"{}})}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_sprite_node}{SpriteNode}} : \textcolor{keyword}{public} \mbox{\hyperlink{classscene_node}{sceneNode}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_node_a61fc9218c31a12aaef84105f6e45490e}{ScrollTexture}}(XMFLOAT2 val);}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_sprite_node_af9a13269b4f3d7a194e1826c704155dc}{SpriteNode}}(\mbox{\hyperlink{class_game}{Game}}* game);}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_node_af37c87941d2d015f98d6f65faec76847}{buildSprite}}(std::string MatName, std::string GeoName);}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_node_a8f4039527041d16e4384ad2bc80ca27a}{buildSpriteOpaque}}(std::string MatName, std::string GeoName);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{private}:}
+\DoxyCodeLine{22     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} drawCurrent() \textcolor{keyword}{const};}
+\DoxyCodeLine{23 \textcolor{keyword}{private}:}
+\DoxyCodeLine{24     std::string mSprite;}
+\DoxyCodeLine{25 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{26     }
+\DoxyCodeLine{27     \mbox{\hyperlink{class_game}{Game}}* \mbox{\hyperlink{class_sprite_node_a47247ba65ecd153315620d1695cf40c2}{mGame}};}
+\DoxyCodeLine{28 \};}
 
 \end{DoxyCode}

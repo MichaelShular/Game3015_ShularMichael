@@ -1,0 +1,125 @@
+\hypertarget{class_pause_state}{}\doxysection{Pause\+State Class Reference}
+\label{class_pause_state}\index{PauseState@{PauseState}}
+
+
+This class is the derived class from state, which is used to stop gameplay.  
+
+
+
+
+{\ttfamily \#include $<$Pause\+State.\+h$>$}
+
+Inheritance diagram for Pause\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_pause_state}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pause_state_ac5c14226e18f688233f5b511e1025a59}{Pause\+State}} (\mbox{\hyperlink{class_state_stack}{State\+Stack}} \&stack, \mbox{\hyperlink{struct_state_1_1_context}{Context}} context)
+\begin{DoxyCompactList}\small\item\em The defualt conconstructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_pause_state_ac4c159c2f6d32eedd351f39e36c43f9d}{draw}} ()
+\begin{DoxyCompactList}\small\item\em Used draw state\textquotesingle{}s game objects. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_pause_state_a9822236314419b3b0d3519f4ff2cf5b6}{update}} (const Game\+Timer \&gt)
+\begin{DoxyCompactList}\small\item\em Used to keep game paused. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_pause_state_a21930146f1e7cd829be0f4c0dec5a140}{handle\+Event}} ()
+\begin{DoxyCompactList}\small\item\em Handle any commands once or real time input. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_pause_state_a1d78effb4b98203663461d52657975d1}{Build\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Build game objects for scene (Not used) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class is the derived class from state, which is used to stop gameplay. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_pause_state_ac5c14226e18f688233f5b511e1025a59}\label{class_pause_state_ac5c14226e18f688233f5b511e1025a59}} 
+\index{PauseState@{PauseState}!PauseState@{PauseState}}
+\index{PauseState@{PauseState}!PauseState@{PauseState}}
+\doxysubsubsection{\texorpdfstring{PauseState()}{PauseState()}}
+{\footnotesize\ttfamily Pause\+State\+::\+Pause\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state_stack}{State\+Stack}} \&}]{stack,  }\item[{\mbox{\hyperlink{struct_state_1_1_context}{Context}}}]{context }\end{DoxyParamCaption})}
+
+
+
+The defualt conconstructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \mbox{\hyperlink{class_state_stack}{State\+Stack}}\& \\
+\hline
+{\em } & Context ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pause_state_a1d78effb4b98203663461d52657975d1}\label{class_pause_state_a1d78effb4b98203663461d52657975d1}} 
+\index{PauseState@{PauseState}!BuildScene@{BuildScene}}
+\index{BuildScene@{BuildScene}!PauseState@{PauseState}}
+\doxysubsubsection{\texorpdfstring{BuildScene()}{BuildScene()}}
+{\footnotesize\ttfamily void Pause\+State\+::\+Build\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Build game objects for scene (Not used) 
+
+
+
+Implements \mbox{\hyperlink{class_state_ad0a7d5cb4879d0429e38eee80bae0f1c}{State}}.
+
+\mbox{\Hypertarget{class_pause_state_ac4c159c2f6d32eedd351f39e36c43f9d}\label{class_pause_state_ac4c159c2f6d32eedd351f39e36c43f9d}} 
+\index{PauseState@{PauseState}!draw@{draw}}
+\index{draw@{draw}!PauseState@{PauseState}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Pause\+State\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Used draw state\textquotesingle{}s game objects. 
+
+
+
+Implements \mbox{\hyperlink{class_state_ae261605bc40b7e3959ce5df5457e4942}{State}}.
+
+\mbox{\Hypertarget{class_pause_state_a21930146f1e7cd829be0f4c0dec5a140}\label{class_pause_state_a21930146f1e7cd829be0f4c0dec5a140}} 
+\index{PauseState@{PauseState}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!PauseState@{PauseState}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}}
+{\footnotesize\ttfamily bool Pause\+State\+::handle\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handle any commands once or real time input. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a0bb3e556d9cfbb24cf9dd9ab85b7997d}{State}}.
+
+\mbox{\Hypertarget{class_pause_state_a9822236314419b3b0d3519f4ff2cf5b6}\label{class_pause_state_a9822236314419b3b0d3519f4ff2cf5b6}} 
+\index{PauseState@{PauseState}!update@{update}}
+\index{update@{update}!PauseState@{PauseState}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily bool Pause\+State\+::update (\begin{DoxyParamCaption}\item[{const Game\+Timer \&}]{gt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Used to keep game paused. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & const Game\+Timer\& \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a3edbdcd142b9da8470d1f7d3fbe74e83}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Semester 6/\+Game Engine Dev 2/\+Game3015\+\_\+\+Shular\+Michael/\+Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{_pause_state_8h}{Pause\+State.\+h}}\item 
+D\+:/\+Semester 6/\+Game Engine Dev 2/\+Game3015\+\_\+\+Shular\+Michael/\+Game3015\+\_\+\+Shular\+Michael/\+Project1/\mbox{\hyperlink{_pause_state_8cpp}{Pause\+State.\+cpp}}\end{DoxyCompactItemize}

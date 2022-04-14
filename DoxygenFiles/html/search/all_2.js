@@ -8,7 +8,10 @@ var searchData=
   ['buildpsos_5',['BuildPSOs',['../class_game.html#aa0934b45052f43934eb93fd013ca23a8',1,'Game']]],
   ['buildrenderitems_6',['BuildRenderItems',['../class_game.html#ab4c32e9bd2226c780e1dcd5939f4e1db',1,'Game']]],
   ['buildrootsignature_7',['BuildRootSignature',['../class_game.html#aa02e07384ccea21f7421ca60967c1fa5',1,'Game']]],
-  ['buildscene_8',['buildScene',['../class_world.html#ae7df49f5d488e5cd1254bf360966f410',1,'World']]],
-  ['buildshadersandinputlayout_9',['BuildShadersAndInputLayout',['../class_game.html#adc0692c304c05a5a281d88622b39c498',1,'Game']]],
-  ['buildshapegeometry_10',['BuildShapeGeometry',['../class_game.html#af1166f658b26c355325807126ff2e4a6',1,'Game']]]
+  ['buildscene_8',['BuildScene',['../class_game_state.html#af36f800e90ea57c904f0e26254a2ab14',1,'GameState::BuildScene()'],['../class_menu_state.html#a0b7d7cbd7c986d407f7900ae436e4474',1,'MenuState::BuildScene()'],['../class_pause_state.html#a1d78effb4b98203663461d52657975d1',1,'PauseState::BuildScene()'],['../class_state.html#ad0a7d5cb4879d0429e38eee80bae0f1c',1,'State::BuildScene()'],['../class_title_state.html#a8762d7c68c678db1bccffa44b1a44ee6',1,'TitleState::BuildScene()']]],
+  ['buildscene_9',['buildScene',['../class_world.html#ae7df49f5d488e5cd1254bf360966f410',1,'World']]],
+  ['buildshadersandinputlayout_10',['BuildShadersAndInputLayout',['../class_game.html#adc0692c304c05a5a281d88622b39c498',1,'Game']]],
+  ['buildshapegeometry_11',['BuildShapeGeometry',['../class_game.html#af1166f658b26c355325807126ff2e4a6',1,'Game']]],
+  ['buildsprite_12',['buildSprite',['../class_sprite_node.html#af37c87941d2d015f98d6f65faec76847',1,'SpriteNode']]],
+  ['buildspriteopaque_13',['buildSpriteOpaque',['../class_sprite_node.html#a8f4039527041d16e4384ad2bc80ca27a',1,'SpriteNode']]]
 ];

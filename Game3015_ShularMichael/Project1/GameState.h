@@ -24,6 +24,9 @@ private:
 	World* mWorld;
 	Player& mPlayer;
 
+	sceneNode* pauseSceneGraph;
+	SpriteNode* mPauseSprite;
+
 	SpriteNode* mGround;
 	SpriteNode* mSky;
 	Aircraft* mplayerAircraftOne;

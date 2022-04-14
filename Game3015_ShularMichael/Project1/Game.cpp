@@ -165,6 +165,8 @@ void Game::loadTextures()
 	CreateTexture("desert", L"Desert.dds");
 	CreateTexture("eagle", L"Eagle.dds");
 	CreateTexture("raptor", L"Raptor.dds");
+	CreateTexture("pause", L"pause.dds");
+
 }
 
 
@@ -214,7 +216,15 @@ void Game::Draw(const GameTimer& gt)
 	//mGameWorld->draw(gt);
 	mStateStack.draw();
 
-	DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::AlphaTested]);
+	if (gamePaused) {
+		DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::Opaque]);
+
+	}
+	else
+	{
+		DrawRenderItems(mCommandList.Get(), mRitemLayer[(int)RenderLayer::AlphaTested]);
+	}
+
 
 
 	// Indicate a state transition on the resource usage.
@@ -647,7 +657,7 @@ void Game::BuildFrameResources()
 			1, (UINT)mAllRitems.size(), (UINT)mMaterials.size()));
 	}
 
-	
+
 
 }
 /// Used to build materials for game objects

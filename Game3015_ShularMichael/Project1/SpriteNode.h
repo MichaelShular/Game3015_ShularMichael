@@ -16,6 +16,8 @@ public:
 	void ScrollTexture(XMFLOAT2 val);
 	SpriteNode(Game* game);
 	void buildSprite(std::string MatName, std::string GeoName);
+	void buildSpriteOpaque(std::string MatName, std::string GeoName);
+
 private:
 	virtual void drawCurrent() const;
 private:

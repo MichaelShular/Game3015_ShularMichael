@@ -20,8 +20,8 @@ public:
 
 
 private:
-	sceneNode* sceneGraph;
-	//SpriteNode* mBackgroundSprite;
+	sceneNode* pauseSceneGraph;
+	SpriteNode* mPauseSprite;
 
 private:
 	//sf::Sprite				mBackgroundSprite;

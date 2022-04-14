@@ -139,6 +139,8 @@ public:
 
 	StateStack mStateStack;
 
+	bool gamePaused = false;
+
 	std::unordered_map<std::string, std::wstring> mTexture;
 
 	int key;

@@ -35,7 +35,7 @@ void World::update(const GameTimer& gt)
 
 
 	sceneGraph->update(gt);
-	mGround->ScrollTexture(XMFLOAT2(0, -0.1f * gt.DeltaTime()) );
+	//mGround->ScrollTexture(XMFLOAT2(0, -0.1f * gt.DeltaTime()) );
 	
 }
 /// Used draw
@@ -60,8 +60,7 @@ void World::buildScene()
 	mGame->BuildMaterials("desert");
 	mGame->BuildMaterials("eagle");
 	mGame->BuildMaterials("raptor");
-
-
+	mGame->BuildMaterials("pause");
 
 
 

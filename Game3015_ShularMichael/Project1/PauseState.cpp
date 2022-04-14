@@ -3,7 +3,7 @@
 
 PauseState::PauseState(StateStack& stack, Context context)
 	: State(stack, context),
-	sceneGraph(new sceneNode(mGame))
+	pauseSceneGraph(new sceneNode(mGame))
 	//, mOptions()
 	//, mOptionIndex(0)
 {
@@ -34,7 +34,7 @@ PauseState::PauseState(StateStack& stack, Context context)
 
 void PauseState::draw()
 {
-	sceneGraph->draw();
+	pauseSceneGraph->draw();
 	/*sf::RenderWindow& window = *getContext().window;
 
 	window.setView(window.getDefaultView());
@@ -56,6 +56,7 @@ bool PauseState::handleEvent()
 	if (GetAsyncKeyState(VK_RETURN) & 0x8000)
 	{
 		requestStackPop();
+		mGame->gamePaused = false;
 	}
 
 	//// The demonstration menu logic
@@ -103,26 +104,12 @@ bool PauseState::handleEvent()
 
 void PauseState::BuildScene()
 {
-	/*mGame->mAllRitems.clear();
-	mGame->mFrameResources.clear();
-	mGame->mRitemLayer[(int)RenderLayer::AlphaTested].clear();
-
-	mGame->mTexture.clear();
-	mGame->loadTextures();
-
-	mGame->BuildMaterials("title");
-	mGame->BuildMaterials("sky");
+	
 
 
-	std::unique_ptr<SpriteNode> BGSky(new SpriteNode(mGame));
-	mBackgroundSprite = BGSky.get();
-	mBackgroundSprite->setWorldPosition(7.0f, 11.0f, -3.6f);
-	mBackgroundSprite->setWorldRotation(90.0f, 13.0f, 45.0f);
-	mBackgroundSprite->setWorldScale(0.1f, 10.0f, 14.0f);
-	sceneGraph->attachChild(std::move(BGSky));
-	mBackgroundSprite->buildSprite("sky", "box");
 
-	mGame->BuildFrameResources();*/
+
+	
 }
 
 void PauseState::updateOptionText()

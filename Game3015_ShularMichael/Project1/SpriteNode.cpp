@@ -30,6 +30,25 @@ void SpriteNode::buildSprite(std::string MatName, std::string GeoName)
 	mGame->mAllRitems.push_back(std::move(render));
 }
 
+void SpriteNode::buildSpriteOpaque(std::string MatName, std::string GeoName)
+{
+	auto render = std::make_unique<RenderItem>();
+	renderer = render.get();
+
+	renderer->World = getTransform();
+	renderer->ObjCBIndex = mGame->mAllRitems.size();
+	renderer->Mat = mGame->mMaterials[MatName].get();
+	renderer->Geo = mGame->mGeometries[GeoName].get();
+	renderer->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+	renderer->IndexCount = renderer->Geo->DrawArgs[GeoName].IndexCount;
+	renderer->StartIndexLocation = renderer->Geo->DrawArgs[GeoName].StartIndexLocation;
+	renderer->BaseVertexLocation = renderer->Geo->DrawArgs[GeoName].BaseVertexLocation;
+
+	mGame->mRitemLayer[(int)RenderLayer::Opaque].push_back(render.get());
+
+	mGame->mAllRitems.push_back(std::move(render));
+}
+
 void SpriteNode::drawCurrent() const
 {
 	UINT objCBByteSize = d3dUtil::CalcConstantBufferByteSize(sizeof(ObjectConstants));

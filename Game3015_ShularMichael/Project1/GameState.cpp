@@ -40,7 +40,15 @@ bool GameState::handleEvent()
 
 void GameState::BuildScene()
 {
+	mGame->mAllRitems.clear();
+	mGame->mFrameResources.clear();
+	mGame->mRitemLayer[(int)RenderLayer::AlphaTested].clear();
+
+	mGame->mTexture.clear();
+	mGame->loadTextures();
+
 	mWorld->buildScene();
+	
 
 
 	mGame->BuildFrameResources();

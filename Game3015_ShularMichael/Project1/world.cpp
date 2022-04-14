@@ -3,12 +3,12 @@
 /// The defualt conconstructor
 ///
 /// @param: Game
-World::World(Game* game):
+World::World(Game* game) :
 	sceneGraph(new sceneNode(game)),
 	mGame(game)
 {
-	
-	
+
+
 }
 
 /// USed to get the command queue
@@ -27,15 +27,16 @@ void World::update(const GameTimer& gt)
 {
 	mplayerAircraftOne->setVelocity(0, 0);
 
+
 	// Forward commands to scene graph, adapt velocity (scrolling, diagonal correction)
 	while (!mCommandQueue.isEmpty())
 		sceneGraph->onCommand(mCommandQueue.pop(), gt);
 
-	
+
 
 	sceneGraph->update(gt);
-
-
+	mGround->ScrollTexture(XMFLOAT2(0, -0.1f * gt.DeltaTime()) );
+	
 }
 /// Used draw
 /// 
@@ -54,37 +55,44 @@ std::unordered_map<std::string, std::wstring>* World::getTextures()
 /// Used to construct materials for scene and game objects
 void World::buildScene()
 {
-	
 
-	mGame->BuildMaterials("desert");
 	mGame->BuildMaterials("sky");
+	mGame->BuildMaterials("desert");
 	mGame->BuildMaterials("eagle");
 	mGame->BuildMaterials("raptor");
 
-	
 
-	std::unique_ptr<SpriteNode> BGGround(new SpriteNode(mGame));
-	mGround = BGGround.get();
-	mGround->setWorldPosition(0.0f, 10.0f, -5.0f);
-	mGround->setWorldRotation(0.0f, 0.0f, 0.0f);
-	mGround->setWorldScale(30.0f, 30.0f, 0.1f);
-	
-	//mGame->BuildRenderItems("desert", "box", mGround->getWorldPosition(), mGround->getWorldRotation(), mGround->getWorldScale());
-	mGround->buildSprite("desert", "box");
-	
-	sceneGraph->attachChild(std::move(BGGround));
+
+
 
 	std::unique_ptr<SpriteNode> BGSky(new SpriteNode(mGame));
 	mSky = BGSky.get();
 	mSky->setWorldPosition(2.0f, 15.0f, 0.f);
 	mSky->setWorldRotation(90.0f, 0.0f, 0.0f);
 	mSky->setWorldScale(0.1f, 30.0f, 30.0f);
-	
+
+	/*mSky->setWorldPosition(0.0f, 0.0f, 0.f);
+	mSky->setWorldRotation(90.0f, 0.0f, 0.0f);
+	mSky->setWorldScale(0.1f, 30.0f, 30.0f);*/
+
+
 	sceneGraph->attachChild(std::move(BGSky));
 	mSky->buildSprite("sky", "box");
-	
-	//mGame->BuildRenderItems("sky", "box", mSky->getWorldPosition(), mSky->getWorldRotation(), mSky->getWorldScale());
 
+	//mGame->BuildRenderItems("sky", "box", mSky->getWorldPosition(), mSky->getWorldRotation(), mSky->getWorldScale());
+	std::unique_ptr<SpriteNode> BGGround(new SpriteNode(mGame));
+	mGround = BGGround.get();
+	mGround->setWorldPosition(0.0f, 10.0f, -5.0f);
+	mGround->setWorldRotation(0.0f, 0.0f, 0.0f);
+	mGround->setWorldScale(30.0f, 30.0f, 0.1f);
+	/*mGround->setWorldPosition(0.0f, 0.0f, 0.0f);
+	mGround->setWorldRotation(0.0f, 0.0f, 0.0f);
+	mGround->setWorldScale(30.0f, 30.0f, 0.1f);*/
+
+	//mGame->BuildRenderItems("desert", "box", mGround->getWorldPosition(), mGround->getWorldRotation(), mGround->getWorldScale());
+	mGround->buildSprite("desert", "box");
+
+	sceneGraph->attachChild(std::move(BGGround));
 
 
 
@@ -107,7 +115,7 @@ void World::buildScene()
 	//sceneGraph->attachChild(std::move(raptorPlane));
 
 	//mGame->BuildRenderItems("raptor", "box", mplayerAircraftTwo->getWorldPosition(), mplayerAircraftTwo->getWorldRotation(), mplayerAircraftTwo->getWorldScale());
-	
+
 
 
 

@@ -75,6 +75,14 @@ public:
 
 	void CreateTexture(std::string name, std::wstring fileName);
 	void loadTextures();
+
+	void resetCommandList() { mCommandList.Reset(); }
+	void FlushCommandList() { FlushCommandQueue(); 
+	MaterialCBIndexCount = 0;
+	DiffuseSrvHeapIndexCount = 0;
+	ObjectCBIndex = 0;
+	}
+
 public:
 	FrameResource* mCurrFrameResource = nullptr;
 

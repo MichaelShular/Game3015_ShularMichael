@@ -1,6 +1,6 @@
 #include "SpriteNode.h"
 #include "Game.h"
-#include "../../Common/d3dApp.h"
+
 
 
 /// The defualt conconstructor
@@ -9,6 +9,7 @@ SpriteNode::SpriteNode(Game* game) : sceneNode(game)
 	mGame = game;
 
 }
+
 
 void SpriteNode::buildSprite(std::string MatName, std::string GeoName)
 {
@@ -56,4 +57,12 @@ void SpriteNode::drawCurrent() const
 		mGame->getCmdList()->DrawIndexedInstanced(renderer->IndexCount, 1, renderer->StartIndexLocation, renderer->BaseVertexLocation, 0);
 
 	}
+}
+
+void SpriteNode::ScrollTexture(XMFLOAT2 val)
+{
+	mTexturePosition.x += val.x;
+	mTexturePosition.y += val.y;
+
+	XMStoreFloat4x4(&renderer->TexTransform, DirectX::XMMatrixTranslation(mTexturePosition.x, mTexturePosition.y, 0.0f));
 }

@@ -43,3 +43,5 @@ void Entity::updateCurrent(const GameTimer& gt)
 	renderer->NumFramesDirty++;
 
 }
+
+

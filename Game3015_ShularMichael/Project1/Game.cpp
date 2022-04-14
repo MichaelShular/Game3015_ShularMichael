@@ -52,12 +52,27 @@ bool Game::Initialize()
 	ObjectCBIndex = 0;
 
 	registerStates();
-	mStateStack.pushState(States::Game);
+	mStateStack.pushState(States::Title);
 
 	//mGameWorld->buildScene();
 	//BuildFrameResources();
 
+	BuildPSOs();
+	// Execute the initialization commands.
+	ThrowIfFailed(mCommandList->Close());
+	ID3D12CommandList* cmdsLists[] = { mCommandList.Get() };
+	mCommandQueue->ExecuteCommandLists(_countof(cmdsLists), cmdsLists);
 
+	//mCommandList.Reset();
+
+
+	//BuildMaterials("desert");
+	/*BuildMaterials("sky");
+	BuildMaterials("eagle");
+	BuildMaterials("raptor");*/
+
+	// Wait until initialization is complete.
+	FlushCommandQueue();
 
 
 	//mPlayer.assignKey(mPlayer.MoveDown, VK_SPACE);
@@ -131,7 +146,7 @@ ID3D12GraphicsCommandList* Game::getCmdList()
 
 void Game::registerStates()
 {
-	//mStateStack.registerState<TitleState>(States::Title);
+	mStateStack.registerState<TitleState>(States::Title);
 	//mStateStack.registerState<MenuState>(States::Menu);
 	mStateStack.registerState<GameState>(States::Game);
 
@@ -145,8 +160,8 @@ void Game::CreateTexture(std::string name, std::wstring fileName)
 
 void Game::loadTextures()
 {
-	CreateTexture("desert", L"Desert.dds");
 	CreateTexture("sky", L"sky.dds");
+	CreateTexture("desert", L"Desert.dds");
 	CreateTexture("eagle", L"Eagle.dds");
 	CreateTexture("raptor", L"Raptor.dds");
 }
@@ -300,7 +315,9 @@ void Game::UpdateCamera(const GameTimer& gt)
 	mEyePos.y = mRadius * cosf(mPhi);
 
 	// Build the view matrix.
+	//XMVECTOR pos = XMVectorSet(-10.0f, -5.0f, 2.0f, 1.0f);
 	XMVECTOR pos = XMVectorSet(-10.0f, -5.0f, 2.0f, 1.0f);
+
 	XMVECTOR target = XMVectorSet(300.0f, 300.0f, -100.0f, 0.0f);
 	XMVECTOR up = XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
 
@@ -621,20 +638,15 @@ void Game::BuildPSOs()
 /// Used to build frame resources
 void Game::BuildFrameResources()
 {
+
+
 	for (int i = 0; i < gNumFrameResources; ++i)
 	{
 		mFrameResources.push_back(std::make_unique<FrameResource>(md3dDevice.Get(),
 			1, (UINT)mAllRitems.size(), (UINT)mMaterials.size()));
 	}
 
-	BuildPSOs();
-	// Execute the initialization commands.
-	ThrowIfFailed(mCommandList->Close());
-	ID3D12CommandList* cmdsLists[] = { mCommandList.Get() };
-	mCommandQueue->ExecuteCommandLists(_countof(cmdsLists), cmdsLists);
-
-	// Wait until initialization is complete.
-	FlushCommandQueue();
+	
 
 }
 /// Used to build materials for game objects

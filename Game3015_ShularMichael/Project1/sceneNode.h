@@ -93,6 +93,7 @@ private:
 protected:
 	Game* mGame;
 	RenderItem* renderer;
+	XMFLOAT2 mTexturePosition; 
 private:
 	std::vector<Ptr> mChildren;
 	sceneNode* mParent;
